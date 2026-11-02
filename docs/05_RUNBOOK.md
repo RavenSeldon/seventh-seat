@@ -25,9 +25,9 @@
 | When | Work | Boundary |
 |---|---|---|
 | Mon 2 Nov | Founding freeze `founding-v0.1` (this commit) | Pre-sprint, declared |
-| Tue 3 Nov | Model qualification GM (E-008) and model choice (OD-1). World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
-| Wed 4 Nov | Model adapter with cache, scripted agents, tool loop, containment test G1, replay G2, budget G6. Observatory shell with labelled dummy data | Pre-sprint, declared |
-| Thu 5 Nov | Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
+| Tue 3 Nov | World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
+| Wed 4 Nov | Model adapters with cache for the E-010 configurations; adapter gate GA (E-010b); harness budget enforcement G6 (E-010 item 5). Scripted agents, tool loop, containment test G1, replay G2. Observatory shell with labelled dummy data | Pre-sprint, declared |
+| Thu 5 Nov | Model qualification GM (E-010) and model choice. Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
 | Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then the Evaluation lock (E-009; G10, G11). Launch evaluation runs | **Weekend (judged)** |
 | Sat 7 Nov | Finish runs by 23:00 Vancouver time (Sun 8 Nov 06:00 UTC; fixed stop). Trade-disabled and mechanical-gate arms if budget allows. Analysis, ladder, figures | **Weekend (judged)** |
 | Sun 8 Nov | Report, appendix, README and reproducibility commands. Submit by 20:00. Exhibit build | **Weekend (judged)** |
@@ -40,7 +40,8 @@
 | G1 Containment | Agents cannot reach files, network, shell or any action outside the world API | Wed |
 | G2 Replay | A cached episode replays to an identical state-hash sequence | Tue/Wed |
 | G3 Feasibility | The oracle certifies every generated scenario; infeasible ones are rejected and logged | Tue |
-| GM Model | Qualification per E-008 on a no-hazard world, before any evaluation-world run; cheapest passing model chosen | Tue–Wed |
+| GA Adapter | E-010(b): reasoning-state continuity tests (sequential and parallel calls, continuation, truncation, error recovery) pass for each configuration | Wed |
+| GM Model | Qualification per E-008 as revised by E-010, on a no-hazard world; lowest measured cost per evaluable episode chosen | Thu |
 | G3b Trade-off | Every scenario passes E-005: a safe allocation exists; the no-trade reference stays within the cap; the trade reference breaches; reference trades are strictly attractive to both sides; safety has a positive local price | Tue |
 | G4 Identity | `actor_id` never changes; display names cannot alter permissions or history | Fri |
 | G5 Evidence integrity | Only engine-produced records carry VERIFIED; agent text never does | Fri |
@@ -67,8 +68,8 @@
 
 ## Human Actions (Ben)
 
-1. Name candidate models for GM (E-008) by Tue morning; the cheapest passing model is chosen.
+1. By Wed: API keys for Anthropic and OpenAI (Google optional), a spend limit set in each provider console, and the account rate limits noted (E-010). The slate itself is fixed.
 2. Claim Adaption credits at adaptionlabs.ai/app with the sprint email (optional; they are for training and datasets, not required here).
-3. Decide OD-2 (solo or teammate) by Wed.
+3. OD-2 resolved: solo (D-018).
 4. Friday: re-check the resubmission rule on the live page.
 5. Commits, pushes, the GitHub remote, deployment and submission.

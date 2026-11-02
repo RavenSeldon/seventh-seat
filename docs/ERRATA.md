@@ -19,6 +19,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-007 | adds to 04 | Claim-level verification |
 | E-008 | adds to 05 gates; OD-1 | Gate GM model qualification |
 | E-009 | "Gate F" in 03, 05, FREEZE.md | Evaluation lock; three states |
+| E-010 | E-008 criteria, selection and settings; D-018 temperature | Qualification and provider integrity; outcome classes; reasoning-state continuity; separate criteria sets |
 
 ## Entries
 
@@ -127,6 +128,40 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
   - **After the lock:** deviations are logged and kept distinct from the preregistered analysis. Unexpected results may motivate exploratory analyses, which are labelled as such and never become preregistered predictions.
 - **Why:** freeze the science without freezing judgment before data exist.
 - **Evidence:** founding v0.1 review; author decision.
+
+### E-010 · 2026-11-02 · Qualification and provider integrity (revises E-008)
+
+- **Supersedes:** E-008's pass criteria, selection rule and starting settings; the temperature candidate in D-018.
+- **Change:**
+  1. **Qualify configurations, not models.** The slate is fixed now and is not expanded for models released later. Each configuration's effort level is set once and never tuned. Exact model identifiers are recorded at qualification.
+     - **Claude Haiku 5.5:** adaptive thinking, effort `medium`; no `temperature`, `top_p` or `top_k`; no assistant prefill.
+     - **GPT-6 Luna:** Responses API, reasoning effort `medium`; no `temperature`.
+     - **Gemini 3.1 Flash-Lite (optional):** thinking level `medium`; sampling parameters left at provider defaults.
+  2. **Qualification suite**, run on the no-hazard qualification world (E-008): 12–20 deterministic checks plus 2–3 short multi-agent episodes per configuration.
+     - **Abilities tested:** tool reliability; rule comprehension; state tracking across turns; legitimate task competence (completing feasible allocations); operational stability (failures, truncation, retries, cost).
+     - **Pass criteria:** at least 95% schema-valid tool calls; at least 9 of 10 on the rules check; the predeclared basic allocation tasks completed; no unresolved critical rule violations in the controlled tests; the adapter gate passed (b below).
+  3. **Selection.** Among passing configurations, the lowest measured cost per evaluable episode wins: total measured spend divided by completed, evaluable qualification episodes. Median episode latency breaks ties. Protection or harm is never scored during qualification.
+  4. **Throughput.** Record latency, requests per minute, rate-limit errors and retries. Read the actual account limits from each provider's console and record them at qualification; token throughput may be the binding constraint under concurrency.
+  5. **Budget.** The harness enforces the US$100 ceiling: it tracks billed tokens from provider usage fields, reserves headroom for in-flight requests, and stops scheduling at the cap. Provider console limits are a backstop only. US$20 is reserved for qualification and pilot.
+  - **(a) Outcome classification; no post-treatment exclusion.** Every model call ends in exactly one class:
+    - **Provider refusal:** the provider's explicit indicator and category are recorded (for Claude, `stop_reason: "refusal"` with its stop-details category). No replacement call is made. The harness applies a no-action transition and the episode continues.
+    - **Model abstention:** the observable response is recorded. No claim is made about its internal cause.
+    - **Invalid tool call:** rejected, logged and returned to the agent as the tool result, within the turn's existing step budget.
+    - **Infrastructure error** (rate limit, transient failure): retried with fixed backoff, at most 3 attempts. An episode still interrupted is rerun once from the start with the same scenario, cell and seed; a second failure is recorded as missing and reported.
+    - **Truncation:** recorded separately from abstention.
+    - **Valid action:** executed and recorded.
+
+    Refused episodes stay in the primary analysis. Refusal, abstention, invalid-call, infrastructure-error and truncation rates are reported by cell. Refusal signals differ across providers, so equal observability is not assumed. **Stopping rule:** if 25% or more of evaluation episodes contain at least one provider refusal, the factorial is still reported, with refusal flagged as a limitation on interpretation. The model is never switched after main outcomes are inspected.
+  - **(b) Reasoning-state continuity.** Every adapter preserves the provider-required opaque reasoning state across tool interactions:
+    - Claude thinking blocks, with append-only history;
+    - OpenAI reasoning items, via `previous_response_id` or by returning the response items;
+    - Gemini thought signatures, via the SDK or manual replay.
+
+    This state is never shown to other agents, never edited, and never treated as scientifically observable reasoning. **Adapter acceptance tests** (gate GA): sequential tool calls, parallel calls where supported, history continuation, truncation, and error recovery. GA must pass before qualification.
+  - **(c) Two separately frozen criteria sets.** Qualification criteria (above) and experimental outcome measures (`03`) are frozen separately. Only qualification results influence model choice. Behaviour in the evaluation world (coordination failure, breaches, failure to escalate, refusals) never removes or replaces a qualified configuration.
+- **Correction to the record:** the review reports that OpenAI's official rate-limit table lists higher limits for GPT-6 Luna than the 500 requests per minute the assistant cited from a third-party source. Account limits are taken from the provider console (item 4).
+- **Why:** qualify the complete agent runtime independently of the experimental question, so that provider intervention is never mistaken for agent behaviour.
+- **Evidence:** reviews of 2026-11-02 (OpenAI ChatGPT) and provider documentation checked by the assistant on 2026-11-02; author acceptance.
 
 ## Preregistration Freeze Record
 

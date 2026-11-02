@@ -57,6 +57,7 @@
 | D-014 | E-007 | Citable requires claim-level passage verification |
 | OD-1 | E-008 | Model chosen by qualification gate GM, not by outcome behaviour |
 | D-016 | E-009 | Three states: founding freeze, design amendments (errata), Evaluation lock |
+| D-018 | E-010 | Temperature 0.4 withdrawn; fixed provider-supported configurations instead |
 
 ## Settled After Founding (2026-11-02)
 
@@ -71,6 +72,6 @@
 
 | ID | Status |
 |---|---|
-| OD-1 | Procedure set by E-008; candidate models still to be named (Ben) |
+| OD-1 | Slate and configurations fixed by E-010; the model is chosen at GM by measured cost per evaluable episode |
 | OD-2 | Resolved: solo (D-018) |
 | OD-5 | Partly resolved: private remote now; public later (D-018) |
