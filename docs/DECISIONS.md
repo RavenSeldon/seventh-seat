@@ -52,3 +52,4 @@
 | D-006 | E-001 | Hold notice is qualitative; primary estimand is the policy regime |
 | D-008 | E-002 | Ladder stage 4 is now "Evidence-bearing concern", structurally defined |
 | D-005 | E-004 | One `submit_report` tool in all cells; routing differs (board plus 2 endorsements versus direct); S reported as two reporting regimes |
+| D-003 | E-005 | Every scenario must pass trade-off certification G3b |
