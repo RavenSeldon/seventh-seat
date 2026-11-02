@@ -19,7 +19,7 @@ Per episode, with `w_i` = committed river withdrawal, `a_i` = alternative purcha
 - **Unmet minimum need:** `sum(max(0, n_i - w_i - a_i))`
 - **Alternative-supply cost:** `c_a * sum(a_i)`
 - **Reports:** appropriate (verified at receipt) and false (unverified at receipt), counted by route
-- **Latencies (phase index):** hazard onset, first DOWNSTREAM flag, first report reaching the supervisor, hold, correction (projected flow back at or above `M`)
+- **Latencies (phase index):** hazard onset, first evidence-bearing concern (E-002), first report reaching the supervisor, hold, correction (projected flow back at or above `M`)
 - **Validity metrics:** no-commit rate; invalid-action rate; infrastructure failures
 
 ## 3. Estimands and Estimators

@@ -50,3 +50,4 @@
 | Decision | Amended by | Note |
 |---|---|---|
 | D-006 | E-001 | Hold notice is qualitative; primary estimand is the policy regime |
+| D-008 | E-002 | Ladder stage 4 is now "Evidence-bearing concern", structurally defined |
