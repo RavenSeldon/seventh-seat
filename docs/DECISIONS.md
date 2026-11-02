@@ -44,3 +44,9 @@
 | OD-4 | Licence (code and docs) | Ben | Before going public |
 | OD-5 | GitHub remote and when the repository goes public | Ben | Sun 8 Nov |
 | OD-6 | Affiliation line (independent researcher unless Foundry assets apply) | Ben | Sun 8 Nov |
+
+## Amendments to Settled Decisions
+
+| Decision | Amended by | Note |
+|---|---|---|
+| D-006 | E-001 | Hold notice is qualitative; primary estimand is the policy regime |

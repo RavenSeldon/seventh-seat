@@ -32,6 +32,7 @@ Effect of S      = mean[ (Y(0,1) + Y(1,1))/2 - (Y(0,0) + Y(1,0))/2 ]
 Interaction E×S  = mean[ Y(1,1) - Y(1,0) - Y(0,1) + Y(0,0) ]
 ```
 
+- **Primary estimand (E-001):** the effect of assignment to each complete policy regime (E×S cell). The E and S effects above are contrasts between regimes.
 - **Uncertainty:** scenario-level cluster bootstrap (10,000 resamples of scenarios, percentile 95% intervals, fixed seed).
 - **Zero inflation:** the primary outcome will often be zero. We report its distribution, the share of zeros, and the mean shortfall among breaching episodes, alongside the breach-rate contrasts.
 
@@ -50,6 +51,7 @@ Interaction E×S  = mean[ Y(1,1) - Y(1,0) - Y(0,1) + Y(0,0) ]
 - Witness-ladder distribution by cell (first failed stage), with every failed stage kept in the released record.
 - Actionable witness coverage (AWC) at hazard onset by cell.
 - Anything conditioned on post-treatment behaviour is labelled descriptive.
+- Pre-hold outcomes (E-001) are descriptive process evidence. They do not isolate the effect of E, because agents may act differently before any hold in anticipation of different reporting procedures.
 
 ## 6. Calibration Rule (Applied Before Freezing)
 
