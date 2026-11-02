@@ -1,12 +1,12 @@
 # Runbook: 2–8 November 2026
 
-**Status:** LIVING. All times Pacific (PST, UTC−8; daylight saving ended 1 Nov).
+**Status:** LIVING. All times are Vancouver local time, UTC−7: British Columbia stays on UTC−7 year-round from 1 Nov 2026 (confirmed against tzdata 2026e). UTC is given for anything hard. The sprint page's "PT" means US Pacific, now UTC−8, so add one hour for Vancouver.
 
 ## Hard Facts (from PA-01, fetched 2026-11-02)
 
 - **Sprint:** Fri 6 Nov to Sun 8 Nov 2026.
-- **Deadline:** Sun 8 Nov 23:59 AoE, which is Mon 9 Nov 11:59 UTC, or **Mon 9 Nov 03:59 PST**.
-- **Internal submission target:** Sun 8 Nov 20:00 PST.
+- **Deadline:** Sun 8 Nov 23:59 AoE, which is Mon 9 Nov 11:59 UTC, or **Mon 9 Nov 04:59 Vancouver time**.
+- **Internal submission target:** Sun 8 Nov 20:00 Vancouver time (Mon 9 Nov 03:00 UTC).
 - **Report:** PDF on the official template; at most 8 pages excluding references and appendices; abstract of 150–250 words; author names and affiliations; a mandatory Limitations and Dual-Use / Ethical Considerations appendix.
 - **Prior work:** only the weekend's work is judged. Prior work must be stated clearly, and pre-sprint code marked as pre-existing in both the README and the report. Every submission is screened for this.
 - **AI tools:** allowed. The author is responsible for everything, and made-up results or references can disqualify a project.
@@ -15,10 +15,10 @@
 
 ## Talks (Optional)
 
-- Thu 5 Nov 05:15: Adaption workshop
-- Thu 5 Nov 07:00: John Kitaoka, open problems in securing systems against agent swarms
-- Sat 7 Nov 05:00: Justin Shenk, modeling agent swarms
-- Sat 7 Nov 11:00: Jurgis Kemeklis, mitigating insider threats with AI control
+- Thu 5 Nov 06:15 (13:15 UTC): Adaption workshop
+- Thu 5 Nov 08:00 (15:00 UTC): John Kitaoka, open problems in securing systems against agent swarms
+- Sat 7 Nov 06:00 (13:00 UTC): Justin Shenk, modeling agent swarms
+- Sat 7 Nov 12:00 (19:00 UTC): Jurgis Kemeklis, mitigating insider threats with AI control
 
 ## Schedule
 
@@ -29,7 +29,7 @@
 | Wed 4 Nov | Model adapter with cache, scripted agents, tool loop, containment test G1, replay G2, budget G6. Observatory shell with labelled dummy data | Pre-sprint, declared |
 | Thu 5 Nov | Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
 | Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then the Evaluation lock (E-009; G10, G11). Launch evaluation runs | **Weekend (judged)** |
-| Sat 7 Nov | Finish runs by 23:00 PT (fixed stop). Trade-disabled and mechanical-gate arms if budget allows. Analysis, ladder, figures | **Weekend (judged)** |
+| Sat 7 Nov | Finish runs by 23:00 Vancouver time (Sun 8 Nov 06:00 UTC; fixed stop). Trade-disabled and mechanical-gate arms if budget allows. Analysis, ladder, figures | **Weekend (judged)** |
 | Sun 8 Nov | Report, appendix, README and reproducibility commands. Submit by 20:00. Exhibit build | **Weekend (judged)** |
 
 ## Gates (Acceptance Conditions)
@@ -63,7 +63,7 @@
 - [ ] Tracks selected (Track 2 primary; Tracks 3 and 4 secondary)
 - [ ] Code link works (public repository at submission is the author's decision, OD-5)
 - [ ] Links in the PDF work
-- [ ] Submitted by 20:00 PST; confirmation email received
+- [ ] Submitted by 20:00 Vancouver time; confirmation email received
 
 ## Human Actions (Ben)
 

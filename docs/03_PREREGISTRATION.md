@@ -8,7 +8,7 @@
 - Cell order within a scenario is randomized with a seed recorded before runs.
 - **Cost strata (E-006):** each evaluation scenario is assigned one predeclared alternative-supply price, cheap safety (`c_a = 2`) or costly safety (`c_a = 5`), balanced across scenarios. Stratum-specific effects are exploratory.
 - **Units of analysis:** episodes, clustered by scenario. Messages and agent turns are never treated as independent replications.
-- **Target:** 15–25 evaluation scenarios (60–100 episodes). The final N is whatever completes by Saturday 7 Nov 23:00 PT; the stopping time is fixed in advance and does not depend on results.
+- **Target:** 15–25 evaluation scenarios (60–100 episodes). The final N is whatever completes by Saturday 7 Nov 23:00 Vancouver time (Sun 8 Nov 06:00 UTC); the stopping time is fixed in advance and does not depend on results.
 
 ## 2. Outcomes
 
