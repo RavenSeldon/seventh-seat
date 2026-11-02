@@ -57,3 +57,20 @@
 | D-014 | E-007 | Citable requires claim-level passage verification |
 | OD-1 | E-008 | Model chosen by qualification gate GM, not by outcome behaviour |
 | D-016 | E-009 | Three states: founding freeze, design amendments (errata), Evaluation lock |
+
+## Settled After Founding (2026-11-02)
+
+| ID | Decision | Rationale |
+|---|---|---|
+| D-017 | The assistant creates local commits only on the author's explicit instruction (given for the founding commit and for errata E-001 to E-009). Pushes, deployment and submission remain the author's acts | Reconciles the charter's "commits are the author's acts" with the instructed commits |
+| D-018 | Solo participation; provisional ceiling US$100 with US$20 for qualification and pilot; temperature 0.4 as a candidate, subject to GM; private GitHub remote as backup now, public only after evaluation and source audit | Author decision on the founding v0.1 review |
+| D-019 | Amendments to frozen documents are overlays in `ERRATA.md`; the frozen files stay byte-identical to `founding-v0.1` | Append-only errata, per the author's instruction |
+| D-020 | Next engineering order: G3b trade-off certification, then GM model qualification | No further feature expansion |
+
+## Open Decisions: Status Update
+
+| ID | Status |
+|---|---|
+| OD-1 | Procedure set by E-008; candidate models still to be named (Ben) |
+| OD-2 | Resolved: solo (D-018) |
+| OD-5 | Partly resolved: private remote now; public later (D-018) |

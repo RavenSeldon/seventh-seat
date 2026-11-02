@@ -20,6 +20,8 @@ Verify with: `sha256sum -c FREEZE_MANIFEST.sha256`
 
 ## Amendment Procedure
 
+Amendments to frozen documents are overlays: they live in `docs/ERRATA.md` (see its reading rule), and the frozen files stay byte-identical to `founding-v0.1` (D-019). The steps below apply to the errata and to any living document an erratum touches.
+
 1. Append an erratum (`E-NNN`) stating what changes, why, and on what evidence.
 2. Apply the change in a commit whose message cites the erratum ID.
 3. Regenerate the manifest and record the new hash beside the erratum.
