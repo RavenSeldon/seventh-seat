@@ -16,6 +16,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-004 | 01 §5 tool definitions; 02 §5 tools; D-005 | One tool set; routing differs |
 | E-005 | adds to 02 §3; 05 gates | Gate G3b: numbers and incentives |
 | E-006 | 02 §2 `c_a`, `rho`; 03 §6 | Cost strata; lever `kappa`; frontier metrics |
+| E-007 | adds to 04 | Claim-level verification |
 
 ## Entries
 
@@ -87,6 +88,13 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
   5. **Utility gap (secondary):** `U_star(S) - U`, as a fraction of total demand. This is the utility left unrealized at the episode's own level of harm.
 - **Why:** to test whether the safeguards work only when safety is free, and to remove ambiguity from "distance to a frontier" before any result is seen.
 - **Evidence:** founding v0.1 review; the author's refinement 4.
+
+### E-007 · 2026-11-02 · Claim-level verification
+
+- **Adds to:** `04_PRIOR_ART_LEDGER.md`.
+- **Change:** a claim is citable only when (a) its source is VERIFIED bibliographically and (b) the located passage supports this specific claim (VERIFIED-PASSAGE). Each claim is recorded with its locator in a Claim Verification Register in `04`. Near matches are not substitutes.
+- **Why:** a source that exists may still not support the sentence attributed to it.
+- **Evidence:** founding v0.1 review.
 
 ## Preregistration Freeze Record
 

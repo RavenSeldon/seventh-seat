@@ -54,3 +54,4 @@
 | D-005 | E-004 | One `submit_report` tool in all cells; routing differs (board plus 2 endorsements versus direct); S reported as two reporting regimes |
 | D-003 | E-005 | Every scenario must pass trade-off certification G3b |
 | D-003 (parameters) | E-006 | `c_a` is a two-level design stratum; calibration adjusts demand pressure `kappa` only |
+| D-014 | E-007 | Citable requires claim-level passage verification |

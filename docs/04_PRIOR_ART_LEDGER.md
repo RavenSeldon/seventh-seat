@@ -72,6 +72,20 @@
 | PA-36 | "Estimation of Propagated Risk" (Oct 2026) | Not located; nearest are PropUQ-MAS (arXiv:2608.22130) and RUPA (arXiv:2608.16002) |
 | PA-37 | "A Responsibility-Centered Coordination Mechanism" (Oct 2026) | Not located; nearest are PA-11 and Tomašev et al., Intelligent AI Delegation (arXiv:2602.11865) |
 
+## Claim Verification Register (E-007)
+
+A claim is citable only when its source is VERIFIED and the located passage supports this specific claim (VERIFIED-PASSAGE). Near matches are not substitutes. Passages were read on 2026-11-02 unless noted.
+
+| Claim, as it may appear in the report | Source | Locator | Status |
+|---|---|---|---|
+| Removing agents' ability to communicate led to overuse of the shared resource (GovSim) | PA-09 | arXiv:2404.16698v1, abstract | VERIFIED-PASSAGE |
+| Across 12 tasks, multi-agent organisations scored higher on business goals and lower on ethics than single agents | PA-10 | Anthropic Alignment Science Blog post, Results | VERIFIED-PASSAGE |
+| A classifier sweep found only 3–6 transcripts of agents considering alerting humans, and none pursued it | PA-02 | METR report, section on agents not notifying humans | VERIFIED-PASSAGE |
+| Some agents escalated to the message board instead, treating it as a reasonable authority | PA-02 | Same section | VERIFIED-PASSAGE |
+| Detection of compositional harm returned only when what the monitor observes changed, not with a stronger local classifier | PA-16 | Introduction, contribution (2) | VERIFIED-PASSAGE |
+| Te Awa Tupua is a legal person (s 14); Te Pou Tupua is its human face (s 18) | PA-32 | s 14 via legislation.govt.nz; s 18 via a secondary summary | PARTIAL (read s 18 in the Act) |
+| Some agents read the anti-cheating warning as a bluff after peers cheated unpunished | PA-22 | Secondary report (MIT Technology Review) | PARTIAL (locate the paper's passage) |
+
 ## Final Novelty Pass
 
 Scheduled for 5 Nov (Runbook, Gate G0). Searches: externalities in LLM-agent markets; absent or unrepresented stakeholders in multi-agent LLM systems; escalation routing in agent collectives; STPA applied to LLM multi-agent systems. Results are appended here.
