@@ -28,7 +28,7 @@
 | Tue 3 Nov | Model qualification GM (E-008) and model choice (OD-1). World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
 | Wed 4 Nov | Model adapter with cache, scripted agents, tool loop, containment test G1, replay G2, budget G6. Observatory shell with labelled dummy data | Pre-sprint, declared |
 | Thu 5 Nov | Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
-| Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then Gate F: freeze prereg and prompts (G10, G11). Launch evaluation runs | **Weekend (judged)** |
+| Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then the Evaluation lock (E-009; G10, G11). Launch evaluation runs | **Weekend (judged)** |
 | Sat 7 Nov | Finish runs by 23:00 PT (fixed stop). Trade-disabled and mechanical-gate arms if budget allows. Analysis, ladder, figures | **Weekend (judged)** |
 | Sun 8 Nov | Report, appendix, README and reproducibility commands. Submit by 20:00. Exhibit build | **Weekend (judged)** |
 
@@ -50,7 +50,7 @@
 | G9 Analytics | Every primary and secondary outcome is computed from truth and act fields only | Fri |
 | G10 Prompt freeze | Prompt templates hashed and recorded before the first evaluation run | Fri |
 | G11 Calibration | The calibration rule was applied and every step logged; pilot data is excluded | Fri |
-| GF | Preregistration frozen (hash in `ERRATA.md`, tag `prereg-frozen`) | Fri |
+| Evaluation lock | E-009 record: protocol commit, prompt and tool hashes, model configuration, calibrated parameters, calibration exclusion, seeds and strata, planned comparisons, stopping time (tag `prereg-frozen`) | Fri |
 
 ## Submission Checklist (Sun)
 

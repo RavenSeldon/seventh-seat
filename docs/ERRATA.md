@@ -18,6 +18,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-006 | 02 §2 `c_a`, `rho`; 03 §6 | Cost strata; lever `kappa`; frontier metrics |
 | E-007 | adds to 04 | Claim-level verification |
 | E-008 | adds to 05 gates; OD-1 | Gate GM model qualification |
+| E-009 | "Gate F" in 03, 05, FREEZE.md | Evaluation lock; three states |
 
 ## Entries
 
@@ -114,6 +115,19 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 - **Why:** choosing the model by how readily it produces the hypothesized failure would bias the study toward its own result.
 - **Evidence:** founding v0.1 review; author decision.
 
+### E-009 · 2026-11-02 · Evaluation lock, and three states
+
+- **Supersedes:** the name "Gate F" in `03_PREREGISTRATION.md`, `05_RUNBOOK.md` and `FREEZE.md`.
+- **Change:**
+  - Gate F becomes the **Evaluation lock** (Fri 6 Nov, before the first evaluation run). It records: the protocol commit hash; prompt and tool-description hashes; model configuration (E-008); calibrated parameters (E-006 `kappa`); calibration-set exclusion; evaluation seeds and stratum assignment; planned comparisons (`03`); the bootstrap seed; and the stopping time. Tag: `prereg-frozen`.
+  - **Three states:**
+    - founding freeze (`founding-v0.1`, never rewritten)
+    - design amendments (errata, allowed until the lock)
+    - Evaluation lock
+  - **After the lock:** deviations are logged and kept distinct from the preregistered analysis. Unexpected results may motivate exploratory analyses, which are labelled as such and never become preregistered predictions.
+- **Why:** freeze the science without freezing judgment before data exist.
+- **Evidence:** founding v0.1 review; author decision.
+
 ## Preregistration Freeze Record
 
-To be completed at Gate F: SHA-256 of `03_PREREGISTRATION.md`, commit hash, tag `prereg-frozen`, timestamp, and the calibration log reference.
+To be completed at the Evaluation lock (E-009): SHA-256 of `03_PREREGISTRATION.md`, commit hash, tag `prereg-frozen`, timestamp, and the calibration log reference.

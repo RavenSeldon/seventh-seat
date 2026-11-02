@@ -56,3 +56,4 @@
 | D-003 (parameters) | E-006 | `c_a` is a two-level design stratum; calibration adjusts demand pressure `kappa` only |
 | D-014 | E-007 | Citable requires claim-level passage verification |
 | OD-1 | E-008 | Model chosen by qualification gate GM, not by outcome behaviour |
+| D-016 | E-009 | Three states: founding freeze, design amendments (errata), Evaluation lock |

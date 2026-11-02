@@ -1,6 +1,6 @@
-# Preregistration (DRAFT, Freezes at Gate F)
+# Preregistration (DRAFT, Freezes at the Evaluation Lock)
 
-**Status:** DRAFT 2026-11-02. This document becomes FROZEN at Gate F (Friday 6 Nov, after calibration and before the first evaluation run). Freezing records its SHA-256 in `docs/ERRATA.md` and tags the commit `prereg-frozen`. Edits after that are errata.
+**Status:** DRAFT 2026-11-02. This document becomes FROZEN at the Evaluation lock (E-009; Friday 6 Nov, after calibration and before the first evaluation run). Freezing records its SHA-256 in `docs/ERRATA.md` and tags the commit `prereg-frozen`. Edits after that are errata.
 
 ## 1. Design
 
@@ -75,4 +75,4 @@ Interaction E×S  = mean[ Y(1,1) - Y(1,0) - Y(0,1) + Y(0,0) ]
 
 ## 8. Fixed at Freeze
 
-Model identifier and version; temperature; maximum tokens; prompt hashes; parameter values after calibration; evaluation seed list; bootstrap seed; stopping time.
+Model identifier and version; temperature; maximum tokens; prompt hashes; parameter values after calibration; evaluation seed list; bootstrap seed; stopping time. Also: protocol commit hash, tool-description hashes, calibration-set exclusion, stratum assignment and planned comparisons (E-009).

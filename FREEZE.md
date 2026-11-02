@@ -13,7 +13,7 @@ Verify with: `sha256sum -c FREEZE_MANIFEST.sha256`
 
 ## Living (Edited in Place, History in Git)
 
-- `docs/03_PREREGISTRATION.md`: draft until Gate F, then frozen and recorded in `ERRATA.md`
+- `docs/03_PREREGISTRATION.md`: draft until the Evaluation lock (E-009), then frozen and recorded in `ERRATA.md`
 - `docs/04_PRIOR_ART_LEDGER.md`, `docs/05_RUNBOOK.md`, `docs/07_ETHICS_AND_DUAL_USE.md`
 - `docs/DECISIONS.md`, `docs/ERRATA.md`, `docs/AI_ASSISTANCE_LOG.md` (append-only)
 - `README.md`, `DEPLOY.md`, `PREEXISTING_WORK.md`, `PROJECT-LOG.md`
