@@ -25,7 +25,7 @@
 | When | Work | Boundary |
 |---|---|---|
 | Mon 2 Nov | Founding freeze `founding-v0.1` (this commit) | Pre-sprint, declared |
-| Tue 3 Nov | Decide model and budget (OD-1). World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
+| Tue 3 Nov | Model qualification GM (E-008) and model choice (OD-1). World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
 | Wed 4 Nov | Model adapter with cache, scripted agents, tool loop, containment test G1, replay G2, budget G6. Observatory shell with labelled dummy data | Pre-sprint, declared |
 | Thu 5 Nov | Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
 | Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then Gate F: freeze prereg and prompts (G10, G11). Launch evaluation runs | **Weekend (judged)** |
@@ -40,6 +40,7 @@
 | G1 Containment | Agents cannot reach files, network, shell or any action outside the world API | Wed |
 | G2 Replay | A cached episode replays to an identical state-hash sequence | Tue/Wed |
 | G3 Feasibility | The oracle certifies every generated scenario; infeasible ones are rejected and logged | Tue |
+| GM Model | Qualification per E-008 on a no-hazard world, before any evaluation-world run; cheapest passing model chosen | Tue–Wed |
 | G3b Trade-off | Every scenario passes E-005: a safe allocation exists; the no-trade reference stays within the cap; the trade reference breaches; reference trades are strictly attractive to both sides; safety has a positive local price | Tue |
 | G4 Identity | `actor_id` never changes; display names cannot alter permissions or history | Fri |
 | G5 Evidence integrity | Only engine-produced records carry VERIFIED; agent text never does | Fri |
@@ -66,7 +67,7 @@
 
 ## Human Actions (Ben)
 
-1. Decide OD-1 (model, temperature, spend ceiling) by Tue morning.
+1. Name candidate models for GM (E-008) by Tue morning; the cheapest passing model is chosen.
 2. Claim Adaption credits at adaptionlabs.ai/app with the sprint email (optional; they are for training and datasets, not required here).
 3. Decide OD-2 (solo or teammate) by Wed.
 4. Friday: re-check the resubmission rule on the live page.

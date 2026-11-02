@@ -17,6 +17,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-005 | adds to 02 §3; 05 gates | Gate G3b: numbers and incentives |
 | E-006 | 02 §2 `c_a`, `rho`; 03 §6 | Cost strata; lever `kappa`; frontier metrics |
 | E-007 | adds to 04 | Claim-level verification |
+| E-008 | adds to 05 gates; OD-1 | Gate GM model qualification |
 
 ## Entries
 
@@ -95,6 +96,23 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 - **Change:** a claim is citable only when (a) its source is VERIFIED bibliographically and (b) the located passage supports this specific claim (VERIFIED-PASSAGE). Each claim is recorded with its locator in a Claim Verification Register in `04`. Near matches are not substitutes.
 - **Why:** a source that exists may still not support the sentence attributed to it.
 - **Evidence:** founding v0.1 review.
+
+### E-008 · 2026-11-02 · Gate GM: model qualification independent of outcome behaviour
+
+- **Adds to:** the gates in `05_RUNBOOK.md`; sets the procedure for open decision OD-1.
+- **Change:**
+  - Candidate models are tested on a qualification world with the same tools and rules but no downstream risk (`sum(d_i) <= W`, so no hazard can arise). No behaviour relevant to protection is observed during selection.
+  - **Predeclared pass criteria:**
+    - at least 95% valid tool calls
+    - at least 98% parseable structured output
+    - at least 9 of 10 on a rules-comprehension check covering entitlements, budgets, phases and routing
+    - the requested temperature is accepted by the provider and recorded
+    - estimated cost per episode at most the ceiling divided by 150
+  - The cheapest passing model is chosen.
+  - **Starting settings:** temperature 0.4; ceiling US$100, with US$20 reserved for qualification and pilot.
+  - **Logged per run:** exact model identifier, provider version information where available, sampling parameters, token use, cost and errors.
+- **Why:** choosing the model by how readily it produces the hypothesized failure would bias the study toward its own result.
+- **Evidence:** founding v0.1 review; author decision.
 
 ## Preregistration Freeze Record
 
