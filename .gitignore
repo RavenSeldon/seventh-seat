@@ -1,0 +1,11 @@
+.DS_Store
+.env*
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+node_modules/
+dist/
+*.tsbuildinfo
+runs/cache/
+runs/scratch/
