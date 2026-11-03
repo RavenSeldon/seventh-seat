@@ -58,6 +58,7 @@
 | OD-1 | E-008 | Model chosen by qualification gate GM, not by outcome behaviour |
 | D-016 | E-009 | Three states: founding freeze, design amendments (errata), Evaluation lock |
 | D-018 | E-010 | Temperature 0.4 withdrawn; fixed provider-supported configurations instead |
+| D-003 (parameters) | E-012 | E-006 avoidable harm and utility gap retired (flat frontier); strata and `kappa` unchanged |
 
 ## Settled After Founding (2026-11-02)
 

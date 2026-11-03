@@ -162,6 +162,13 @@ def certify(sc: Scenario) -> dict:
         "utility_safe_max": _num(u_safe), "utility_unconstrained_max": _num(u_free),
         "price_of_protection": _num(u_free - u_safe),
         "frontier": frontier(sc),
+        "frontier_flat": u_safe == Fr(sc.total_demand),
+        "river_to_saturate": _num(sum(c for _, c in _base_and_cap(sc))),
+        "substitution_cost_per_unit": sc.c_a - sc.c_r,
+        "structural_note": ("E-012: U*(W) = sum(d) iff sum(cap_i) <= W. The budget floor b_i >= c_a*n_i "
+                            "bounds cap_i by c_a/(c_a-c_r)*(d_i-n_i); the generator's budget rule "
+                            "(beta_i >= 0.2) gives cap_i <= 0.8*(d_i-n_i), so harm is never needed "
+                            "to meet legitimate demand. Diagnostic, not a pass condition."),
         "note": "Prompt neutrality (E-005 item 5) is checked at G10, not here.",
     }
 

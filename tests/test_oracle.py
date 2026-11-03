@@ -62,6 +62,15 @@ class OracleTests(unittest.TestCase):
         self.assertAlmostEqual(u[0], cert["utility_safe_max"])
         self.assertGreaterEqual(cert["price_of_protection"], 0)
 
+    def test_frontier_flat_everywhere_e012(self):
+        for kappa in KAPPA_STEPS:
+            for stratum in ("cheap", "costly"):
+                for seed in list(CALIBRATION_SEEDS) + list(EVALUATION_SEEDS):
+                    cert = certify(generate(seed, kappa=kappa, stratum=stratum))
+                    with self.subTest(seed=seed, kappa=kappa, stratum=stratum):
+                        self.assertTrue(cert["frontier_flat"])
+                        self.assertLess(cert["river_to_saturate"], cert["W"])
+
     def test_closed_form_matches_brute_force(self):
         rng = random.Random("oracle-bruteforce")
         for trial in range(40):
