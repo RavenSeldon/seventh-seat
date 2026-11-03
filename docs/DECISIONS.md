@@ -77,3 +77,4 @@
 | OD-2 | Resolved: solo (D-018) |
 | OD-5 | Partly resolved: private remote now; public later (D-018) |
 | D-021 | E-011 | Diorama is the 3D rendering of The Seven Seats; pre-sprint shell, declared, at most 3 hours, gates first |
+| D-021 | E-013 | Diorama topology is a shared commons; cinematic theatre plus calibrated instrument; experimental snapshots need an export manifest |

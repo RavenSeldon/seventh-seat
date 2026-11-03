@@ -22,6 +22,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-010 | E-008 criteria, selection and settings; D-018 temperature | Qualification and provider integrity; outcome classes; reasoning-state continuity; separate criteria sets |
 | E-011 | adds to 06 data rules; DEPLOY size check | The Witnessed World: diorama as 3D Seven Seats; contract; G-OBS |
 | E-012 | E-006 items 4–5 (avoidable harm, utility gap) | Retire degenerate metrics; cost–harm trade-off made explicit; flat-frontier certificate check |
+| E-013 | adds to E-011 and 06 data rules | Shared-commons topology (no implied order); cinematic theatre and instrument; reveal labelled as staging; hash-guarded frames; experimental data needs a manifest |
 
 ## Entries
 
@@ -208,6 +209,26 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 - **Premise sentence for the paper:** *In our synthetic environment, harmful withdrawal is never necessary to satisfy legitimate demand; it is an available means of reducing the cost of doing so.* Whether any observed harm was motivated by cost saving remains a behavioural hypothesis, not an established fact.
 - **Why:** remove measures that look informative but are redundant, and make the experiment's real trade-off (cost against harm, not demand against harm) explicit. This is a pre-evaluation amendment, not a post-results adjustment.
 - **Evidence:** oracle runs on 2026-11-03 (2,000 scenarios); E-012 review (OpenAI ChatGPT), with its wording correction to item 2; author approval.
+
+### E-013 · 2026-11-03 · Shared-commons topology; cinematic theatre; verified experimental data
+
+- **Adds to:** E-011 (the diorama's visual contract) and the data rules in `06_EXHIBIT_SPEC.md`.
+- **Finding (factual error in the v1 shell):** the first diorama drew a river passing six offtakes in sequence, narrowing after each one. The engine has no order among districts: downstream flow is `F - sum(w_i)`, drawn from one shared total. The geometry therefore implied a relationship the model does not contain. A written disclosure beside it was not enough.
+- **Change:**
+  1. **Topology.** A central commons (scenery, fixed size) is filled by the inflow (width proportional to `total_inflow`). Six radial channels (each proportional to that district's withdrawal) are drawn at once, and one outlet (proportional to `downstream_flow`) carries the remainder to the seventh seat, over a band proportional to `minimum_required_flow`. Seat positions are arbitrary and symmetric. Acceptance test: no sequential river course.
+  2. **Two presentations.**
+     - *Cinematic theatre:* perspective, with decorative glow and water motion, and no numeric reading of widths. Its HUD numbers come from the snapshot.
+     - *Instrument:* the calibrated flat plan and the reading panel, plus the 3D calibrated plan with the glow switched off.
+
+     Coral appears only where the record shows a shortfall.
+  3. **Guided reveal.** It stages one recorded final state, is labelled "not a replay of events", and takes every caption number from the snapshot. All six draws are revealed together. An event-by-event replay needs validated per-event states and is future work.
+  4. **Pre-rendered frames.** Each frame is filed under the SHA-256 of its snapshot's canonical JSON and shown only on an exact match. A test confirms that every frame belongs to an embedded snapshot. Frames are re-rendered after scene changes.
+  5. **Experimental data.** A snapshot with `data_status: experimental` is refused unless it carries `provenance.manifest_sha256`, the export manifest that verified it against the run's event log. Balanced arithmetic is not authenticity. The exporter and its manifest are weekend work.
+  6. **Rendering.** Frames are drawn on demand; an idle plan renders nothing. The scene pauses when the page is hidden, reduced motion is honoured, and pixel density and shadows scale down on low-power devices.
+- **Acceptance (G-OBS, extended):** 12 contract tests and 68 browser checks, all passing on 2026-11-03.
+- **Correction to the record:** the assistant's concept sketch of 2026-11-02 drew six equal draws of 14. The recorded reference-trade fixture is 15, 14, 12, 15, 15 and 13 (total 84). The diorama uses the recorded distribution.
+- **Why:** a beautiful image that suggests structure the model lacks is a false claim, however well it is captioned.
+- **Evidence:** diorama review of 2026-11-03 (OpenAI ChatGPT); `layout()` in the v1 shell; `withdrawals = F - sum` in `world/engine.py`; author instruction.
 
 ## Preregistration Freeze Record
 

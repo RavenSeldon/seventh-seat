@@ -1,0 +1,78 @@
+[
+ {
+  "actors": [
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "D5",
+   "D6"
+  ],
+  "contract": "seventh-seat/snapshot/v1",
+  "data_status": "scripted-fixture",
+  "description": "Each district draws its own entitlement up to its demand and buys alternative supply for the rest. No trades.",
+  "downstream_flow": 30,
+  "episode_id": "fixture-1000-no-trade",
+  "event_refs": [
+   "E000021"
+  ],
+  "label": "No-trade reference",
+  "minimum_required_flow": 30,
+  "provenance": {
+   "condition": "E0S0",
+   "log_head": "81826250801a24d1e89e0f26b667228b124d19e5f138a7d4c5802e42e72bb6a3",
+   "season_event_hash": "81826250801a24d1e89e0f26b667228b124d19e5f138a7d4c5802e42e72bb6a3"
+  },
+  "scenario_id": "S1000-k14-cheap",
+  "tick": 22,
+  "total_inflow": 100,
+  "withdrawals_by_actor": {
+   "D1": 10,
+   "D2": 9,
+   "D3": 12,
+   "D4": 11,
+   "D5": 15,
+   "D6": 13
+  }
+ },
+ {
+  "actors": [
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "D5",
+   "D6"
+  ],
+  "contract": "seventh-seat/snapshot/v1",
+  "data_status": "scripted-fixture",
+  "description": "Surplus entitlement is sold to districts in deficit, then every district draws its entitlement up to its demand.",
+  "downstream_flow": 16,
+  "episode_id": "fixture-1000-reference-trades",
+  "event_refs": [
+   "E000029",
+   "E000008",
+   "E000009",
+   "E000010",
+   "E000011"
+  ],
+  "label": "Reference trades",
+  "minimum_required_flow": 30,
+  "provenance": {
+   "condition": "E0S0",
+   "log_head": "1e22661323ff563ea8aa1f7b678899450db5aae9d09e5f3ede10edd2ada02930",
+   "season_event_hash": "1e22661323ff563ea8aa1f7b678899450db5aae9d09e5f3ede10edd2ada02930"
+  },
+  "scenario_id": "S1000-k14-cheap",
+  "tick": 30,
+  "total_inflow": 100,
+  "withdrawals_by_actor": {
+   "D1": 15,
+   "D2": 14,
+   "D3": 12,
+   "D4": 15,
+   "D5": 15,
+   "D6": 13
+  }
+ }
+]
