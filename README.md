@@ -17,6 +17,8 @@ An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Si
 7. [Exhibit specification](docs/06_EXHIBIT_SPEC.md) and [ethics and dual-use draft](docs/07_ETHICS_AND_DUAL_USE.md)
 8. [Decisions](docs/DECISIONS.md), [errata](docs/ERRATA.md), [AI assistance log](docs/AI_ASSISTANCE_LOG.md)
 
+**Run the tests** (Python 3.10+, standard library only): `python3 -m unittest discover -s tests -t .`
+
 **Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-009 amend the founding design; where they differ, the erratum governs.
 
 ## Layout

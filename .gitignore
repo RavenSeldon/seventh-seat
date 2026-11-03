@@ -9,3 +9,4 @@ dist/
 *.tsbuildinfo
 runs/cache/
 runs/scratch/
+*.egg-info/

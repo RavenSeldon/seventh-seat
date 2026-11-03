@@ -11,7 +11,7 @@
 - **Prior work:** only the weekend's work is judged. Prior work must be stated clearly, and pre-sprint code marked as pre-existing in both the README and the report. Every submission is screened for this.
 - **AI tools:** allowed. The author is responsible for everything, and made-up results or references can disqualify a project.
 - **Limits:** at most two projects per person.
-- **Resubmission: DISCREPANCY (unresolved).** Two direct reads of the live page by the assistant on 2026-11-02 (about 14:40 and 19:45 UTC; page metadata `modified_time` 2026-10-30T10:26Z) show, in both the Important Notes and the FAQ, that resubmitting with the exact same title replaces the files. A ChatGPT review reported that the version it retrieved says same-title resubmission updates the form details but not the PDF (a new title or an email would be needed). Both readings are recorded. **Action (Ben):** ask on the Apart Discord help desk (tag @Support) and record the reply here. Until it is confirmed, treat a submitted PDF as final and submit only a checked version.
+- **Resubmission: RESOLVED BY POLICY (author, 2026-11-03).** Submit once, the final checked version, on Sunday. The rule discrepancy recorded on 2026-11-02 (assistant's direct reads: same title replaces files; a ChatGPT review: it does not) therefore no longer matters, and the help-desk question is not needed. The live page is still re-read on Friday.
 
 ## Talks (Optional)
 

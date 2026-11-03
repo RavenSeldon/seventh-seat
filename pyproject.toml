@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seventh-seat"
+version = "0.1.0"
+description = "The Seventh Seat: a multi-agent watershed experiment (Apart Swarm Alignment Sprint, Nov 2026)"
+requires-python = ">=3.10"
+dependencies = []  # standard library only: exact fractions, no numeric dependencies
+
+[tool.setuptools.packages.find]
+where = ["src"]
