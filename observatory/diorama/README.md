@@ -21,6 +21,10 @@ One static page, `index.html`, in two parts:
 
 **Rendering.** Frames are drawn only when something changes: camera movement, a reveal step, or the water motion in the cinematic view. An idle calibrated plan renders nothing, and the scene pauses when the page is hidden or the theatre is offscreen. Phone layouts reserve separate space for the title, scene, controls and reveal text. Reduced-motion settings stop the water motion and turn camera moves into cuts. Pixel density and shadows are reduced on low-power devices.
 
+**Scenery and motifs.** Light moves downstream along the water, rings spread across the commons, a faint 道 lies beneath it and an ∞ of gilt light hangs below the assembly; the page carries a 道 seal and ∞ marks. These are ornament from the author's other work. They encode nothing, are listed in the legend as scenery, and are all switched off in the calibrated plan.
+
+**Labels.** Seat labels follow their seats. The "Downstream users" label is moved when needed so it stays inside the theatre and clear of the seat labels (position only, never data). All labels hide while the camera is far out.
+
 The page draws only from the snapshots embedded in its `<script id="snapshots">` block. Those snapshots are generated from engine episodes; no value is entered by hand.
 
 ## Data
@@ -40,11 +44,11 @@ The page draws only from the snapshots embedded in its `<script id="snapshots">`
 To regenerate the fixtures and the page's embedded block, from the repository root:
 
 ```bash
-PYTHONPATH=src python3 -m seventh_seat.observatory.snapshot      # snapshots; drops frames that no longer match
-node observatory/diorama/render_posters.mjs                     # re-render the pre-rendered frames
+make fixtures    # snapshots and the page's embedded block; drops frames that no longer match
+make posters     # re-render the pre-rendered frames
 ```
 
-**Pre-rendered frames.** Each frame is filed under the SHA-256 of its snapshot's canonical JSON, and the page shows a frame only when that hash matches the snapshot on screen. A frame therefore never appears over data it was not made from. A test checks that every filed frame belongs to an embedded snapshot. A layout change does not alter the hash, so re-render the frames after changing the scene.
+**Pre-rendered frames.** Each frame is filed under the SHA-256 of its snapshot's canonical JSON, and the page shows a frame only when that hash matches the snapshot on screen. A frame therefore never appears over data it was not made from. A test checks that every filed frame belongs to an embedded snapshot. A change to the scene's look does not alter the hash, so run `make posters` after changing the scene.
 
 **Experimental data.** A snapshot marked `experimental` is refused unless it carries a correctly formatted `provenance.manifest_sha256` reference. The current validator checks the reference’s presence and format; it does **not** load that manifest or verify its contents against the run’s event log. The experimental exporter must perform that verification before publication. Balanced arithmetic alone does not prove a snapshot came from a real run (E-013).
 
@@ -52,25 +56,28 @@ node observatory/diorama/render_posters.mjs                     # re-render the 
 
 | Half | Command | Checks |
 |---|---|---|
-| Contract (stdlib) | `python3 -m unittest discover -s tests -t .` (`tests/test_snapshot.py`, 12 snapshot tests; 43 tests in the complete suite) | Fixtures reproduce the reference worlds; invalid snapshots are refused, including experimental ones without a manifest; the page embeds exactly the engine's fixtures; every pre-rendered frame matches an embedded snapshot |
-| Browser (Node + Playwright) | `node observatory/diorama/check_gobs.mjs [--three-dir node_modules/three] [--shots out/]` (86 checks) | Scripted label visible; no WebGL before it is requested; each frame shown only for its own snapshot; HUD, panel, flat plan and 3D meshes agree with the snapshot (widths measured from the drawn SVG and mesh geometry); no sequential river course; glow is decorative and off in the calibrated plan; the idle plan renders nothing; the reveal states the recorded numbers and is labelled "not a replay"; the camera reaches the seventh seat even when steps are clicked quickly; no horizontal scroll at phone width; the WebGL fallback works; UTF-8/viewport declarations, camera reset, paused/offscreen rendering, reduced motion, fixture changes during reveal, full-screen disclosure and mobile controls |
+| Contract (stdlib) | `make test` (`tests/test_snapshot.py`: 12 of the 43 unit tests) | Fixtures reproduce the reference worlds; invalid snapshots are refused, including experimental ones without a manifest reference; the page embeds exactly the engine's fixtures; every pre-rendered frame matches an embedded snapshot |
+| Browser (Node + Playwright) | `make diorama-check` (source page) and `make release-check` (release build, offline, served with its CSP): 97 checks, about 2 minutes | Grouped below |
 
-`--three-dir` serves three.js from a local copy, for offline runs. Both halves passed on 2026-11-03.
+- **Data honesty:** HUD, panel, flat plan and 3D meshes agree with the snapshot, with widths measured from the drawn SVG strokes and mesh vertices; invalid snapshots are refused; each frame is shown only over its own snapshot; no sequential river course.
+- **Labelling:** the scripted-fixture label is visible, including in full screen; the cinematic view says it is not a reading; the reveal says it is not a replay and states the recorded numbers.
+- **Calibration:** all decoration is off in the calibrated plan.
+- **Legibility:** no label overlaps another or leaves the theatre, on desktop, in the plan, on a phone and at the reveal's seventh-seat view.
+- **Cost:** with motion on, the water moves; in the plan, when paused, with reduced motion and offscreen, the render loop stops. The checks wait for the loop to stop (with a deadline) instead of sampling a fixed window, so they do not depend on machine speed.
+- **Hosting:** no third-party requests (the source page may ask only for the pinned three.js); the release's Content-Security-Policy causes no violation.
+- **Access:** no WebGL until asked; a working fallback without it; no sideways scroll and 44 px controls on a phone; reduced-motion settings respected; camera reset, fixture changes during a reveal, keyboard focus after full screen.
 
-## Measured Size (2026-11-03, before release)
+Setup, once: `make diorama-setup` (`npm ci` here installs the pinned Playwright and three.js, then Chromium). The checks use `node_modules/three` automatically and stop if its version differs from the page's importmap. Options: `--page FILE`, `--offline`, `--shots DIR`. Both halves passed on 2026-11-03, the browser half on repeated runs.
 
-| File | Raw | Gzip |
+## Measured Size (2026-11-03, release build)
+
+| | Raw | Gzip |
 |---|---|---|
-| `index.html` (with fixtures and two pre-rendered frames) | 151.7 KB | 81.7 KB |
-| three.js 0.160.0 `three.module.min.js` (loaded on request) | 670.7 KB | 166.2 KB |
-| `OrbitControls.js` | 29.9 KB | 6.5 KB |
-| `CSS2DRenderer.js` | 4.4 KB | 1.5 KB |
-| `RoomEnvironment.js` | 3.7 KB | 1.2 KB |
+| First load: `index.html` with fixtures and two WebP frames | 183.0 KB | 104.1 KB |
+| On entering the 3D scene: vendored three.js, four files | | 176.0 KB |
+| Whole release (8 files) | 894.6 KB | |
 
-- **First load:** about 81.7 KB gzip. The two embedded WebP frames are most of it. System fonts require no font downloads.
-- **Opening the diorama:** adds about 175 KB.
-
-Both transfer totals are within the `DEPLOY.md` budget (1.5 MB first load, 15 MB release). three.js currently loads from jsDelivr (pinned to 0.160.0). Self-hosting it is a release-time decision. Re-measure before any release.
+Within the `DEPLOY.md` budget (1.5 MB first load, 15 MB release). The release vendors three.js, so the deployed page makes no third-party requests. `make release` re-measures and enforces the budget.
 
 ## Not Yet Built (Weekend or Later)
 

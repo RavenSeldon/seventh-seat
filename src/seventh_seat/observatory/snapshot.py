@@ -53,12 +53,13 @@ def validate(snap: dict) -> dict:
     if snap["data_status"] not in DATA_STATUSES:
         raise SnapshotError(f"data_status must be one of {DATA_STATUSES}, got {snap['data_status']!r}")
     if snap["data_status"] == "experimental":
-        # E-013: arithmetic consistency is not authenticity. An experimental snapshot must cite
-        # the export manifest that verified it against the run's event log.
+        # E-013: arithmetic consistency is not authenticity. This checks only that a reference is
+        # present and well-formed; the exporter verifies the manifest against the run's event log.
         manifest = (snap.get("provenance") or {}).get("manifest_sha256", "")
         if not (isinstance(manifest, str) and re.fullmatch(r"[0-9a-f]{64}", manifest)):
-            raise SnapshotError("an experimental snapshot needs a verified export manifest "
-                                "(provenance.manifest_sha256)")
+            raise SnapshotError("an experimental snapshot needs an export-manifest reference "
+                                "(provenance.manifest_sha256); the exporter must verify it "
+                                "against the run's event log")
     actors = snap["actors"]
     if not isinstance(actors, list) or not actors or len(set(actors)) != len(actors):
         raise SnapshotError("actors must be a non-empty list of unique ids")

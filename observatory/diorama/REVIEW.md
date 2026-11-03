@@ -1,6 +1,6 @@
 # Diorama review and polish · 2026-11-03
 
-Reviewed by OpenAI Codex at the author’s request, against the working repository at `b421716`, the charter, frozen exhibit specification and E-011/E-013. This is a visualizer and implementation review, not an independent replication or full methodological audit.
+**Author:** Ben Amuwo. **Assistance:** OpenAI Codex. Against the working repository at `b421716`, the charter, frozen exhibit specification and E-011/E-013. This is a visualizer and implementation review, not an independent replication or full methodological audit.
 
 ## Assessment
 

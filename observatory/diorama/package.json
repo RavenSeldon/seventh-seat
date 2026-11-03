@@ -1,0 +1,14 @@
+{
+  "name": "seventh-seat-diorama",
+  "private": true,
+  "type": "module",
+  "description": "Browser checks and poster rendering for the diorama shell. The page itself needs no build.",
+  "scripts": {
+    "check": "node check_gobs.mjs",
+    "posters": "node render_posters.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0",
+    "three": "0.160.0"
+  }
+}

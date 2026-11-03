@@ -54,7 +54,7 @@ class SnapshotContractTests(unittest.TestCase):
     def test_experimental_needs_a_verified_manifest(self):
         bad = copy.deepcopy(self.fixtures[1])
         bad["data_status"] = "experimental"
-        with self.assertRaisesRegex(SnapshotError, "export manifest"):
+        with self.assertRaisesRegex(SnapshotError, "export-manifest reference"):
             validate(bad)
         bad["provenance"]["manifest_sha256"] = "a" * 64
         validate(bad)

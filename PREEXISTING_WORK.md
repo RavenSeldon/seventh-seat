@@ -18,7 +18,7 @@ Only work done during the sprint (Fri 6 to Sun 8 Nov 2026) is judged. Everything
 
 The exact file list for the pre-sprint code is completed on 5 Nov with `git diff --stat founding-v0.1 pre-sprint-2026-11-05`.
 
-The 2026-11-03 Codex visualizer review and polish (including browser regression checks, WebP posters and accessibility changes) are also pre-sprint work. See `observatory/diorama/REVIEW.md`.
+Diorama v3 (2026-11-03: visual and accessibility polish, motion controls, WebP posters, browser regression checks) is Ben Amuwo's pre-sprint work, with OpenAI Codex assisting; see `observatory/diorama/REVIEW.md`. The release build, deploy template and expanded browser checks of the same day are also pre-sprint.
 
 ## Weekend Contribution (Judged)
 
@@ -26,4 +26,9 @@ Everything after tag `pre-sprint-2026-11-05`: the E and S interventions, the esc
 
 ## Third-Party Software
 
-To be listed when introduced (libraries, model provider SDK).
+| Software | Licence | Use |
+|---|---|---|
+| three.js 0.160.0 | MIT | 3D scene; vendored into the release with its licence |
+| Playwright 1.63.0 | Apache-2.0 | Development only: browser checks and poster rendering; not deployed |
+
+Model provider SDKs are listed when introduced.

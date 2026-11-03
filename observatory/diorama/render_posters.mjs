@@ -1,8 +1,9 @@
 // Pre-render one poster frame per embedded snapshot and file it under the snapshot's canonical
 // hash, so the page shows a frame only for the exact data it was rendered from (E-013).
-// Needs Node and Playwright (Chromium). Run after `python3 -m seventh_seat.observatory.snapshot`.
+// Needs Node and Playwright (Chromium). Run after `python3 -m seventh_seat.observatory.snapshot`,
+// and again after any change to the scene's look (the hash covers the data, not the drawing).
 //
-//   node observatory/diorama/render_posters.mjs [--three-dir node_modules/three]
+//   node render_posters.mjs [--three-dir DIR]     (default: ./node_modules/three when present)
 import { chromium } from "playwright";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
@@ -11,14 +12,19 @@ import fs from "node:fs";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const file = path.join(here, "index.html");
 const arg = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
-const threeDir = arg("--three-dir");
+const html0 = fs.readFileSync(file, "utf8");
+const pinned = html0.match(/https:\/\/cdn\.jsdelivr\.net\/npm\/three@([\d.]+)\//)?.[1];
+const localThree = path.join(here, "node_modules", "three");
+const threeDir = arg("--three-dir") ?? (fs.existsSync(localThree) ? localThree : null);
+if (threeDir) {
+  const v = JSON.parse(fs.readFileSync(path.join(threeDir, "package.json"), "utf8")).version;
+  if (v !== pinned) throw new Error(`local three.js is ${v}, the page pins ${pinned}; run npm ci`);
+}
 
 const browser = await chromium.launch({ args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
 const page = await (await browser.newContext({ viewport: { width: 1600, height: 760 }, deviceScaleFactor: 1, reducedMotion: "reduce" })).newPage();
-await page.route("https://fonts.googleapis.com/**", (r) => r.abort());
-await page.route("https://fonts.gstatic.com/**", (r) => r.abort());
-if (threeDir) await page.route("https://cdn.jsdelivr.net/npm/three@0.160.0/**", (r) => {
-  const rel = new URL(r.request().url()).pathname.replace("/npm/three@0.160.0/", "");
+if (threeDir) await page.route(`https://cdn.jsdelivr.net/npm/three@${pinned}/**`, (r) => {
+  const rel = new URL(r.request().url()).pathname.replace(`/npm/three@${pinned}/`, "");
   r.fulfill({ path: path.resolve(threeDir, rel), contentType: "text/javascript" });
 });
 await page.goto(pathToFileURL(file).href);

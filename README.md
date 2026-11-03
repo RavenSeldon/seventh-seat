@@ -17,7 +17,17 @@ An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Si
 7. [Exhibit specification](docs/06_EXHIBIT_SPEC.md) and [ethics and dual-use draft](docs/07_ETHICS_AND_DUAL_USE.md)
 8. [Decisions](docs/DECISIONS.md), [errata](docs/ERRATA.md), [AI assistance log](docs/AI_ASSISTANCE_LOG.md)
 
-**Run the tests** (Python 3.10+, standard library only): `python3 -m unittest discover -s tests -t .`
+## Quick Start
+
+```bash
+make test             # unit tests (Python 3.10+, standard library only)
+make frozen           # frozen founding docs still match FREEZE_MANIFEST.sha256
+make diorama-setup    # once, optional: Node 18+, Playwright, Chromium and three.js for the browser checks
+make check            # tests, frozen docs, G-OBS on the page and on the release build
+open observatory/diorama/index.html   # the diorama shell (scripted fixtures, not results)
+```
+
+`make help` lists every target. Deploying is in [DEPLOY.md](DEPLOY.md).
 
 **Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-013 amend the founding design; where they differ, the erratum governs.
 
@@ -32,7 +42,8 @@ src/seventh_seat/
   analysis/              WEEKEND (judged): outcomes, ladder, AWC, bootstrap, figures
 tests/                   acceptance gates G1–G9
 experiments/             run configurations and calibration logs
-observatory/             static exhibit source (built to dist/, deployed per DEPLOY.md)
+observatory/             static exhibit source (built to dist/ by make release, deployed per DEPLOY.md)
+scripts/                 build_release.py (static release + guardrails), deploy.sh (template)
 report/                  the Apart report
 ```
 

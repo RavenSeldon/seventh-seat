@@ -78,3 +78,14 @@
 | OD-5 | Partly resolved: private remote now; public later (D-018) |
 | D-021 | E-011 | Diorama is the 3D rendering of The Seven Seats; pre-sprint shell, declared, at most 3 hours, gates first |
 | D-021 | E-013 | Diorama topology is a shared commons; cinematic theatre plus calibrated instrument; experimental snapshots need an export manifest |
+
+## Settled After Founding (2026-11-03)
+
+Correction: the two rows filed above under "Open Decisions: Status Update" as D-021 belong in this table. The second is renumbered D-022.
+
+| ID | Decision | Rationale |
+|---|---|---|
+| D-021 | Diorama is the 3D rendering of The Seven Seats; pre-sprint shell, declared, at most 3 hours, gates first (E-011) | Author approval of E-011 |
+| D-022 | Diorama topology is a shared commons; cinematic theatre plus calibrated instrument; experimental snapshots need an export-manifest reference (E-013) | Author approval of E-013 |
+| D-023 | Commit messages and the author's notes carry no AI credit lines. AI assistance is recorded once, briefly, in `docs/AI_ASSISTANCE_LOG.md` | Author instruction; the log is where the sprint disclosure is drawn from |
+| D-024 | Hosting: the release vendors three.js (no third-party requests at runtime), is built by `scripts/build_release.py` with the DEPLOY.md guardrails enforced, carries `RELEASE.json` (commit, hashes, sizes, CSP), and is deployed as an immutable release directory with an atomic switch | Author request for a sustainable, low-maintenance, near-zero-cost site |

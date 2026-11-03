@@ -72,5 +72,6 @@
 1. By Wed: API keys for Anthropic and OpenAI (Google optional), a spend limit set in each provider console, and the account rate limits noted (E-010). The slate itself is fixed.
 2. Claim Adaption credits at adaptionlabs.ai/app with the sprint email (optional; they are for training and datasets, not required here).
 3. OD-2 resolved: solo (D-018).
-4. Friday: re-check the resubmission rule on the live page.
+4. Friday: re-read the live sprint page for rule changes before the preregistration freeze. Policy stands: one final submission on Sunday by 20:00 Vancouver.
+6. Once, on the Mac (optional, for the browser checks and release): `make diorama-setup`. Then `make check` before each commit that touches the observatory.
 5. Commits, pushes, the GitHub remote, deployment and submission.
