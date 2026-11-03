@@ -37,3 +37,7 @@ A `scripts/deploy.sh` adapted from First Notice's: build, size check against the
 ## Rollback
 
 Identical to First Notice: point `current` at a previous release with an atomic `ln -sfn` and `mv -T`.
+
+## Shell measurement · 2026-11-03 (not a release)
+
+The polished `observatory/diorama/index.html`, including its two WebP poster frames and fixtures, is 151,703 bytes raw / 81,674 bytes gzip. System fonts require no font requests. The existing pinned three.js modules load only on explicit entry (previous measurement: approximately 175 KB gzip). No model or backend requests occur. These are shell measurements; measure the complete production release and verify manifest-to-log provenance before publication.

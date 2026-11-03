@@ -37,6 +37,7 @@ for (let i = 0; i < n; i++) {
     await new Promise((r) => setTimeout(r, 250));
     return { hash: await d.snapHash(d.snapshots[i]), label: d.snapshots[i].label, frame: d.scene3d().snapshotFrame(0.8) };
   }, i);
+  if (!frame.startsWith("data:image/webp;base64,")) throw new Error("browser did not produce a WebP frame");
   posters[hash] = frame;
   console.log(`${label}: ${hash.slice(0, 12)}… ${(frame.length / 1024).toFixed(0)} KB`);
 }

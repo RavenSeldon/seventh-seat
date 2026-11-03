@@ -18,6 +18,8 @@ Only work done during the sprint (Fri 6 to Sun 8 Nov 2026) is judged. Everything
 
 The exact file list for the pre-sprint code is completed on 5 Nov with `git diff --stat founding-v0.1 pre-sprint-2026-11-05`.
 
+The 2026-11-03 Codex visualizer review and polish (including browser regression checks, WebP posters and accessibility changes) are also pre-sprint work. See `observatory/diorama/REVIEW.md`.
+
 ## Weekend Contribution (Judged)
 
 Everything after tag `pre-sprint-2026-11-05`: the E and S interventions, the escalation paths, the supervisor, calibration, the frozen preregistration, the evaluation runs, the analysis, the figures, the report and the exhibit data.

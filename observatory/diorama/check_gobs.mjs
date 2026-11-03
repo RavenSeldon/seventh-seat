@@ -25,8 +25,8 @@ const check = (ok, msg) => { console.log((ok ? "  ok   " : "  FAIL ") + msg); if
 const close = (a, b, tol = 1e-3) => Math.abs(a - b) <= tol;
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function open(browser, { webgl = true, viewport = { width: 1440, height: 900 } } = {}) {
-  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+async function open(browser, { webgl = true, viewport = { width: 1440, height: 900 }, reducedMotion = "no-preference" } = {}) {
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion });
   const page = await ctx.newPage();
   page.on("pageerror", (e) => { console.log("  page error: " + e.message); failures++; });
   await page.route("https://fonts.googleapis.com/**", (r) => r.abort());
@@ -83,6 +83,8 @@ const browser = await chromium.launch({ args: ["--use-angle=swiftshader", "--ena
 console.log("First view, before WebGL");
 {
   const { ctx, page } = await open(browser);
+  check(await page.evaluate(() => document.characterSet === "UTF-8" && document.compatMode === "CSS1Compat" && document.documentElement.lang === "en"), "UTF-8, standards mode and page language are explicit");
+  check((await page.locator('meta[name="viewport"]').getAttribute("content")).includes("width=device-width"), "mobile viewport uses the device width");
   check(/scripted fixture/i.test(await page.locator("#status").innerText()) && await page.locator("#status").isVisible(), "scripted-fixture label visible");
   check(await page.locator("canvas").count() === 0, "no WebGL context before the viewer asks for it");
   for (let i = 0; i < 2; i++) {
@@ -109,6 +111,16 @@ console.log("First view, before WebGL");
   check(/data_status/.test(refused.status), "unknown data status is refused");
   check(/export manifest/.test(refused.experimental), "experimental data without a verified manifest is refused");
   for (let i = 0; i < 2; i++) await checkSnapshot(page, i, false);
+  const zero = await page.evaluate(() => {
+    const d = window.__diorama, s = structuredClone(d.current());
+    s.total_inflow = s.downstream_flow = 0;
+    for (const actor of s.actors) s.withdrawals_by_actor[actor] = 0;
+    d.snapshots.push(s); d.show(d.snapshots.length - 1);
+    const result = { finite: [...document.querySelectorAll(".fill")].every(e => e.style.width === "0%"),
+      scale: document.querySelector("#bars").getAttribute("aria-label"), source: JSON.parse(document.querySelector("#snapshot-source").textContent).downstream_flow };
+    d.snapshots.pop(); d.show(1); return result;
+  });
+  check(zero.finite && zero.scale.includes("0 to 30") && zero.source === 0, "valid zero-inflow snapshot uses a finite bar scale and inspectable source");
   if (shots) { await page.evaluate(() => window.__diorama.show(1)); await wait(150); await page.screenshot({ path: path.join(shots, "first-view.png") }); }
 
   console.log("Entering the diorama (WebGL)");
@@ -147,6 +159,35 @@ console.log("First view, before WebGL");
   if (shots) await page.locator("#theatre").screenshot({ path: path.join(shots, "reveal-seventh.png") });
   await page.click("#reveal-exit");
   check(await page.locator("#reveal-card").isHidden(), "reveal can be ended at any step");
+  await page.click("#motion-toggle");
+  await page.click("#reset-view");
+  await wait(600);
+  const paused = await d3(); await wait(600);
+  check((await d3()).frames === paused.frames, "paused cinematic scene settles to idle");
+  check(await page.locator("#motion-toggle").getAttribute("aria-pressed") === "true", "motion toggle exposes its paused state");
+  const atHero = await page.evaluate(() => { const s = window.__diorama.scene3d(); return Math.hypot(...s.camera().map((v, i) => v - s.pose("hero").pos[i])) < 0.05; });
+  check(atHero, "Reset view restores the overview camera");
+  await page.click("#reveal-start");
+  await page.click("#reveal-next"); await page.click("#reveal-next");
+  await page.click("#fixture-0");
+  check(await page.locator("#reveal-card").isHidden() && (await page.locator("#hud-flow").innerText()).includes("30"), "changing fixture ends the old narration and updates the reading");
+  await page.click("#reveal-start");
+  await page.click("#reveal-next"); await page.click("#reveal-next");
+  check((await page.locator("#reveal-text").innerText()).includes("30 arrive"), "a new reveal narrates the newly selected fixture");
+  await page.click("#reset-view");
+  check(await page.locator("#reveal-card").isHidden(), "Reset view exits a reveal");
+  await page.click("#motion-toggle");
+  if (await page.locator("#fullscreen").isVisible()) {
+    await page.click("#fullscreen");
+    await page.waitForFunction(() => document.fullscreenElement !== null);
+    check(await page.locator("#fullscreen-status").isVisible() && /not an experimental result/.test(await page.locator("#fullscreen-status").innerText()), "full screen retains the fixture disclaimer");
+    await page.click("#read-instrument");
+    await page.waitForFunction(() => !document.fullscreenElement);
+    check(await page.evaluate(() => document.activeElement.id === "instrument-title"), "Read the numbers exits full screen and moves keyboard focus to the instrument");
+  }
+  await page.locator("#source-title").scrollIntoViewIfNeeded();
+  await wait(600); const offscreen = await d3(); await wait(600);
+  check((await d3()).frames === offscreen.frames, "offscreen theatre renders no frames");
   await ctx.close();
 }
 
@@ -156,6 +197,33 @@ console.log("Phone width");
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
   check(!overflow, "no horizontal page scroll at 390 px");
   if (shots) await page.screenshot({ path: path.join(shots, "phone.png"), fullPage: false });
+  await page.click("#enter");
+  await page.waitForFunction(() => window.__diorama.scene() !== null);
+  const fits = await page.evaluate(() => {
+    const canvas = document.querySelector("canvas").getBoundingClientRect();
+    const top = document.querySelector(".hud-top").getBoundingClientRect();
+    const bottom = document.querySelector(".hud-bottom").getBoundingClientRect();
+    return canvas.top >= top.bottom && canvas.bottom <= bottom.top && canvas.width <= innerWidth;
+  });
+  check(fits, "phone canvas has its own space between title and controls");
+  check(await page.evaluate(() => [...document.querySelectorAll('.stage-tools button:not([hidden])')].every(e => e.getBoundingClientRect().height >= 44)), "phone controls have at least 44px touch targets");
+  if (shots) await page.locator("#theatre").screenshot({ path: path.join(shots, "phone-live.png") });
+  await page.click("#reveal-start"); await page.click("#reveal-next");
+  check(await page.locator("#reveal-exit").isVisible(), "guided reveal remains operable on a phone");
+  if (shots) await page.locator("#theatre").screenshot({ path: path.join(shots, "phone-reveal.png") });
+  await ctx.close();
+}
+
+console.log("Reduced motion");
+{
+  const { ctx, page } = await open(browser, { reducedMotion: "reduce" });
+  await page.click("#enter");
+  await page.waitForFunction(() => window.__diorama.scene() !== null);
+  check(await page.locator("#motion-toggle").isDisabled() && await page.locator("#motion-toggle").getAttribute("aria-pressed") === "true", "device reduced-motion preference is respected");
+  await page.click("#reveal-start"); await page.click("#reveal-next"); await page.click("#reveal-next");
+  check(await page.evaluate(() => { const s = window.__diorama.scene3d(); return Math.hypot(...s.camera().map((v, i) => v - s.pose("seventh").pos[i])) < 0.05; }), "reduced-motion camera cuts directly to the seventh seat");
+  await wait(600); const a = await page.evaluate(() => window.__diorama.scene3d().frames()); await wait(600);
+  check(await page.evaluate(() => window.__diorama.scene3d().frames()) === a, "reduced-motion reveal settles without decorative animation");
   await ctx.close();
 }
 

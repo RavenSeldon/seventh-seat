@@ -16,14 +16,18 @@
 - **Finding F-1 (executable check):** across all 400 calibration and evaluation scenarios, at both cost strata, `price_of_protection` = 0 and the E-006 utility frontier is flat. At the generator's budgets every district can meet full demand within the safe cap by buying alternative supply, so harm buys credits (14 cheap, 56 costly per 14-unit breach), never utility. E-006's avoidable-harm metric therefore equals the shortfall. Resolved by E-012 (approved 2026-11-03; uncommitted with tonight's code)
 - Hosting pattern confirmed by reading First Notice's `DEPLOY.md` and the blog's `first_notice` blueprint, read-only (plan in `DEPLOY.md`)
 
+## Review and polish · 2026-11-03
+
+- Repository review confirms the world core, E-012 and diorama v2 are committed at `d136a4a`, `a313a4a` and `b421716` respectively. The earlier “uncommitted” notes above describe the state when those entries were written.
+- Codex reviewed the live Neurascape and Schrödinger’s Civilization references, the rendered exhibit, its source and the governing documents. Added navigation, source-snapshot inspection, camera reset, motion control, mobile framing and keyboard focus handling; repaired UTF-8/viewport declarations, stale reveal narration on fixture changes, and fixture disclosure in full screen.
+- WebP posters and system fonts now follow the media/font guardrails in `DEPLOY.md`. Quantitative geometry, engine code, fixtures and frozen documents are unchanged. Details and remaining release gates: `observatory/diorama/REVIEW.md`.
+- This polish is pre-sprint assistance and remains uncommitted for the author’s review. No push, deployment, model run or submission was performed.
+
 ## Remaining
 
 **Code to write (pre-sprint, declared):**
-1. World engine, seeded scenario generator, feasibility oracle (LP) with **G3b trade-off certification and the E-006 frontier**, ledger, append-only hash-chained event log. Gates G2, G3, G3b, G7. Implement against the errata, not the superseded tool list in `02` §5.
-1b. Model adapters for the E-010 slate; adapter gate GA (E-010b); then GM qualification (E-008 as revised by E-010).
-2. Model adapter with response cache, tool loop, scripted agents, containment. Gates G1, G2, G6.
-3. Observatory shell with clearly labelled dummy data.
-4. End-to-end scripted dry run; tag `pre-sprint-2026-11-05`.
+1. Model adapters for the E-010 slate, response cache, tool loop and containment; adapter gate GA, then GM qualification. Complete the model-cache half of G2 and remaining G1/G6 coverage.
+2. End-to-end scripted dry run; tag `pre-sprint-2026-11-05`. The world core, scripted agents and fixture-labelled observatory shell are already built.
 
 **Code to write (weekend, judged):** E ledger, S direct route, S0 endorsement path, supervisor; calibration; runs; analysis; figures; report; exhibit data.
 
@@ -35,4 +39,4 @@ See `docs/DECISIONS.md` (D-001 to D-016; qualms Q-1 to Q-6; open decisions OD-1 
 
 ## Resume Point
 
-Start with Remaining item 1 (G3b first), then 1b (GM). Human actions now: API keys and console spend limits for Anthropic and OpenAI; ask the Apart help desk about resubmission and prior work.
+Start with Remaining item 1 (adapters and GA, then GM). Human actions now: API keys and console spend limits for Anthropic and OpenAI; ask the Apart help desk about resubmission and prior work.

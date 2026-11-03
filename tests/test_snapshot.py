@@ -65,7 +65,7 @@ class SnapshotContractTests(unittest.TestCase):
         hashes = {canonical_hash(s) for s in embedded(html)}
         self.assertTrue(keys <= hashes, "a pre-rendered frame belongs to no embedded snapshot")
         for v in embedded_posters(html).values():
-            self.assertTrue(v.startswith("data:image/jpeg;base64,"))
+            self.assertTrue(v.startswith("data:image/webp;base64,"))
 
     def test_event_refs_required(self):
         bad = copy.deepcopy(self.fixtures[0])

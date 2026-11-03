@@ -4,7 +4,7 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status:** founding freeze `founding-v0.1` (2026-11-02). Design locked; **no code, no runs, no results yet.**
+**Status:** founding freeze `founding-v0.1` (2026-11-02). Founding design preserved with errata through E-013. **World engine, scripted fixtures and the 3D observatory shell are implemented; no experimental runs or results yet.**
 
 ## Read in This Order
 
@@ -19,7 +19,7 @@ An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Si
 
 **Run the tests** (Python 3.10+, standard library only): `python3 -m unittest discover -s tests -t .`
 
-**Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-009 amend the founding design; where they differ, the erratum governs.
+**Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-013 amend the founding design; where they differ, the erratum governs.
 
 ## Layout
 
