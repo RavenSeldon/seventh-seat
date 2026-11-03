@@ -23,6 +23,8 @@ One static page, `index.html`, in two parts:
 
 **Scenery and motifs.** Light moves downstream along the water, rings spread across the commons, a faint 道 lies beneath it and an ∞ of gilt light hangs below the assembly; the page carries a 道 seal and ∞ marks. These are ornament from the author's other work. They encode nothing, are listed in the legend as scenery, and are all switched off in the calibrated plan.
 
+**Interface.** The controls, reveal card and instrument follow the design of benamuwo.com: monospace type (Space Mono where installed, otherwise the system monospace; no font is downloaded), hairline rules, square corners, a lavender accent and a blue-to-lavender primary action. The scene itself is unchanged by this dressing.
+
 **Labels.** Seat labels follow their seats. The "Downstream users" label is moved when needed so it stays inside the theatre and clear of the seat labels (position only, never data). All labels hide while the camera is far out.
 
 The page draws only from the snapshots embedded in its `<script id="snapshots">` block. Those snapshots are generated from engine episodes; no value is entered by hand.
@@ -73,9 +75,9 @@ Setup, once: `make diorama-setup` (`npm ci` here installs the pinned Playwright 
 
 | | Raw | Gzip |
 |---|---|---|
-| First load: `index.html` with fixtures and two WebP frames | 183.0 KB | 104.1 KB |
+| First load: `index.html` with fixtures and two WebP frames | 186.9 KB | 105.2 KB |
 | On entering the 3D scene: vendored three.js, four files | | 176.0 KB |
-| Whole release (8 files) | 894.6 KB | |
+| Whole release (8 files) | 898.4 KB | |
 
 Within the `DEPLOY.md` budget (1.5 MB first load, 15 MB release). The release vendors three.js, so the deployed page makes no third-party requests. `make release` re-measures and enforces the budget.
 

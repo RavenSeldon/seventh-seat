@@ -69,8 +69,8 @@ Identical to First Notice: point `current` at a previous release with an atomic 
 
 | | Raw | Gzip |
 |---|---|---|
-| First load (`index.html`: page, fixtures, two WebP poster frames) | 183,045 B | 104,090 B |
+| First load (`index.html`: page, fixtures, two WebP poster frames) | 186,867 B | 105,154 B |
 | On entering the 3D scene (vendored three.js, four files) | | 175,952 B |
-| Whole release (8 files) | 894,598 B | |
+| Whole release (8 files) | 898,420 B | |
 
 No font, model or backend requests. Before publication: rebuild from the final commit, and verify manifest-to-log provenance for any experimental snapshot.

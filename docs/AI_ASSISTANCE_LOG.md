@@ -17,6 +17,7 @@
 | 2026-11-03 | Anthropic Claude (Opus 5.5, in claude.ai) | Built diorama shell v1 and v2 (snapshot contract, fixtures, three.js scene, G-OBS checks, poster renderer); drafted E-013 | Files in the working tree, uncommitted |
 | 2026-11-03 | OpenAI Codex (GPT-6) | Reviewed repository canon and rendered diorama against the author’s two reference sites; implemented visual and accessibility polish, reveal-state and full-screen corrections, motion controls, source inspection, WebP posters and system fonts; expanded browser checks and corrected living status documentation | Pre-sprint assistance. Frozen documents, engine, fixtures and research measures unchanged. Validation and remaining release gates recorded in `observatory/diorama/REVIEW.md`. Changes left uncommitted; no push, deployment, model run or submission |
 | 2026-11-03 | Anthropic Claude (Opus 5.5) | Assisted with the browser checks, release build and deploy template, label placement, water shading and the 道/∞ motifs | Working tree; reviewed and committed by the author |
+| 2026-11-03 | Anthropic Claude (Opus 5.5) | Applied the author's portfolio design (benamuwo.com) to the diorama's controls, reveal card and instrument section, at the author's direction | Working tree |
 
 ## Corrections
 

@@ -22,6 +22,7 @@
   - Validator message now says what the check is: a manifest reference, verified by the exporter
   - Downstream label no longer collides with seat labels on a phone
   - The commons now shows (it sat beneath the dais top); water shading with moving caustics; 道 and ∞ light motifs, off in the calibrated plan
+- **Interface dressing (2026-11-03):** controls, reveal card and instrument restyled after benamuwo.com; smaller title block so it covers less of the scene
 
 ## Remaining
 
