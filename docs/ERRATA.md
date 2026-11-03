@@ -20,6 +20,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-008 | adds to 05 gates; OD-1 | Gate GM model qualification |
 | E-009 | "Gate F" in 03, 05, FREEZE.md | Evaluation lock; three states |
 | E-010 | E-008 criteria, selection and settings; D-018 temperature | Qualification and provider integrity; outcome classes; reasoning-state continuity; separate criteria sets |
+| E-011 | adds to 06 data rules; DEPLOY size check | The Witnessed World: diorama as 3D Seven Seats; contract; G-OBS |
 
 ## Entries
 
@@ -162,6 +163,24 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 - **Correction to the record:** the review reports that OpenAI's official rate-limit table lists higher limits for GPT-6 Luna than the 500 requests per minute the assistant cited from a third-party source. Account limits are taken from the provider console (item 4).
 - **Why:** qualify the complete agent runtime independently of the experimental question, so that provider intervention is never mistaken for agent behaviour.
 - **Evidence:** reviews of 2026-11-02 (OpenAI ChatGPT) and provider documentation checked by the assistant on 2026-11-02; author acceptance.
+
+### E-011 · 2026-11-02 · The Witnessed World: the diorama as the 3D rendering of The Seven Seats
+
+- **Adds to:** the data rules in `06_EXHIBIT_SPEC.md`; `DEPLOY.md` size verification. No fifth exhibit: the diorama is the three-dimensional rendering of **The Seven Seats**. The Witness Record and Two Rivers may reuse its scene and camera.
+- **Invariant:** the diorama is a reconstruction of recorded events, never an independent simulation. Every quantitative encoding is derived from a validated event record. Illustrative scenery is allowed but kept distinct from measured data. Quantitative comparisons stay available in calibrated 2D views. Experimental and scripted data are unmistakably labelled. Its purpose is to reveal structure, consequence and missing representation, not to manufacture drama.
+- **Change:**
+  1. **Reconstruction only.** The diorama replays validated snapshots. It makes no runtime model calls and generates no events.
+  2. **Measured marks versus scenery.** Quantitative marks derive only from snapshot fields. Terrain, sky, table, stones and the like are scenery, listed as *metaphor* in the exhibit's source table (rule 1 of `06`).
+  3. **Calibrated reading.** Proportional ribbon widths are readable only in a fixed, top-down orthographic view. Angled and orbiting views carry no numeric reading; numbers come from the adjacent 2D panel. Orthographic projection removes distance scaling but not foreshortening or occlusion, which is why one view is fixed. Ribbons encode *allocated flow in model units*, not river width or hydraulics. Motion shows direction only: no particle speed or turbulence implies a measured flow rate.
+  4. **Data status.** Every snapshot carries `data_status`, either `scripted-fixture` or `experimental`. Scripted data shows a persistent, visible label, and the two are never mixed in one view.
+  5. **Input contract.** Snapshot fields: `episode_id`, `tick`, `total_inflow`, `withdrawals_by_actor`, `downstream_flow`, `minimum_required_flow`, `event_refs`, `data_status`. Validation rejects any snapshot whose accounting does not balance (`total_inflow - sum(withdrawals_by_actor) = downstream_flow`). Missing events raise a validation error and never become zero-valued events. The 2D and 3D views read the same snapshot object.
+  6. **Narration.** The in-world supervisor is a logged institutional actor, never an omniscient narrator. Exhibit captions may state what the independent evaluator knows, marked as out-of-world. The seventh seat's appearance encodes the recorded deficit only; nothing suggests the seat experiences anything.
+  7. **Loading.** The static page renders without WebGL, showing a poster and the 2D twin; the WebGL scene loads on request. Reduced motion is honoured. The measured production bundle and first-load transfer are recorded in `DEPLOY.md` before release; no assumed figures.
+  8. **Priority.** The shell is built pre-sprint with a scripted fixture only: at most 3 hours in total, and only after that day's gates pass. During the sprint it is connected to one validated episode, and only after the analysis gates pass. The full interactive Observatory follows submission.
+- **Acceptance tests (gate G-OBS):** 2D and 3D agree on every displayed quantity; accounting balances; missing events error; the scripted label is visible; the no-WebGL fallback renders.
+- **Correction to the record:** the three.js size figures the assistant cited (about 682 kB minified, 169 kB gzipped) come from a July 2024 continuous-integration bundle-size comment on three.js PR #28773, a procedural-texture change. They are dated and do not describe our build. Size targets are verified only by measuring our own production build.
+- **Why:** beauty doing scientific work, without letting the exhibit produce, alter or interpret results.
+- **Evidence:** the diorama review of 2026-11-02 (OpenAI ChatGPT), with the author's decision; Munzner's rules of thumb (no unjustified 3D).
 
 ## Preregistration Freeze Record
 

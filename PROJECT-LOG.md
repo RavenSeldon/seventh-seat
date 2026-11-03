@@ -8,6 +8,7 @@
 - Runbook times corrected to Vancouver UTC−7 (tzdata 2026e)
 - Pushed to the GitHub remote by the author (`origin/main` at 321a6ab)
 - E-010 applied: qualification and provider integrity
+- E-011 applied: The Witnessed World (diorama as the 3D rendering of The Seven Seats)
 - Hosting pattern confirmed by reading First Notice's `DEPLOY.md` and the blog's `first_notice` blueprint, read-only (plan in `DEPLOY.md`)
 
 ## Remaining

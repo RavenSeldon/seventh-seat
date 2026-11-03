@@ -14,7 +14,7 @@ Only work done during the sprint (Fri 6 to Sun 8 Nov 2026) is judged. Everything
 | Artifact | Created | Tag |
 |---|---|---|
 | Founding documents (`docs/00`–`07`, `DECISIONS.md`, `AI_ASSISTANCE_LOG.md`, `ERRATA.md`, `README.md`, `DEPLOY.md`, `PROJECT-LOG.md`, `FREEZE.md`) | 2026-11-02 | `founding-v0.1` |
-| Pre-sprint code (world engine, scenario generator, feasibility oracle, permit register, event log, model adapter, scripted agents, observatory shell) | 3–5 Nov (planned) | `pre-sprint-2026-11-05` |
+| Pre-sprint code (world engine, scenario generator, feasibility oracle, permit register, event log, model adapter, scripted agents, observatory shell including the 3D diorama shell per E-011, scripted fixture only) | 3–5 Nov (planned) | `pre-sprint-2026-11-05` |
 
 The exact file list for the pre-sprint code is completed on 5 Nov with `git diff --stat founding-v0.1 pre-sprint-2026-11-05`.
 

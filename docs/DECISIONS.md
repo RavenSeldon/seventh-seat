@@ -75,3 +75,4 @@
 | OD-1 | Slate and configurations fixed by E-010; the model is chosen at GM by measured cost per evaluable episode |
 | OD-2 | Resolved: solo (D-018) |
 | OD-5 | Partly resolved: private remote now; public later (D-018) |
+| D-021 | E-011 | Diorama is the 3D rendering of The Seven Seats; pre-sprint shell, declared, at most 3 hours, gates first |
