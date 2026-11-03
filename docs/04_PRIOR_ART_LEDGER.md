@@ -86,6 +86,21 @@ A claim is citable only when its source is VERIFIED and the located passage supp
 | Te Awa Tupua is a legal person (s 14); Te Pou Tupua is its human face (s 18) | PA-32 | s 14 via legislation.govt.nz; s 18 via a secondary summary | PARTIAL (read s 18 in the Act) |
 | Some agents read the anti-cheating warning as a bluff after peers cheated unpunished | PA-22 | Secondary report (MIT Technology Review) | PARTIAL (locate the paper's passage) |
 
+## Design Lineage (Observatory and Diorama)
+
+These are inspirations for the exhibit, not evidence for findings. They are cited in the report only through the claim register.
+
+| Work | What it gives the exhibit | Status |
+|---|---|---|
+| Dmitry Davidoff, *Mafia* (Moscow State University, 1986) | Table, phases, neutral moderator, reveal. Not adopted: hidden roles, villains, accusation | VERIFIED (secondary sources) |
+| Bailis, Friedhoff and Chen, *Werewolf Arena* (arXiv:2407.13943, 2024) | LLMs in a social-deduction game; the boundary case, because its subject is deception and ours has no deceivers | VERIFIED |
+| Park et al., *Generative Agents* / Smallville (UIST 2023) | Precedent for replaying agent runs visually; the diorama replays logs rather than simulating | VERIFIED |
+| Nicky Case, *The Evolution of Trust* (2017, public-domain dedication) | One clear mechanic per scene; playable game theory after Axelrod | VERIFIED |
+| Jansen, Dragicevic et al., *Opportunities and Challenges for Data Physicalization* (CHI 2015) | Data as an object; the physicalization tradition | VERIFIED |
+| Munzner, *Visualization Analysis and Design*, ch. 6 (2014) | No unjustified 3D; function before form | VERIFIED |
+| Museum of Science, Boston, *Engineer a River System* (Yawkey Gallery on the Charles River; MCN 2016 session) | A river-system table with projection mapping and physical feedback | VERIFIED (exhibit developer credit not confirmed) |
+| London Museum Docklands, *Secrets of the Thames* (4 Apr 2025 – 1 Mar 2026) | Recreated foreshore with explorable 3D digital reconstructions | VERIFIED (digital studio credit not confirmed) |
+
 ## Final Novelty Pass
 
 Scheduled for 5 Nov (Runbook, Gate G0). Searches: externalities in LLM-agent markets; absent or unrepresented stakeholders in multi-agent LLM systems; escalation routing in agent collectives; STPA applied to LLM multi-agent systems. Results are appended here.
