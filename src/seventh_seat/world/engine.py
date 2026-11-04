@@ -80,7 +80,7 @@ class Engine:
         return sha256_hex(canonical(self.state))
 
     def _log(self, actor, action, args=None, authorized=True, reason=None, result=None,
-             before=None, claim_text=None, evidence_refs=None, view_hash=None):
+             before=None, claim_text=None, evidence_refs=None, view_hash=None, **provenance):
         self._step += 1
         spent = self.attention.get(actor)
         return self.log.append(
@@ -90,7 +90,7 @@ class Engine:
             args=args or {}, authorized=authorized, reason=reason, result=result,
             view_hash=view_hash, claim_text=claim_text, evidence_refs=evidence_refs or [],
             state_hash_before=before or self.state_hash(), state_hash_after=self.state_hash(),
-            attention_spent=spent, attention_left=(None if spent is None else self.B - spent))
+            attention_spent=spent, attention_left=(None if spent is None else self.B - spent), **provenance)
 
     def _credits(self, did) -> Fr:
         return Fr(self.state["credits"][did])
@@ -146,6 +146,19 @@ class Engine:
                 "entitlements": dict(snap["entitlement"]), "trades": list(snap["trades"])}
 
     # ------------------------------------------------------------ actions
+    def reject_action(self, did, action, args, reason):
+        """Reject a malformed adapter call, preserving identity and attention accounting."""
+        if self.state["executed"] or self.state["phase"] is None:
+            raise RuntimeError("episode not running")
+        if did not in self.ids:
+            raise KeyError(did)
+        if self.attention[did] >= self.B:
+            reason = "attention budget exhausted"
+        else:
+            self.attention[did] += 1
+        self._log(did, action, args, False, reason)
+        return {"ok": False, "reason": reason}
+
     def submit(self, did, action, args=None, claim_text=None, evidence_refs=None):
         """One agent action. Returns the immediate result."""
         args = dict(args or {})

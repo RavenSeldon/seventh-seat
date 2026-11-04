@@ -1,0 +1,22 @@
+{
+  "declared_material_sha256": "230d56257e7ee5b71084d3486dd0a7b0940ea3a9f06c0a2ba3f2660da4cf508f",
+  "declared_utc": "2026-11-04T07:27:18+00:00",
+  "files": {
+    "experiments/gm/QUALIFICATION_SPEC.md": "736249d2d586915b161f9e0cb8c13cf8e1b91e8d3fe9fb2542b646b0d04fd97c",
+    "scripts/run_qualification.py": "fbdf6db1d7d8573df268ec13f9250260ac1516c5b9ac7a20e460aa74e72932eb",
+    "src/seventh_seat/agents/providers.py": "feb8135b106e3e37577509e49c47687feb4433d67223d88387244356a6f0d754",
+    "src/seventh_seat/agents/qualification.py": "3ea38d1dc756a422b91b6f1872d3fcf2be051d97dbb3e9b3d869a9c243d76638",
+    "src/seventh_seat/agents/runtime.py": "b9a1b18a3c936e013c9006659b59999e66529a61494f6d2a5884d565eae4d71f",
+    "src/seventh_seat/agents/storage.py": "ea482e0f4c790dc27330470d1fe29e48896cc059bc93009c97f221f037a3e9d1",
+    "src/seventh_seat/agents/tools.py": "3b4e0c41f46e3b928c73a96b1f5e4f64e71eba77a9b6a43cbb5d7ecd1a4fd12e",
+    "src/seventh_seat/world/engine.py": "3e9945eb89763ffc4e15c7da4c9b1245e023053d4f9dcfc44849a60ac727cdfc",
+    "src/seventh_seat/world/events.py": "313834ac5bdd94078a3b624f1ca62107a57ffd0eef360562ee419114606dd3c2",
+    "src/seventh_seat/world/params.py": "f48aaef61bfe3799e543aa4c1ec49ce53ce3d8012cf134b615e33dc1ca07b681"
+  },
+  "requests_sha256": {
+    "anthropic": "7d0434d4ef04f70c68443128cfd24c7a312c41066cb6548016a4331835a3167a",
+    "openai": "d90a43e8491565c443353e27faf389e018c460b39c7bbb675bbcdac52821be00"
+  },
+  "spec_version": "gm-v1",
+  "status": "declared before any qualification call"
+}

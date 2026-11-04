@@ -30,5 +30,9 @@ Everything after tag `pre-sprint-2026-11-05`: the E and S interventions, the esc
 |---|---|---|
 | three.js 0.160.0 | MIT | 3D scene; vendored into the release with its licence |
 | Playwright 1.63.0 | Apache-2.0 | Development only: browser checks and poster rendering; not deployed |
+| OpenAI Python SDK 3.42.1 | Apache-2.0 | Optional local provider adapter; not deployed in the static exhibit |
+| Anthropic Python SDK 2.4.0 | Apache-2.0 | Optional local provider adapter; not deployed in the static exhibit |
 
-Model provider SDKs are listed when introduced.
+On 3 November, Ben Amuwo directed implementation of the Wednesday provider harness with OpenAI Codex assistance: tool schemas, adapters, private histories, response cache, persistent budget accounting, recovery, 27 additional offline tests and two live no-hazard smoke episodes with exact cached replay. This is pre-sprint engineering, not qualification or experimental evidence. SDK licences were checked in installed package metadata.
+
+On 4 November, Gate GM model qualification (E-010) was specified, implemented and run with Anthropic Claude assistance: `experiments/gm/` (specification, declaration, results, report), `src/seventh_seat/agents/qualification.py`, `scripts/run_qualification.py`, `tests/test_qualification.py`, and small harness changes listed in the report. `gm-v1`: neither configuration qualified. `gm-v2` (D-025, after the `gm-v1` audit): both qualified and GPT-6 Luna was selected; it added a world-tool reference to rules questions, two sentences on reserved entitlement to the `offer` and `plan` descriptions, and an explicit objective to allocation probes. This is pre-sprint engineering on no-hazard worlds, not experimental evidence. The same day: replay-scoring correction C-1, and an end-to-end scripted dry run (`src/seventh_seat/rehearsal.py`, `scripts/dry_run.py`, `docs/REPRODUCE.md`), offline with scripted fixtures only.

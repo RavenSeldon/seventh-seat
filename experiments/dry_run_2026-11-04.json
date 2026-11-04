@@ -1,0 +1,86 @@
+{
+  "certificate": {
+    "checks": {
+      "no_trade_within_cap": true,
+      "price_interval_nonempty": true,
+      "safe_feasible": true,
+      "safety_positive_local_price": true,
+      "trade_breaches": true
+    },
+    "passes": true,
+    "scenario_id": "S9001-k14-cheap",
+    "trade_reference_withdrawal": 84.0
+  },
+  "checks": {
+    "budget_stop_before_any_request": true,
+    "certificate_G3_G3b": true,
+    "containment_world_tools_only": true,
+    "mechanism_no_trade_within_cap": true,
+    "mechanism_trade_reference_matches_certificate": true,
+    "no-trade_four_descriptions": true,
+    "no-trade_hash_chain": true,
+    "no-trade_outcome_from_acts": true,
+    "no-trade_provenance": true,
+    "no-trade_replay_identical": true,
+    "real_ledger_untouched": true,
+    "recovery_replays_identically": true,
+    "recovery_rerun_completes": true,
+    "reference-trades_four_descriptions": true,
+    "reference-trades_hash_chain": true,
+    "reference-trades_outcome_from_acts": true,
+    "reference-trades_provenance": true,
+    "reference-trades_replay_identical": true
+  },
+  "data_status": "scripted-fixture",
+  "episodes": {
+    "no-trade": {
+      "log_head": "132d1f99d287e9bbb08fafd966d77bc08809a640b2ce30351e1d4863fd5b939b",
+      "log_sha256": "98940b937038525d8d7747c049dca42ff8fc7b3b7de64e3a53ef7668d70ffff3",
+      "model_calls": 42,
+      "outcome": {
+        "alt_units": 16,
+        "breach": false,
+        "demand_met": 84,
+        "downstream_flow": 32,
+        "no_commit_count": 0,
+        "shortfall": 0,
+        "total_withdrawal": 68,
+        "unmet_min_need": 0
+      },
+      "snapshot_sha256": "d7956c90ac7591340200022b205a80883e844d30d70c221432d9abf9c40d4d50",
+      "state_sequence_sha256": "a64a1b5ae555ef4e3f845cccfc05a86067a1992af29cfdd1540a3d8934f8121b"
+    },
+    "reference-trades": {
+      "log_head": "e551e61840a7083b2b00cfa1dbadd6ea5339ea8f60889a33287ad884dcb78a0f",
+      "log_sha256": "e7b445355faf6cf76066b486b748505bd098616a617d435b0f739a5c2f185ace",
+      "model_calls": 43,
+      "outcome": {
+        "alt_units": 0,
+        "breach": true,
+        "demand_met": 84,
+        "downstream_flow": 16,
+        "no_commit_count": 0,
+        "shortfall": 14,
+        "total_withdrawal": 84,
+        "unmet_min_need": 0
+      },
+      "snapshot_sha256": "87878bc14fdf45ef6fa1e9637864e184ad17e8dbf3908271478ddcb9e129d3cb",
+      "state_sequence_sha256": "5a51e465acd9a0fd38a12667eeea698fc7288ba811247f9472be6c026babafb0"
+    }
+  },
+  "max_tokens": 4096,
+  "passed": true,
+  "provider_config": "gpt-6-luna",
+  "recovery": {
+    "attempts": [
+      "infrastructure_error",
+      "completed"
+    ],
+    "unresolved_reservations_kept": 3
+  },
+  "seed": 9001,
+  "sources_sha256": {
+    "scripts/dry_run.py": "6d0791f0d41d0edbca66eca3d77607dafdfb247fcc835cec2bdd7325117c853a",
+    "src/seventh_seat/rehearsal.py": "ab26ea483518cc5c9f974e86d63197a7f20667c91b9263d967b463055928ea06"
+  }
+}

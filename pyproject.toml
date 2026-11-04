@@ -9,5 +9,8 @@ description = "The Seventh Seat: a multi-agent watershed experiment (Apart Swarm
 requires-python = ">=3.10"
 dependencies = []  # standard library only: exact fractions, no numeric dependencies
 
+[project.optional-dependencies]
+providers = ["openai==3.42.1", "anthropic==2.4.0"]
+
 [tool.setuptools.packages.find]
 where = ["src"]

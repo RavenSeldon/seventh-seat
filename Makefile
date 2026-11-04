@@ -4,11 +4,12 @@ PY      ?= python3
 DIORAMA := observatory/diorama
 export PYTHONPATH := src
 
-.PHONY: help test fixtures diorama-setup diorama-check posters release release-check check frozen
+.PHONY: help test dry-run fixtures diorama-setup diorama-check posters release release-check check frozen
 
 help:
 	@echo "make test            unit tests (stdlib)"
 	@echo "make frozen          frozen founding docs still match the manifest"
+	@echo "make dry-run         end-to-end scripted dry run, offline (no provider calls)"
 	@echo "make fixtures        regenerate the scripted snapshots and the page's embedded block"
 	@echo "make diorama-setup   once: install Playwright, Chromium and three.js for the checks"
 	@echo "make diorama-check   G-OBS browser checks on the source page"
@@ -19,6 +20,9 @@ help:
 
 test:
 	$(PY) -m unittest discover -s tests -t .
+
+dry-run:
+	$(PY) scripts/dry_run.py --output runs/scratch/dry-run-$$(date -u +%Y%m%dT%H%M%SZ)
 
 frozen:
 	shasum -a 256 -c FREEZE_MANIFEST.sha256

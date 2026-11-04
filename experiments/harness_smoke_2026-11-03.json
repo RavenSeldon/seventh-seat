@@ -1,0 +1,71 @@
+{
+  "cost_accounting": {
+    "basis": "conservative published-rate token estimate; not invoice",
+    "currency": "USD",
+    "providers": {
+      "anthropic": {
+        "calls": 43,
+        "nanodollars": 15067100,
+        "unresolved": 0
+      },
+      "openai": {
+        "calls": 48,
+        "nanodollars": 6471585,
+        "unresolved": 0
+      }
+    }
+  },
+  "data_status": "harness-no-hazard-smoke",
+  "date": "2026-11-03",
+  "episodes": {
+    "anthropic": {
+      "call_categories": {
+        "model_abstention": 24,
+        "valid_action": 19
+      },
+      "episode_id": "wednesday-smoke-v1",
+      "exact_replay": true,
+      "local_log": "runs/scratch/wednesday-anthropic-live/attempt-0.jsonl",
+      "log_head": "368f9258d0a20d749e9379e6a49ed7a8ed867f9e00a2759c08157908dd9f6328",
+      "log_sha256": "18252422436e753ad578aa2083866f692fa1483b64b3accc9a72981a6e2013d9",
+      "max_tokens": 2048,
+      "status": "completed"
+    },
+    "openai": {
+      "call_categories": {
+        "model_abstention": 24,
+        "valid_action": 24
+      },
+      "episode_id": "wednesday-smoke-v1",
+      "exact_replay": true,
+      "local_log": "runs/scratch/wednesday-openai-live/attempt-0.jsonl",
+      "log_head": "da2878a4df7650e21539f71587712a53e0aa3f0efa2610d7b0e972f7b3708130",
+      "log_sha256": "238a89d10bb646e2a6ea9dd610e8d6b5859fbb72a029f49dc55008bba2e379e9",
+      "max_tokens": 2048,
+      "status": "completed"
+    }
+  },
+  "final_replay_source_sha256": {
+    "pyproject.toml": "3e914ccfa64a42506dad27f10a42bd7224e77037bc80a88b540f38acb014136b",
+    "scripts/run_harness.py": "8f92c9b5a0102eda296d5550e4206ed5d49fc427eb783ab21db61006383776a0",
+    "src/seventh_seat/agents/__init__.py": "de53920d3effb05876a0c1c94b164b2c61936a9503d1d7e5bd152f7967ba46cc",
+    "src/seventh_seat/agents/providers.py": "3a3562462a90d5f0dad4e8fd4b31ebb1eeeacfab23e6878118f1c56c35ab49a0",
+    "src/seventh_seat/agents/runtime.py": "39afc0a7dbf6a3d017173dea6f0409992f220b16fe4e19bae25c09a7e568ee54",
+    "src/seventh_seat/agents/scripted.py": "f4b873c2e5abea5992b2eedef0a68dd3ee83ae27bd14f857fa188249db0a181a",
+    "src/seventh_seat/agents/storage.py": "ea482e0f4c790dc27330470d1fe29e48896cc059bc93009c97f221f037a3e9d1",
+    "src/seventh_seat/agents/tools.py": "3b4e0c41f46e3b928c73a96b1f5e4f64e71eba77a9b6a43cbb5d7ecd1a4fd12e",
+    "src/seventh_seat/world/__init__.py": "a60cfc93650ef9649bf9e46875b3a54b06fa2d8868ae23316d78dccedc54cf8e",
+    "src/seventh_seat/world/engine.py": "3e9945eb89763ffc4e15c7da4c9b1245e023053d4f9dcfc44849a60ac727cdfc",
+    "src/seventh_seat/world/events.py": "313834ac5bdd94078a3b624f1ca62107a57ffd0eef360562ee419114606dd3c2",
+    "src/seventh_seat/world/oracle.py": "710e930c4460a599240ef4c5d53177967bd0a70f626055033301d06f90f71747",
+    "src/seventh_seat/world/params.py": "f48aaef61bfe3799e543aa4c1ec49ce53ce3d8012cf134b615e33dc1ca07b681",
+    "src/seventh_seat/world/scenario.py": "092f5ed33609b35910f2bf6f5b9f9cddb98745f0ab3f4e06c79c52554eb17a1a",
+    "tests/test_harness.py": "ff7de3cc11e905d040785d188bc5e1b97a6c73ddd09d28c9d698c2873444f550"
+  },
+  "frozen_manifest_verified": true,
+  "qualification_passed": false,
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -t .",
+    "passed": 70
+  }
+}

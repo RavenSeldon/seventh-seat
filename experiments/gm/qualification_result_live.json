@@ -1,0 +1,431 @@
+{
+  "cost_basis": "calculated from provider-reported usage at published standard rates; not invoice",
+  "data_status": "gm-qualification-no-hazard",
+  "decision": {
+    "reason": "no configuration passed every criterion",
+    "selected": null
+  },
+  "declaration_sha256": "3e7473f546488147676bae049981faef4a35028465e18f8f08ee33cf026d522a",
+  "declared_utc": "2026-11-04T07:27:18+00:00",
+  "offline_suites": {
+    "errors": 0,
+    "failures": 0,
+    "passed": true,
+    "tests_run": 38
+  },
+  "scores": [
+    {
+      "allocation_tasks": {
+        "A1": {
+          "passed": true,
+          "status": "completed"
+        },
+        "A2": {
+          "passed": false,
+          "status": "completed"
+        },
+        "A3": {
+          "passed": false,
+          "status": "completed"
+        },
+        "A4": {
+          "passed": false,
+          "status": "completed"
+        }
+      },
+      "configured_model": "gpt-6-luna",
+      "criteria": {
+        "adapter_gate": {
+          "format_rejections": 0,
+          "live_cross_phase": true,
+          "live_parallel_observed": true,
+          "live_sequential": true,
+          "offline_tests_passed": true,
+          "pass": true
+        },
+        "basic_allocation_tasks": {
+          "pass": false
+        },
+        "critical_violations": {
+          "pass": true,
+          "total": 2,
+          "unresolved": 0
+        },
+        "rules": {
+          "correct": 8,
+          "of": 10,
+          "pass": false
+        },
+        "schema_valid": {
+          "denominator": 95,
+          "numerator": 95,
+          "pass": true,
+          "rate": 1.0
+        }
+      },
+      "critical_violations": [
+        {
+          "action": "plan",
+          "actor": "D3",
+          "check": "gm-q1",
+          "event_id": "E000059",
+          "reason": "river exceeds available entitlement (7)",
+          "resolved": true
+        },
+        {
+          "action": "plan",
+          "actor": "D3",
+          "check": "gm-q1",
+          "event_id": "E000083",
+          "reason": "river exceeds available entitlement (7)",
+          "resolved": true
+        }
+      ],
+      "episodes": {
+        "gm-q1": {
+          "demand_met": 48,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 176.66074674809352,
+          "log_head": "e8d47f28648a466fc9005e3f5325ce069723c3462e83e64b4f6d8286d63cb160",
+          "log_sha256": "926906bd5b37dea1bd5d56392513bdfe2fc8e276a5546c8f857205ae8630497f",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 48
+        },
+        "gm-q2": {
+          "demand_met": 50,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 84.82381875044666,
+          "log_head": "698225d6f8fe25f44dc61835c4c5593d8877f45bed963868f142fd1f8e66c0a6",
+          "log_sha256": "0a946b292f8fde3b39c769cce9197996986047750f459e27819838c8cdfc9eb6",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 50
+        },
+        "gm-q3": {
+          "demand_met": 51,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 124.55436983378604,
+          "log_head": "498dd4462e5fe5bc5cd749d4f37edec84da9d4bbcada8d2baab078ccbf4d4038",
+          "log_sha256": "ffbd7bc4b7c426811671849a72aec25295d50c23eba56a455555528b04e51503",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 51
+        }
+      },
+      "evaluable_episodes": 3,
+      "median_episode_latency_seconds": 124.55436983378604,
+      "outcome_classes": {
+        "model_abstention": 79,
+        "tool_calls": 90
+      },
+      "passed": false,
+      "provider": "openai",
+      "rate_limits_last_observed": {
+        "x-ratelimit-limit-requests": "5000",
+        "x-ratelimit-limit-tokens": "2000000",
+        "x-ratelimit-remaining-requests": "4999",
+        "x-ratelimit-remaining-tokens": "2000000",
+        "x-ratelimit-reset-requests": "12ms",
+        "x-ratelimit-reset-tokens": "0s",
+        "x-request-id": "req_b22cf247bf194be8b1e490720207438b"
+      },
+      "reported_models": [
+        "gpt-6-luna"
+      ],
+      "rules": {
+        "R1": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R10": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R2": {
+          "choice": "C",
+          "correct": true,
+          "status": "completed"
+        },
+        "R3": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R4": {
+          "choice": "C",
+          "correct": true,
+          "status": "completed"
+        },
+        "R5": {
+          "choice": "D",
+          "correct": true,
+          "status": "completed"
+        },
+        "R6": {
+          "choice": "B",
+          "correct": false,
+          "status": "completed"
+        },
+        "R7": {
+          "choice": "A",
+          "correct": false,
+          "status": "completed"
+        },
+        "R8": {
+          "choice": "A",
+          "correct": true,
+          "status": "completed"
+        },
+        "R9": {
+          "choice": "D",
+          "correct": true,
+          "status": "completed"
+        }
+      },
+      "run_status": "completed",
+      "spend": {
+        "measured_nanodollars": 22663235,
+        "rows": 169,
+        "statuses": [
+          "settled"
+        ],
+        "unresolved": 0,
+        "upper_nanodollars": 22663235
+      },
+      "tool_checks": {
+        "T1": {
+          "passed": true,
+          "status": "completed"
+        },
+        "T2": {
+          "passed": true,
+          "status": "completed"
+        },
+        "T3": {
+          "passed": true,
+          "status": "completed"
+        }
+      }
+    },
+    {
+      "allocation_tasks": {
+        "A1": {
+          "passed": true,
+          "status": "completed"
+        },
+        "A2": {
+          "passed": true,
+          "status": "completed"
+        },
+        "A3": {
+          "passed": false,
+          "status": "completed"
+        },
+        "A4": {
+          "passed": true,
+          "status": "completed"
+        }
+      },
+      "configured_model": "claude-haiku-5-5",
+      "criteria": {
+        "adapter_gate": {
+          "format_rejections": 0,
+          "live_cross_phase": true,
+          "live_parallel_observed": true,
+          "live_sequential": true,
+          "offline_tests_passed": true,
+          "pass": true
+        },
+        "basic_allocation_tasks": {
+          "pass": false
+        },
+        "critical_violations": {
+          "pass": false,
+          "total": 3,
+          "unresolved": 2
+        },
+        "rules": {
+          "correct": 10,
+          "of": 10,
+          "pass": true
+        },
+        "schema_valid": {
+          "denominator": 98,
+          "numerator": 98,
+          "pass": true,
+          "rate": 1.0
+        }
+      },
+      "critical_violations": [
+        {
+          "action": "plan",
+          "actor": "D4",
+          "check": "A3",
+          "event_id": "E000013",
+          "reason": "cost exceeds credits",
+          "resolved": false
+        },
+        {
+          "action": "commit",
+          "actor": "D4",
+          "check": "A3",
+          "event_id": "E000014",
+          "reason": "cost exceeds credits",
+          "resolved": false
+        },
+        {
+          "action": "plan",
+          "actor": "D4",
+          "check": "gm-q1",
+          "event_id": "E000081",
+          "reason": "river exceeds available entitlement (2)",
+          "resolved": true
+        }
+      ],
+      "episodes": {
+        "gm-q1": {
+          "demand_met": 48,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 86.1833703792654,
+          "log_head": "805478d05f345078a90af7ff34771a00bad25ef9e445d1eb700e1cfcc2dfb5c2",
+          "log_sha256": "ef79eef36a5258025e4878d50560faf0e2f8b63c5b1d76f906226ef42e34cc88",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 48
+        },
+        "gm-q2": {
+          "demand_met": 50,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 72.39688516780734,
+          "log_head": "221b1c99d04d66356b38debe509a79b8cf347e1539f7674eadb5371bf9b51a42",
+          "log_sha256": "d4e6a7444ba7dc60185639523361df0e0c7bc26b231c8188a23deb568fe25285",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 50
+        },
+        "gm-q3": {
+          "demand_met": 51,
+          "evaluable": true,
+          "explicit_commits": 6,
+          "latency_seconds": 65.4107762540225,
+          "log_head": "d7e9330efc4cf9830717777f054cbe714d0e04e07f5812d849f24bd631f308d2",
+          "log_sha256": "2f7f6e9639483f523fe7567f6571f9704c2da6b67bc7800f7cbf544f2723eb4b",
+          "min_need_met_all": true,
+          "status": "completed",
+          "total_demand": 51
+        }
+      },
+      "evaluable_episodes": 3,
+      "median_episode_latency_seconds": 72.39688516780734,
+      "outcome_classes": {
+        "model_abstention": 78,
+        "tool_calls": 90
+      },
+      "passed": false,
+      "provider": "anthropic",
+      "rate_limits_last_observed": {
+        "anthropic-ratelimit-input-tokens-limit": "10000000",
+        "anthropic-ratelimit-input-tokens-remaining": "9998000",
+        "anthropic-ratelimit-input-tokens-reset": "2026-11-04T07:31:57Z",
+        "anthropic-ratelimit-output-tokens-limit": "2000000",
+        "anthropic-ratelimit-output-tokens-remaining": "2000000",
+        "anthropic-ratelimit-output-tokens-reset": "2026-11-04T07:31:57Z",
+        "anthropic-ratelimit-requests-limit": "13000",
+        "anthropic-ratelimit-requests-remaining": "12999",
+        "anthropic-ratelimit-requests-reset": "2026-11-04T07:31:57Z",
+        "anthropic-ratelimit-tokens-limit": "12000000",
+        "anthropic-ratelimit-tokens-remaining": "11998000",
+        "anthropic-ratelimit-tokens-reset": "2026-11-04T07:31:57Z",
+        "request-id": "req_011CghVrB5c4q22SZMBMYgne"
+      },
+      "reported_models": [
+        "claude-haiku-5-5"
+      ],
+      "rules": {
+        "R1": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R10": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R2": {
+          "choice": "C",
+          "correct": true,
+          "status": "completed"
+        },
+        "R3": {
+          "choice": "B",
+          "correct": true,
+          "status": "completed"
+        },
+        "R4": {
+          "choice": "C",
+          "correct": true,
+          "status": "completed"
+        },
+        "R5": {
+          "choice": "D",
+          "correct": true,
+          "status": "completed"
+        },
+        "R6": {
+          "choice": "A",
+          "correct": true,
+          "status": "completed"
+        },
+        "R7": {
+          "choice": "D",
+          "correct": true,
+          "status": "completed"
+        },
+        "R8": {
+          "choice": "A",
+          "correct": true,
+          "status": "completed"
+        },
+        "R9": {
+          "choice": "D",
+          "correct": true,
+          "status": "completed"
+        }
+      },
+      "run_status": "completed",
+      "spend": {
+        "measured_nanodollars": 66274000,
+        "rows": 168,
+        "statuses": [
+          "settled"
+        ],
+        "unresolved": 0,
+        "upper_nanodollars": 66274000
+      },
+      "tool_checks": {
+        "T1": {
+          "passed": true,
+          "status": "completed"
+        },
+        "T2": {
+          "passed": true,
+          "status": "completed"
+        },
+        "T3": {
+          "passed": true,
+          "status": "completed"
+        }
+      }
+    }
+  ],
+  "spec_version": "gm-v1"
+}

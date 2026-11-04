@@ -4,7 +4,7 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status:** founding freeze `founding-v0.1` (2026-11-02). Founding design preserved with errata through E-013. **World engine, scripted fixtures and the 3D observatory shell are implemented; no experimental runs or results yet.**
+**Status:** founding freeze `founding-v0.1` (2026-11-02). Founding design preserved with errata through E-013. **World engine, provider harness, scripted fixtures and the 3D observatory shell are implemented. Both provider smoke runs replay exactly; formal qualification and experimental runs remain ahead.**
 
 ## Read in This Order
 
@@ -23,11 +23,14 @@ An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Si
 make test             # unit tests (Python 3.10+, standard library only)
 make frozen           # frozen founding docs still match FREEZE_MANIFEST.sha256
 make diorama-setup    # once, optional: Node 18+, Playwright, Chromium and three.js for the browser checks
+make dry-run          # end-to-end scripted dry run, offline, no provider calls
 make check            # tests, frozen docs, G-OBS on the page and on the release build
 open observatory/diorama/index.html   # the diorama shell (scripted fixtures, not results)
 ```
 
-`make help` lists every target. Deploying is in [DEPLOY.md](DEPLOY.md).
+The [Wednesday harness guide](docs/WEDNESDAY_HARNESS.md) documents bounded live checks and offline replay. Live calls use optional dependencies (`.venv/bin/python -m pip install -e '.[providers]'`); offline tests remain standard-library only.
+
+`make help` lists every target. Reproducing records (dry run, Gate GM): [docs/REPRODUCE.md](docs/REPRODUCE.md). Deploying is in [DEPLOY.md](DEPLOY.md).
 
 **Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-013 amend the founding design; where they differ, the erratum governs.
 
