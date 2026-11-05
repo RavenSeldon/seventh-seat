@@ -23,6 +23,7 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 | E-011 | adds to 06 data rules; DEPLOY size check | The Witnessed World: diorama as 3D Seven Seats; contract; G-OBS |
 | E-012 | E-006 items 4–5 (avoidable harm, utility gap) | Retire degenerate metrics; cost–harm trade-off made explicit; flat-frontier certificate check |
 | E-013 | adds to E-011 and 06 data rules | Shared-commons topology (no implied order); cinematic theatre and instrument; reveal labelled as staging; hash-guarded frames; experimental data needs a manifest |
+| E-014 | 01 §10–11 calibration interpretation; 03 §6 | Eight fixed pilot scenarios; bounded adjacent-step procedure; endpoint/revisit stopping; descriptive fallback outside target |
 
 ## Entries
 
@@ -229,6 +230,19 @@ Frozen documents (see `../FREEZE.md`) are never silently edited. A correction is
 - **Correction to the record:** the assistant's concept sketch of 2026-11-02 drew six equal draws of 14. The recorded reference-trade fixture is 15, 14, 12, 15, 15 and 13 (total 84). The diorama uses the recorded distribution.
 - **Why:** a beautiful image that suggests structure the model lacks is a false claim, however well it is captioned.
 - **Evidence:** diorama review of 2026-11-03 (OpenAI ChatGPT); `layout()` in the v1 shell; `withdrawals = F - sum` in `world/engine.py`; author instruction.
+
+### E-014 · 2026-11-05 · Calibration boundary and stopping behavior fixed before pilot
+
+- **Clarifies/amends:** `01_DESIGN_FREEZE.md` §10 global-falsifier interpretation and §11 pilot volume; draft `03_PREREGISTRATION.md` §6. No hypothesis, outcome, model, cost stratum or evaluation stopping time changes.
+- **Change:**
+  1. Eight fixed E0S0 pilot seeds (1000–1007), balanced four cheap/four costly using `assign_strata`; log the exact mapping before calls and reuse it across tested κ values.
+  2. Start at κ=14; allowed ordered levels are 8, 10, 14, 18, 22. Accept the first setting with unrounded breach rate in [30%, 85%]. Below range, move up one adjacent level; above, down one.
+  3. At most three parameter changes after the initial completed batch; at most four eight-episode batches, excluding allowed infrastructure reruns. These reuse eight seed/stratum pairs, not 32 independently chosen seeds. The generator depends on κ, so the worlds need not otherwise be identical.
+  4. Stop at an endpoint or before retesting a setting. If none qualifies, retain the last tested setting and report any factorial descriptively, without confirmatory intervention claims. Report the actual stop reason; distinguish a low baseline (the global falsifier) from a high baseline or exhausted search.
+  5. A batch with a terminal infrastructure failure is incomplete, not a smaller denominator. Apply E-010 recovery and stop calibration if still incomplete. Preserve all attempts/costs and exclude the entire reserved calibration seed range from evaluation.
+- **Why:** the previous wording listed only two steps in either direction while allowing three adjustments, and left endpoint, revisit, denominator and high-baseline cases unclear. Fixing these before data removes outcome-dependent discretion.
+- **Evidence/authority:** D-028; the author selected the recommended rule on 5 November. No pilot or evaluation data existed when the choice was made. Operational details: `PROTOCOL_CLARIFICATIONS.md`.
+- **Frozen record:** the four founding documents and `FREEZE_MANIFEST.sha256` remain unchanged; this is an overlay under D-019. The preregistration remains draft until the actual evaluation lock.
 
 ## Preregistration Freeze Record
 

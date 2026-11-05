@@ -104,3 +104,52 @@ These are inspirations for the exhibit, not evidence for findings. They are cite
 ## Final Novelty Pass
 
 Scheduled for 5 Nov (Runbook, Gate G0). Searches: externalities in LLM-agent markets; absent or unrepresented stakeholders in multi-agent LLM systems; escalation routing in agent collectives; STPA applied to LLM multi-agent systems. Results are appended here.
+
+### 5 November search and verification addendum
+
+**Status: search and bounded contribution wording completed; G0 remains OPEN for two newly surfaced primary-source checks (PA-38/39).** Earlier entries are preserved. The corrections below govern the present report reference set. No experimental results were examined or generated during this review.
+
+Searches used: `LLM multi agent markets externalities unrepresented stakeholders verified evidence escalation routing`; `multi agent LLM whistleblowing independent escalation oversight evidence`; `STPA LLM multi agent responsibility PHASE`; `LLM commons GovSim governance absent stakeholders`; `"LLM" "unrepresented" stakeholders markets`; `"LLM" "externalities" "evidence" governance`; and exact-title follow-ups. Discovery summaries were used to locate primary sources, not to verify technical findings. This is a bounded search, not a systematic review or proof of priority.
+
+**Contribution sentence (prospective):** The Seventh Seat will compare four policy regimes in a scenario-blocked synthetic watershed, crossing access to verified aggregate evidence with consent-gated versus direct reporting to an identical scripted supervisor, and measure downstream shortfall, protection cost and the logged sequence of missed protection opportunities.
+
+This is a specific experimental comparison. Do not claim that absent stakeholders, collective externalities, whistleblowing, evidence-based accountability, independent escalation or system-level hazard analysis are new. Keep result-dependent wording prospective until evaluation exists.
+
+#### Bibliographic corrections and primary sources read
+
+| ID | 5 November disposition | Primary source / locator |
+|---|---|---|
+| PA-09 | VERIFIED again: Giorgio Piatti, Zhijing Jin, Max Kleiman-Weiner, Bernhard Schölkopf, Mrinmaya Sachan and Rada Mihalcea, *Cooperate or Collapse: Emergence of Sustainable Cooperation in a Society of LLM Agents* (2024), NeurIPS 2024 | https://arxiv.org/abs/2404.16698v4 — title, authors, abstract, comments |
+| PA-11 | VERIFIED again: Jinwei Hu et al., *Stop Reducing Responsibility in LLM-Powered Multi-Agent Systems to Local Alignment* (2025), preprint | https://arxiv.org/abs/2510.14008v2 — title, authors, abstract |
+| PA-16 | VERIFIED again: Yibo Hu and Ren Wang, *When Local Monitors Miss Compositional Harm: Diagnosing Distributed Backdoors in Multi-Agent Systems* (2026), preprint | https://arxiv.org/abs/2607.11751v1 — title, authors, abstract |
+| PA-17 | **PARTIAL → VERIFIED** for the source and bounded abstract claim below. Author is **Paul-Peter Arslan**. *Audit Without Verification: When LLM Accountability Layers Relay Rather Than Check* (2026), preprint | https://arxiv.org/abs/2609.07680v1 — author and abstract. No unsupported reviewer attribution retained |
+| PA-19 | VERIFIED again: Shalaleh Rismani, Roel Dobbe and AJung Moon, *From Silos to Systems: Process-Oriented Hazard Analysis for AI Systems*. Initial preprint 2024; version 2 revised 2026 | https://arxiv.org/abs/2410.22526v2 — authors, dates, abstract |
+| PA-22 | **Correction:** full title is *A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*. Author list begins **Davide Paglieri**, followed by Logan Cross, Tim Genewein, Joel Z. Leibo, Nenad Tomasev and Alexander Sasha Vezhnevets (2026). Earlier abbreviated attribution omitted the first author | https://arxiv.org/abs/2609.04170v1 — title, authors, abstract. The older claim about warnings being read as a bluff remains PARTIAL and is not in the report outline |
+| PA-23 | VERIFIED: Tahir Rahman, *Extreme Overvalued Beliefs and Artificial Intelligence Agents* (2026), Preprints.org v1, not peer reviewed | https://www.preprints.org/manuscript/202609.1396 — intervention paragraph beginning “A complementary safeguard” |
+| PA-24 | VERIFIED again: Kushal Agrawal, Frank Xiao, Guido Bergman and Asa Cooper Stickland, *Why Do Language Model Agents Whistleblow?*. Initial preprint 2025; version 3 revised 2026 | https://arxiv.org/abs/2511.17085v3 — authors, dates, abstract |
+| PA-25 | Author manuscript and its human-observer claim verified; **publication metadata remains PARTIAL**. Zoe A. Purcell, Nils Köbis, Andrew Samuel and Jean-François Bonnefon. A publisher DOI candidate, `10.1073/pnas.2536668123`, was located but its page could not be read; do not treat the PNAS/PNAS Nexus issue as settled solely from search metadata | https://zoepurcell.org/wp-content/uploads/2025/09/Whistleblowing.pdf — title page; introduction pp. 3–4, especially lines 66–94. Omitted from the current report bibliography pending venue/year verification |
+| PA-30 | VERIFIED with update: Panayiotis Danassis, Aris Filos-Ratsikas, Haipeng Chen, Milind Tambe and Boi Faltings. *AI-driven Prices for Externalities and Sustainability in Production Markets*. v5 (2026) reports the full version accepted in *Autonomous Agents and Multi-Agent Systems*; AAMAS 2023 was preliminary. Cite the versioned preprint here, rather than conflating versions | https://arxiv.org/abs/2106.06060v5 — authors, abstract, publication comment and version history |
+
+#### Additional claim register (only these bounded claims rechecked today)
+
+| Claim | Source and passage | Status |
+|---|---|---|
+| GovSim studies strategic interaction and sustainable use of a common resource by LLM agents; communication matters in the reported setting | PA-09 v4, abstract | VERIFIED-PASSAGE |
+| The local-alignment position paper argues for system-level responsibility across the multi-agent lifecycle | PA-11 v2, abstract | VERIFIED-PASSAGE; position, not experimental evidence |
+| Distributed payloads can escape local monitoring; changing the observed representation can recover signal in the studied attack settings | PA-16 v1, abstract | VERIFIED-PASSAGE; not a universal theorem about this watershed |
+| An auditor can relay upstream conclusions rather than independently verify them; the study motivates evidence independent of those conclusions | PA-17 v1, abstract, final paragraphs | VERIFIED-PASSAGE; no numerical claim imported |
+| PHASE adapts STPA for AI systems and supports traceable accountability between harms and those able to mitigate them | PA-19 v2, abstract | VERIFIED-PASSAGE; our ladder is an application, not validated by this citation |
+| The research-swarm case study reports emergent cheating and peer responses including audits and reporting | PA-22 v1, abstract | VERIFIED-PASSAGE; not evidence that direct external oversight was effective |
+| Rahman proposes an independent, non-peer-mediated path to human oversight | PA-23, intervention paragraph beginning “A complementary safeguard” | VERIFIED-PASSAGE; proposal, not an intervention trial |
+| Whistleblowing in staged misconduct scenarios varies with model, task complexity, prompting and available workflows | PA-24 v3, abstract | VERIFIED-PASSAGE |
+| Human observers can respond to unethical human-to-AI delegation by whistleblowing | PA-25 author manuscript, introduction pp. 3–4 | PASSAGE VERIFIED; bibliography still PARTIAL, so not yet in report |
+| A reinforcement-learning policymaker adjusts prices and allocations with externality-related objectives | PA-30 v5, abstract | VERIFIED-PASSAGE; no claim about LLM district agents |
+
+#### Newly surfaced close leads — do not cite as verified
+
+| ID | Lead | Status and next check |
+|---|---|---|
+| PA-38 | Yujiao Chen, *Individually Sensible, Collectively Harmful: Simulating Commons Failure in LLM Societies*, reportedly Social Sim @ COLM 2026; OpenReview `cOzZdFglau` | PARTIAL: secondary discovery page describes silent harmed stakeholders and a harm-display intervention, making it a potentially close comparison. Primary forum/PDF require browser verification; public API retrieval also failed. Read the manuscript before asserting its methods/results or novelty relative to it. Primary: https://openreview.net/forum?id=cOzZdFglau ; discovery only: https://lacuna.tiptreesystems.com/work/individually-sensible-collectively-harmful-simulating |
+| PA-39 | Theja Tulabandhula, *Distinguishing Governance Effects from Prompting Artifacts in LLM Pricing Simulations*, reportedly Social Sim @ COLM 2026 | PARTIAL: secondary discovery only; exact-title primary-source search returned no accessible manuscript. Verify on the workshop/OpenReview before citation. Discovery: https://lacuna.tiptreesystems.com/work/distinguishing-governance-effects-from-prompting-artifacts |
+
+PA-38 makes a broad “first absent-party commons experiment” claim inappropriate even while primary verification is pending. PA-39 motivates care about framing as a possible alternative explanation, but its reported numerical findings are not evidence in this project. Existing PA-21, PA-33, PA-34 and PA-31/35/36/37 remain outside the report reference set; no unverified legal, historical or incident-specific claims are needed for the current outline.

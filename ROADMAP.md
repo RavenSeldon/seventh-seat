@@ -2,6 +2,14 @@
 
 Living review · 3 November 2026 · Vancouver dates. This roadmap implements the charter, design freeze, errata E-001–E-013 and runbook; it does not amend them.
 
+## Current update — Thursday 5 November
+
+**This update supersedes the pending-GM/dry-run statements in the historical sections below.** Both configurations passed gm-v2; GPT-6 Luna is selected and GM is closed. C-1 corrects replay selection without changing the live decision. The end-to-end scripted rehearsal passed 18 checks on 4 November. Current verification: 94 tests and four frozen hashes passed; browser checks were not rerun today.
+
+Today's preparation adds a bounded novelty review and claim register, a report outline based on the official template, candidate references, pre-sprint inventory, and an explicit Friday handoff. Two close literature leads still need primary manuscripts, so G0 is open and no priority claim is made. The author approved the calibration rule (D-028/E-014) before data and confirmed survey/Discord complete. Infrastructure wording now matches E-010. See `docs/THURSDAY_HANDOFF.md` for the current checklist and event times.
+
+Remaining before the pre-sprint boundary: primary-source follow-up, console spending-control confirmation, review/commit and the actual `pre-sprint-2026-11-05` tag. Friday still owns interventions, the hazard-world runner, analytics, calibration and evaluation. The existing no-hazard recovery runner is not the evaluation runner. No experimental results exist.
+
 ## Progress update — Wednesday work completed early, 3 November
 
 Provider adapters, bounded tool loop, response cache, containment checks, attention/spend enforcement and retry/recovery are implemented. 70 Python tests pass. Both real-provider no-hazard smoke episodes complete and replay to byte-identical logs. Conservative combined token-cost accounting is US$0.021538685, with no unresolved reservations. See `docs/WEDNESDAY_HARNESS.md`. GM qualification and experimental work are still pending. The baseline assessment below records the earlier review; its missing-harness items are superseded by this update.

@@ -17,8 +17,22 @@
 
 - Thu 5 Nov 06:15 (13:15 UTC): Adaption workshop
 - Thu 5 Nov 08:00 (15:00 UTC): John Kitaoka, open problems in securing systems against agent swarms
+- Thu 5 Nov 15:00 (22:00 UTC): Grant Fleming, novel risks from adversarially optimized agent swarms
+- Fri 6 Nov 08:00 (15:00 UTC): Kamil Alaa, early logistics session
+- Fri 6 Nov 12:00 (19:00 UTC): Rowan Howard-Jones, To Catch a Swarm
+- Fri 6 Nov 13:15 (20:15 UTC): Elias Stengel-Eskin, The Emergence of Agent Languages
+- Fri 6 Nov 14:30 (21:30 UTC): Judd Rosenblatt, kickoff keynote
+- Fri 6 Nov 15:30 (22:30 UTC): Kamil Alaa, logistics session
 - Sat 7 Nov 06:00 (13:00 UTC): Justin Shenk, modeling agent swarms
 - Sat 7 Nov 12:00 (19:00 UTC): Jurgis Kemeklis, mitigating insider threats with AI control
+
+Schedule rechecked against the live page on 5 November. RSVP on each talk's Luma page for Zoom access; recordings are available. The early Friday logistics session is on the live page but was absent from the 4 November email.
+
+## Readiness Update — 5 November
+
+GM and the scripted rehearsal are complete; GPT-6 Luna is selected. The author settled calibration (D-028/E-014) and confirmed the required registration survey and Discord access complete. The official template was read; a pre-sprint report outline and candidate bibliography are in `report/`. G0 still needs two primary-source follow-ups. The final pre-sprint tag and provider-console controls remain to confirm. Current checklist: `THURSDAY_HANDOFF.md`.
+
+The live page confirms the deadline and eight-page cap. The official template recommends four pages and has an LLM Usage Statement; retain the required ethics/dual-use appendix from the sprint rules even though the generic template labels its appendix optional. Pre-sprint outline/prose must be disclosed alongside code. No substantive weekend research has been performed in this preparation pass.
 
 ## Schedule
 
@@ -27,8 +41,8 @@
 | Mon 2 Nov | Founding freeze `founding-v0.1` (this commit) | Pre-sprint, declared |
 | Tue 3 Nov | World engine, scenario generator, feasibility oracle, permit register, event log. Tests G2, G3, G3b, G7 | Pre-sprint, declared |
 | Wed 4 Nov | Model adapters with cache for the E-010 configurations; adapter gate GA (E-010b); harness budget enforcement G6 (E-010 item 5). Scripted agents, tool loop, containment test G1, replay G2. Observatory diorama shell per E-011 (scripted fixture only; at most 3 hours in total across Tue–Thu, only after each day's gates pass) | Pre-sprint, declared |
-| Thu 5 Nov | Model qualification GM (E-010) and model choice. Final novelty pass G0. End-to-end scripted dry run. Finalize `PREEXISTING_WORK.md`. Tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
-| Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, and the supervisor. Gates G4, G5, G8, G9. Calibration pilot, then the Evaluation lock (E-009; G10, G11). Launch evaluation runs | **Weekend (judged)** |
+| Thu 5 Nov | GM and dry run already complete. Finish G0, settle calibration wording, prepare report outline, finalize `PREEXISTING_WORK.md` and inventory, then review/commit/tag `pre-sprint-2026-11-05` | Pre-sprint, declared |
+| Fri 6 Nov | Implement E (verified ledger), S (direct route), the S0 endorsement path, supervisor, hazard-world runner and analytics. Gates G4, G5, G8, G9. Calibration pilot under E-014, then the Evaluation lock (E-009; G10, G11). Launch evaluation runs | **Weekend (judged)** |
 | Sat 7 Nov | Finish runs by 23:00 Vancouver time (Sun 8 Nov 06:00 UTC; fixed stop). Trade-disabled and mechanical-gate arms if budget allows. Analysis, ladder, figures | **Weekend (judged)** |
 | Sun 8 Nov | Report, appendix, README and reproducibility commands. Submit by 20:00. Exhibit build | **Weekend (judged)** |
 

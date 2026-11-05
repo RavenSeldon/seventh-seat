@@ -1,0 +1,772 @@
+{
+  "base_commit": "63a55ad54cfda0ab58fd8d9d6e8392636f6c6dbd",
+  "date": "2026-11-05",
+  "files": [
+    {
+      "base_change_from_founding": "M",
+      "path": ".gitignore",
+      "pending_preparation_change": false,
+      "sha256": "55e0b33d0517c7521c87b97b41939d29375b3cc518bb86b4eaf80da1395bea2e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "DEPLOY.md",
+      "pending_preparation_change": false,
+      "sha256": "df8a5fbe157831f0c5d7cc565e3cf6a6a936891237acb46821fd0f0d8d10998e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "FREEZE.md",
+      "pending_preparation_change": false,
+      "sha256": "fa49605447612b934b093e38644184b6a0d858a64be00e9c68d68a9f95f39f8b",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "FREEZE_MANIFEST.sha256",
+      "pending_preparation_change": false,
+      "sha256": "0b586f174289725ebff9b8b388ed49ce663043499b7c270f5b0b0300c173c0bd",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "Makefile",
+      "pending_preparation_change": false,
+      "sha256": "175b5f2e73765c5f93fd39ba04a20a6addec4751b9979f444f595480af5b5900",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "PREEXISTING_WORK.md",
+      "pending_preparation_change": true,
+      "sha256": "1b5fb21b71c21f93562e2dbacbc42ffafa0a37e3c00d55cedfbb92c61475b658",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "PROJECT-LOG.md",
+      "pending_preparation_change": true,
+      "sha256": "6ea4bb2716607e6a342b4aff88f50f973bcd4193470334bfbba524a4b9c448b5",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "README.md",
+      "pending_preparation_change": true,
+      "sha256": "ed5421a6b86a0a8065ccfc947efd8b5089ce87e649e407a6a893e5a8f253dc96",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "ROADMAP.md",
+      "pending_preparation_change": true,
+      "sha256": "c058af8368ec02df26593ef7f3fe4a04a0a7afc8ef652bce06b05eeb97bb859e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "docs/00_CHARTER.md",
+      "pending_preparation_change": false,
+      "sha256": "2f94b296eb729e9c4f052563fb20157e28f940500db6f09ff363b59d4d0b54cf",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "docs/01_DESIGN_FREEZE.md",
+      "pending_preparation_change": false,
+      "sha256": "c15eb1dc4611909940571161812b5cf55625cd1224ff66ae368e83a6f3ffa959",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "docs/02_WORLD_SPEC.md",
+      "pending_preparation_change": false,
+      "sha256": "2ffc11e1cfe990e6422af627464678835eb7eb8784914edbdd826efa4c3e12b0",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/03_PREREGISTRATION.md",
+      "pending_preparation_change": true,
+      "sha256": "62b9367cf90145aa496ac5eab3f88ec88b97715df4d6b04f682b9f91a85d37c8",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/04_PRIOR_ART_LEDGER.md",
+      "pending_preparation_change": true,
+      "sha256": "cd7b01167af56c1733b611b5639d846dd85a464c45ee04b5bad60f71a32ab935",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/05_RUNBOOK.md",
+      "pending_preparation_change": true,
+      "sha256": "c8ee42b6e3be6782e8b4211ba89a21fe6ad938041e2535771b3ac996a9fd3cd1",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "docs/06_EXHIBIT_SPEC.md",
+      "pending_preparation_change": false,
+      "sha256": "f59faa4adaed141f6ac6a4aba829ca32a8210659a0bd3485e026b6ccdcebe499",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "docs/07_ETHICS_AND_DUAL_USE.md",
+      "pending_preparation_change": false,
+      "sha256": "39dd2327b2255fe2535c787a6e2ae197d9aed2dbc87fb3d1c3d04f6924cf83f2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/AI_ASSISTANCE_LOG.md",
+      "pending_preparation_change": true,
+      "sha256": "deda5314d279571aea5deb06b77c67c5bd960ed1e3f1105ee2cb798dd1413f06",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/DECISIONS.md",
+      "pending_preparation_change": true,
+      "sha256": "87f71a59b6e7898628fa31d1bf68a100c3584cb94a218046f6a72abfe365d36e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "docs/ERRATA.md",
+      "pending_preparation_change": true,
+      "sha256": "1ee987f59eaa7f2a42df54ff7084ac4eeaff088997f131e9575369bac5489b9c",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "not_in_base",
+      "path": "docs/PROTOCOL_CLARIFICATIONS.md",
+      "pending_preparation_change": true,
+      "sha256": "901510e7fd89264eea0eb046bbe09e5e49bfe50b3b0943a1dc9144f8a7e15c80",
+      "tracked_at_base": false
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "docs/REPRODUCE.md",
+      "pending_preparation_change": false,
+      "sha256": "21076dea35429e10c66a41a0a2272a55f5d145de96a06196c70d4adf71104ebd",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "not_in_base",
+      "path": "docs/THURSDAY_HANDOFF.md",
+      "pending_preparation_change": true,
+      "sha256": "7581a7adbc1d32b4fa7357f542135facc45aef5c66f4db13bbb0d3f2ad57f7e4",
+      "tracked_at_base": false
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "docs/WEDNESDAY_HARNESS.md",
+      "pending_preparation_change": false,
+      "sha256": "c9b3aa9cdcef44f7349ffbf90ec70958088dc88235832fcf2e32f75429347db4",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "experiments/README.md",
+      "pending_preparation_change": false,
+      "sha256": "43bf97a4feab30583a732335d7fb5c307390d46bb5f7db36fdda1dd3a953cb37",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/dry_run_2026-11-04.json",
+      "pending_preparation_change": false,
+      "sha256": "02f386b6e60b1fa4a36f3d4a90f2b2c49f8cc124703830b09b7de7e1cfcb905c",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/DECLARATION.json",
+      "pending_preparation_change": false,
+      "sha256": "3e7473f546488147676bae049981faef4a35028465e18f8f08ee33cf026d522a",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/GM_V1_AUDIT.md",
+      "pending_preparation_change": false,
+      "sha256": "90cf95bd9b83fd477e276ae0056666416aa07b8932288de450349f2905cfba19",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/QUALIFICATION_REPORT.md",
+      "pending_preparation_change": false,
+      "sha256": "e321f50092dc5dba04238ac891f5b8949fd6d7793092b4f58e4c898cc6816250",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/QUALIFICATION_SPEC.md",
+      "pending_preparation_change": false,
+      "sha256": "736249d2d586915b161f9e0cb8c13cf8e1b91e8d3fe9fb2542b646b0d04fd97c",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/qualification_result_live.json",
+      "pending_preparation_change": false,
+      "sha256": "e08673de0a043142078e161d9b9e1baab4c1efc1c81be1f638dfde6320d58c26",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/qualification_result_replay-live.json",
+      "pending_preparation_change": false,
+      "sha256": "01614a5b63df59deeda1d1fdf9ca95254821bd91074f4d9a88bbfc1221073df0",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/README.md",
+      "pending_preparation_change": false,
+      "sha256": "2a4dcce86773efbb3800bc7cbd4041954c269222b91b467e80a00a3d0b95e811",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/experiments/gm/QUALIFICATION_SPEC.md",
+      "pending_preparation_change": false,
+      "sha256": "736249d2d586915b161f9e0cb8c13cf8e1b91e8d3fe9fb2542b646b0d04fd97c",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/scripts/run_qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "fbdf6db1d7d8573df268ec13f9250260ac1516c5b9ac7a20e460aa74e72932eb",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/agents/providers.py",
+      "pending_preparation_change": false,
+      "sha256": "feb8135b106e3e37577509e49c47687feb4433d67223d88387244356a6f0d754",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/agents/qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "3ea38d1dc756a422b91b6f1872d3fcf2be051d97dbb3e9b3d869a9c243d76638",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/agents/runtime.py",
+      "pending_preparation_change": false,
+      "sha256": "b9a1b18a3c936e013c9006659b59999e66529a61494f6d2a5884d565eae4d71f",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/agents/storage.py",
+      "pending_preparation_change": false,
+      "sha256": "ea482e0f4c790dc27330470d1fe29e48896cc059bc93009c97f221f037a3e9d1",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/agents/tools.py",
+      "pending_preparation_change": false,
+      "sha256": "3b4e0c41f46e3b928c73a96b1f5e4f64e71eba77a9b6a43cbb5d7ecd1a4fd12e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/world/engine.py",
+      "pending_preparation_change": false,
+      "sha256": "3e9945eb89763ffc4e15c7da4c9b1245e023053d4f9dcfc44849a60ac727cdfc",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/world/events.py",
+      "pending_preparation_change": false,
+      "sha256": "313834ac5bdd94078a3b624f1ca62107a57ffd0eef360562ee419114606dd3c2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v1-sources/src/seventh_seat/world/params.py",
+      "pending_preparation_change": false,
+      "sha256": "f48aaef61bfe3799e543aa4c1ec49ce53ce3d8012cf134b615e33dc1ca07b681",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/DECLARATION.json",
+      "pending_preparation_change": false,
+      "sha256": "ec166aafb2c21fa5df4ee7088f251b3dacc0c65b263281e9b4f67759dc71b7bd",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/QUALIFICATION_REPORT.md",
+      "pending_preparation_change": false,
+      "sha256": "f20f3ed1f8a7daed457f36b742c47ee037c8542e1a57a269a48f3cbb43367882",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/QUALIFICATION_SPEC.md",
+      "pending_preparation_change": false,
+      "sha256": "42d7c0b98f6d21df8a0630f40a492734ac0703499be3c90a27af27862a893266",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/qualification_result_live.json",
+      "pending_preparation_change": false,
+      "sha256": "ac4830ebb89f6b7e2cbcc9c566f8964b67c5ca944acdb64343306c0e2ade4208",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/qualification_result_replay-live.SUPERSEDED.md",
+      "pending_preparation_change": false,
+      "sha256": "e2b02624686092c2210a78e3ddee975c7a4682d5682eeda5595ec6d8da7d836f",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/qualification_result_replay-live.corrected.json",
+      "pending_preparation_change": false,
+      "sha256": "9834ab043a81be359d8ea1997e0ea222ad1731b0d2787879b99ddd41493c45cf",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/gm/v2/qualification_result_replay-live.json",
+      "pending_preparation_change": false,
+      "sha256": "0b1a6efa1b7ed747d77eb101160157a87042c1f90e2ba22df60c0869ef20b4db",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "experiments/harness_smoke_2026-11-03.json",
+      "pending_preparation_change": false,
+      "sha256": "5b5f6d67902d05d8a4aa16a277885c1e04f6e0cc78096523f4646dc7d60dce63",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "not_in_base",
+      "path": "experiments/preparation_checks_2026-11-05.json",
+      "pending_preparation_change": true,
+      "sha256": "3a818abcb125cd81b1bb3a3ccbb3c344ccfd8bbbddefb659b1a5abec4aa7a0a2",
+      "tracked_at_base": false
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "observatory/README.md",
+      "pending_preparation_change": false,
+      "sha256": "0797007589d002faa039e735af0560784f389663425e96dffd18caa71490b725",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/README.md",
+      "pending_preparation_change": false,
+      "sha256": "f105bc6a014bf93be1827f2a836f45ec74ec5c6a1e06828c1d2c4927aa508634",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/REVIEW.md",
+      "pending_preparation_change": false,
+      "sha256": "28c38e22569d77ad8c536c36764075230823512a72abc267bdd40780652a8748",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/check_gobs.mjs",
+      "pending_preparation_change": false,
+      "sha256": "ffc5e73aeea3c5152cbbe2920513bdeee9a83876ccd1829b6750c32bb5d4d161",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/fixtures/scripted-S1000.json",
+      "pending_preparation_change": false,
+      "sha256": "17843f99fecd134df5b17305c6b9486719f479693224d313e5dbba72beda8060",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/index.html",
+      "pending_preparation_change": false,
+      "sha256": "cf6a4221f89c56ccb9887109668e22c61121ec4a42b127c6e1e85240fbc04c4b",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/package-lock.json",
+      "pending_preparation_change": false,
+      "sha256": "e0309d1cff76804dc7c9971bd5177705fbf263c3627e9cc39b72d58d32d96e4b",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/package.json",
+      "pending_preparation_change": false,
+      "sha256": "8e99222aab7dcde62de08cb5d83a66e3ab332d279d4185a3205b385a948f7bf3",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "observatory/diorama/render_posters.mjs",
+      "pending_preparation_change": false,
+      "sha256": "46f1d9af1c2b64fee02929fe3ff45905aca0f5f1685c9d5ad8f9fccb0deeec2e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "pyproject.toml",
+      "pending_preparation_change": false,
+      "sha256": "3e914ccfa64a42506dad27f10a42bd7224e77037bc80a88b540f38acb014136b",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "not_in_base",
+      "path": "report/OUTLINE.md",
+      "pending_preparation_change": true,
+      "sha256": "58746c55a6a207874e3fb6c2d10aa085a7c3a4cbc0c0cdd8cfead483fec91052",
+      "tracked_at_base": false
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "report/README.md",
+      "pending_preparation_change": true,
+      "sha256": "ecc4c33b152037d211454f0ab10dccb620aea7c432e62c4b23e12d48c4c70a73",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "not_in_base",
+      "path": "report/references.bib",
+      "pending_preparation_change": true,
+      "sha256": "8c57032e4846f6484a1f473d8d5a0832e5dd007f2a35410ecfde53a4a501da4b",
+      "tracked_at_base": false
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/build_release.py",
+      "pending_preparation_change": false,
+      "sha256": "d9089884c9c47026a0b4aa9455330bb121cb3ad3f1e7119286245ac59c4d1a2a",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/check_api_access.py",
+      "pending_preparation_change": false,
+      "sha256": "62c46031578fe5c39c257c2edf8f48599d68e6c10d792da60fe74f5285ea8fdc",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/deploy.sh",
+      "pending_preparation_change": false,
+      "sha256": "8ca0a92523974ef9b0a73a5033eaf639b3db8068568121c27ead435955baa369",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/dry_run.py",
+      "pending_preparation_change": false,
+      "sha256": "6d0791f0d41d0edbca66eca3d77607dafdfb247fcc835cec2bdd7325117c853a",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/rescore_qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "be6343ad5d376273ef4484f87dd58fb94723cd7b4437fa4ee7790ef70e4b1daa",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/run_harness.py",
+      "pending_preparation_change": false,
+      "sha256": "8f92c9b5a0102eda296d5550e4206ed5d49fc427eb783ab21db61006383776a0",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "scripts/run_qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "7bf00397febbc2b313108e66f2bc66ff895cc7058b4524d97154fe910d3bdda2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/__init__.py",
+      "pending_preparation_change": false,
+      "sha256": "8397d372304651acb09aa33c30320fc0a73489d8201d528b358b6fd52792ea9b",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "M",
+      "path": "src/seventh_seat/agents/README.md",
+      "pending_preparation_change": false,
+      "sha256": "5f2aea1599471f7eeee9dd929870d2ab33c7347d42abdc2f12cbfb1e84c79b20",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/__init__.py",
+      "pending_preparation_change": false,
+      "sha256": "de53920d3effb05876a0c1c94b164b2c61936a9503d1d7e5bd152f7967ba46cc",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/providers.py",
+      "pending_preparation_change": false,
+      "sha256": "feb8135b106e3e37577509e49c47687feb4433d67223d88387244356a6f0d754",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "274d9928abba7460ab3a4df42440456d13dbfe76102c412a406664bce6c18aca",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/qualification_correction.py",
+      "pending_preparation_change": false,
+      "sha256": "4eff5cad870b5ae7d32e15c474209cae45c83220bee08d8dafe0813ce0719021",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/runtime.py",
+      "pending_preparation_change": false,
+      "sha256": "b9a1b18a3c936e013c9006659b59999e66529a61494f6d2a5884d565eae4d71f",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/scripted.py",
+      "pending_preparation_change": false,
+      "sha256": "f4b873c2e5abea5992b2eedef0a68dd3ee83ae27bd14f857fa188249db0a181a",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/storage.py",
+      "pending_preparation_change": false,
+      "sha256": "ea482e0f4c790dc27330470d1fe29e48896cc059bc93009c97f221f037a3e9d1",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/agents/tools.py",
+      "pending_preparation_change": false,
+      "sha256": "cb0336ed01d36f590a5051789703df64be5c593e1b0a0397bac3e5b29e63a558",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "src/seventh_seat/analysis/README.md",
+      "pending_preparation_change": false,
+      "sha256": "8334ba45ed142a7966d0002b0a20101666304bbeb1f57b87b023c70ca251b8a7",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "src/seventh_seat/interventions/README.md",
+      "pending_preparation_change": false,
+      "sha256": "5d8a3293aac2198bf1c7d2c3e61caf3020fb66fdd4868f39f00d36e7963dced9",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/observatory/__init__.py",
+      "pending_preparation_change": false,
+      "sha256": "2a8c4c6d9b5dfe127181a2a7895bd02cb38cf8c800a5ad932b6bf04df89efd06",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/observatory/snapshot.py",
+      "pending_preparation_change": false,
+      "sha256": "ecef27848a3846d44d0ef4f315704d37c55ebd6e32604ab66ba9c693a76b9a3c",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/rehearsal.py",
+      "pending_preparation_change": false,
+      "sha256": "ab26ea483518cc5c9f974e86d63197a7f20667c91b9263d967b463055928ea06",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "src/seventh_seat/world/README.md",
+      "pending_preparation_change": false,
+      "sha256": "ea408d3e959d36fb0bbfe5b8ad71f04eb92eb18b99a0b25131842694b5c2b8f5",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/__init__.py",
+      "pending_preparation_change": false,
+      "sha256": "a60cfc93650ef9649bf9e46875b3a54b06fa2d8868ae23316d78dccedc54cf8e",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/engine.py",
+      "pending_preparation_change": false,
+      "sha256": "3e9945eb89763ffc4e15c7da4c9b1245e023053d4f9dcfc44849a60ac727cdfc",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/events.py",
+      "pending_preparation_change": false,
+      "sha256": "313834ac5bdd94078a3b624f1ca62107a57ffd0eef360562ee419114606dd3c2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/oracle.py",
+      "pending_preparation_change": false,
+      "sha256": "710e930c4460a599240ef4c5d53177967bd0a70f626055033301d06f90f71747",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/params.py",
+      "pending_preparation_change": false,
+      "sha256": "f48aaef61bfe3799e543aa4c1ec49ce53ce3d8012cf134b615e33dc1ca07b681",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "src/seventh_seat/world/scenario.py",
+      "pending_preparation_change": false,
+      "sha256": "092f5ed33609b35910f2bf6f5b9f9cddb98745f0ab3f4e06c79c52554eb17a1a",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "unchanged",
+      "path": "tests/README.md",
+      "pending_preparation_change": false,
+      "sha256": "12551a44d493727bd729b6c00f630da5e79dcfaaaf8a2c96e861d76029bc685d",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/__init__.py",
+      "pending_preparation_change": false,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/_path.py",
+      "pending_preparation_change": false,
+      "sha256": "0051096af35f45eb13f7764f49820883e0898cdc69c26f2b78d14324c934cf95",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_harness.py",
+      "pending_preparation_change": false,
+      "sha256": "ff7de3cc11e905d040785d188bc5e1b97a6c73ddd09d28c9d698c2873444f550",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_oracle.py",
+      "pending_preparation_change": false,
+      "sha256": "8fa2d13e09f81659f29cc7021f528669dabf08b5c3505d1da3cf60de812b694f",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_permits.py",
+      "pending_preparation_change": false,
+      "sha256": "d71722f7d23c88a685c275b4d86b94f5b293665f16f4f3f9bbbe1cea553afbc2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_qualification.py",
+      "pending_preparation_change": false,
+      "sha256": "82e01790937f199367ce83db1d83f4358b871fa6c123d845a99f7f2c8b3a80be",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_qualification_correction.py",
+      "pending_preparation_change": false,
+      "sha256": "3febd49162b79c43d2d1e11eabc8ce24dedcd00fb8aa6dcfe0c0929f3820e965",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_rehearsal.py",
+      "pending_preparation_change": false,
+      "sha256": "683e18831e46bb516831c40ba602368e99b3073c7c38aba6431dfa72f2cc93b2",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_replay.py",
+      "pending_preparation_change": false,
+      "sha256": "b919e5510395c319b9a80e09d77a3778435bf3c05ed99d107952796955589388",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_scenario.py",
+      "pending_preparation_change": false,
+      "sha256": "19d125a2c601d73da5b6394a5bab6c348f526e0540ea1c76f508e8e5d6db64d7",
+      "tracked_at_base": true
+    },
+    {
+      "base_change_from_founding": "A",
+      "path": "tests/test_snapshot.py",
+      "pending_preparation_change": false,
+      "sha256": "72bd41274f04f424d69f7733262df73fa99469bebbdd7a89e3523fe59c62b5fe",
+      "tracked_at_base": true
+    }
+  ],
+  "founding_tag": "founding-v0.1",
+  "pending_preparation_paths": [
+    "PREEXISTING_WORK.md",
+    "PROJECT-LOG.md",
+    "README.md",
+    "ROADMAP.md",
+    "docs/03_PREREGISTRATION.md",
+    "docs/04_PRIOR_ART_LEDGER.md",
+    "docs/05_RUNBOOK.md",
+    "docs/AI_ASSISTANCE_LOG.md",
+    "docs/DECISIONS.md",
+    "docs/ERRATA.md",
+    "docs/PROTOCOL_CLARIFICATIONS.md",
+    "docs/THURSDAY_HANDOFF.md",
+    "experiments/preparation_checks_2026-11-05.json",
+    "report/OUTLINE.md",
+    "report/README.md",
+    "report/references.bib"
+  ],
+  "planned_boundary_tag": "pre-sprint-2026-11-05",
+  "scope": "all git-tracked files at base plus explicitly listed preparation edits; excludes this inventory itself, ignored credentials, private cache/scratch, dependencies and build output",
+  "status": "review snapshot; final pre-sprint tag pending",
+  "tag_created": false,
+  "tracked_file_count_at_base": 101
+}

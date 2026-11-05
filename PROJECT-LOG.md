@@ -31,11 +31,13 @@
 
 ## Remaining
 
+**5 November preparation update (supersedes older pending-preparation wording below):** GM and rehearsal are complete. The current handoff is `docs/THURSDAY_HANDOFF.md`. Citation search and claim verification added bibliographic corrections (including PA-17 and PA-22), a bounded prospective contribution sentence, and two close leads PA-38/39 whose primary manuscripts remain unverified; G0 therefore stays open. The official template was read and a pre-sprint outline plus nine candidate references prepared. The author approved calibration D-028/E-014 and confirmed survey/Discord complete. Draft preregistration §7 now states the existing E-010 recovery rule explicitly. Disclosure and a review inventory were prepared. A fresh offline rehearsal passed all 18 checks; all 10 declared gm-v2 source hashes matched. No model calls or research runs occurred.
+
 **Code to write (pre-sprint, declared):**
 1. GM is decided and closed (`gm-v2`, GPT-6 Luna; C-1 applied; D-025–D-027). Not to be reopened.
-2. ~~End-to-end scripted dry run~~ done 2026-11-04 (`experiments/dry_run_2026-11-04.json`, 18 checks; `make dry-run`; `docs/REPRODUCE.md`). Remaining: author review and commit, then tag `pre-sprint-2026-11-05`.
+2. ~~End-to-end scripted dry run~~ done 2026-11-04 (`experiments/dry_run_2026-11-04.json`, 18 checks; `make dry-run`; `docs/REPRODUCE.md`) and rechecked offline 5 Nov (`experiments/preparation_checks_2026-11-05.json`). Remaining: primary-source follow-up, console controls, final review/commit and tag `pre-sprint-2026-11-05`.
 
-**Code to write (weekend, judged):** E ledger, S direct route, S0 endorsement path, supervisor; calibration; runs; analysis; figures; report; exhibit data.
+**Code to write (weekend, judged):** E ledger, S direct route, S0 endorsement path, supervisor; hazard-world runner; calibration execution; runs; analysis; figures; completed report; experimental exhibit data.
 
 **Human actions:** see `docs/05_RUNBOOK.md` → Human Actions (API access confirmed; record account rate limits and console spend controls; re-read the live sprint page Fri; commits, pushes, deploy, submission).
 
@@ -43,8 +45,8 @@
 
 ## Decisions of Record
 
-See `docs/DECISIONS.md` (D-001 to D-024; qualms Q-1 to Q-6; open decisions OD-1 to OD-6).
+See `docs/DECISIONS.md` (through D-028; qualms Q-1 to Q-6; open decisions OD-1 to OD-6 and their later dispositions).
 
 ## Resume Point
 
-GM closed (GPT-6 Luna). Dry run and reproducibility instructions done. Next: citation review (G0), report skeleton, pre-sprint disclosure (`PREEXISTING_WORK.md` file list), then author review, commit and tag `pre-sprint-2026-11-05`. Weekend runner note: `run_with_recovery` refuses hazard worlds by design; the evaluation runner (with the same recovery rules) is weekend work. Preserve the budget ledger and the GM records in `runs/` (private). Human action: console spend controls. Before committing observatory changes: `make check`.
+GM closed (GPT-6 Luna). Dry run, report outline/bibliography, calibration clarification and review inventory are prepared. Next: PA-38/39 primary-source follow-up to close G0; provider-console control confirmation; review/commit/tag the pre-sprint boundary. Follow `docs/THURSDAY_HANDOFF.md`. Weekend runner note: `run_with_recovery` refuses hazard worlds by design; the evaluation runner (with the same recovery rules) is weekend work. Preserve the budget ledger and GM records in `runs/` (private). Before committing observatory changes: `make check`.

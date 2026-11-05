@@ -4,7 +4,9 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status:** founding freeze `founding-v0.1` (2026-11-02). Founding design preserved with errata through E-013. **World engine, provider harness, scripted fixtures and the 3D observatory shell are implemented. Both provider smoke runs replay exactly; formal qualification and experimental runs remain ahead.**
+**Status (5 November):** founding freeze `founding-v0.1` preserved with errata through E-014. **World engine, provider harness, scripted fixtures and the 3D observatory shell are implemented. GM qualification is complete: GPT-6 Luna selected; correction C-1 preserves the live decision. The scripted end-to-end rehearsal passed 18 checks. No experimental results exist.** 94 Python tests and frozen hashes passed on 5 November; browser checks were not rerun in that review.
+
+Current preparation and Friday dependency order: [Thursday handoff](docs/THURSDAY_HANDOFF.md). Calibration procedure is settled (D-028/E-014); the actual pilot and evaluation lock remain ahead. The literature review surfaced two close leads needing primary-source verification; G0 remains open. Report preparation: [outline](report/OUTLINE.md) and [candidate bibliography](report/references.bib).
 
 ## Read in This Order
 
@@ -32,7 +34,7 @@ The [Wednesday harness guide](docs/WEDNESDAY_HARNESS.md) documents bounded live 
 
 `make help` lists every target. Reproducing records (dry run, Gate GM): [docs/REPRODUCE.md](docs/REPRODUCE.md). Deploying is in [DEPLOY.md](DEPLOY.md).
 
-**Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-013 amend the founding design; where they differ, the erratum governs.
+**Frozen documents are read together with [the errata](docs/ERRATA.md).** E-001 to E-014 amend the founding design; where they differ, the erratum governs.
 
 ## Layout
 
@@ -56,7 +58,7 @@ Reality before myth. What changes is the account, never the record. Behaviour, n
 
 ## Prior Work
 
-Declared in [PREEXISTING_WORK.md](PREEXISTING_WORK.md). Only work after tag `pre-sprint-2026-11-05` is the judged sprint contribution.
+Declared in [PREEXISTING_WORK.md](PREEXISTING_WORK.md), including Thursday's citation review, outline and preparation documents. The planned boundary is `pre-sprint-2026-11-05`; **that tag has not yet been created**. Only actual sprint-period work is eligible as the weekend contribution; a tag does not change when work was done.
 
 ## Hosting
 

@@ -1,0 +1,46 @@
+{
+  "base_commit": "63a55ad54cfda0ab58fd8d9d6e8392636f6c6dbd",
+  "browser_checks_rerun": false,
+  "data_status": "pre-sprint-scripted-verification",
+  "date": "2026-11-05",
+  "dry_run_checks": {
+    "budget_stop_before_any_request": true,
+    "certificate_G3_G3b": true,
+    "containment_world_tools_only": true,
+    "mechanism_no_trade_within_cap": true,
+    "mechanism_trade_reference_matches_certificate": true,
+    "no-trade_four_descriptions": true,
+    "no-trade_hash_chain": true,
+    "no-trade_outcome_from_acts": true,
+    "no-trade_provenance": true,
+    "no-trade_replay_identical": true,
+    "real_ledger_untouched": true,
+    "recovery_replays_identically": true,
+    "recovery_rerun_completes": true,
+    "reference-trades_four_descriptions": true,
+    "reference-trades_hash_chain": true,
+    "reference-trades_outcome_from_acts": true,
+    "reference-trades_provenance": true,
+    "reference-trades_replay_identical": true
+  },
+  "experimental_episodes": 0,
+  "frozen_files_match": true,
+  "gm_v2_declared_source_count": 10,
+  "gm_v2_declared_source_hashes_match": true,
+  "matches_2026_11_04_state_sequences": true,
+  "provider_calls": 0,
+  "source_sha256": {
+    "scripts/dry_run.py": "6d0791f0d41d0edbca66eca3d77607dafdfb247fcc835cec2bdd7325117c853a",
+    "src/seventh_seat/rehearsal.py": "ab26ea483518cc5c9f974e86d63197a7f20667c91b9263d967b463055928ea06"
+  },
+  "state_sequence_sha256": {
+    "no-trade": "a64a1b5ae555ef4e3f845cccfc05a86067a1992af29cfdd1540a3d8934f8121b",
+    "reference-trades": "5a51e465acd9a0fd38a12667eeea698fc7288ba811247f9472be6c026babafb0"
+  },
+  "tests": {
+    "count": 94,
+    "passed": true,
+    "scope": "status review earlier on 2026-11-05; no code changed",
+    "warning": "one unclosed SQLite connection ResourceWarning"
+  }
+}
