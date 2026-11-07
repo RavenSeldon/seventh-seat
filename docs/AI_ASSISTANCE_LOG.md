@@ -57,3 +57,7 @@ Codex prepared a four-exhibit static interface, source-bound export and release 
 Codex verified all 96 episodes and 24 complete blocks, independently checked 1187 allocation arithmetic values, and reviewed the actual exhibit through 221 browser checks. It drafted the empirical interpretation, explicitly retaining unsupported primary hypotheses and the absence of structured reporting/holds, and rendered and inspected the eight-page official-template paper. Tables, audit and descriptive census reproduced exactly from the curated package. Following the author's explicit D-034 approval, Codex applied MIT/CC BY 4.0 notices and changed the authorized repository to public. The reviewed research package is prepared as a GitHub release; final sprint submission remains separate.
 
 The D-034 approved public release was published at 13:00 UTC on 7 November. Codex verified the public page, immutable release target and all seven assets through unauthenticated downloads and exact SHA-256 comparison. Private provider state and budget databases were excluded. Final Sunday submission remains outstanding.
+
+### 7 November — hosting preparation
+
+Claude prepared the `/seventh-seat/` blog blueprint, its installer and checks, and a receipt-verifying deploy script, reading the blog repository without editing it. No commit, push, deployment or submission.
