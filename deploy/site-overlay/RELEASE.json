@@ -1,11 +1,11 @@
 {
   "kind": "four-exhibit-local-release",
   "data_status": "experimental",
-  "commit": "a3d78b852162d731d6980cee28633f1bd9be2255",
+  "commit": "c4a42c12d02c8df3761930324fdd344f1b50860f",
   "working_tree_clean": false,
-  "total_bytes": 1254859,
+  "total_bytes": 1255462,
   "first_load": {
-    "bytes": 130256,
+    "bytes": 130859,
     "files": [
       "index.html",
       "app.js",
@@ -68,9 +68,9 @@
       "gzip": 6871
     },
     "index.html": {
-      "sha256": "60e30da3a7813b17469dda636451838b16071fdf683c4c750108735a7916f703",
-      "bytes": 12089,
-      "gzip": 4525
+      "sha256": "21e22273e00f062b47b368c388e26a07382f2917c62337a7f756a889b50791b2",
+      "bytes": 12692,
+      "gzip": 4823
     },
     "seven/index.html": {
       "sha256": "0dce5ca3fb9dabc44f1ff4137dfcf911bab089ec06630d2f9d4bbc05b812cc34",
@@ -105,5 +105,5 @@
   },
   "publication_status": "not-deployed",
   "exhibit_manifest_sha256": "ca6f2edf8fdf9223c3497502ff0a2da3eb186f5bf14b7912c9314c7cd4d452c2",
-  "total_bytes_excluding_self": 1250979
+  "total_bytes_excluding_self": 1251582
 }
