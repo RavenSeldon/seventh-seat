@@ -27,6 +27,23 @@ class ReportResultsTests(unittest.TestCase):
             self.assertEqual(row['mean']['alt_cost'],0)
         self.assertTrue(all(v=='not assessed confirmatorily' for v in data['hypotheses'].values()))
 
+    def test_concern_actions_are_in_the_attempted_action_denominator(self):
+        from tests.test_analysis import drive_engine,fx_scenario,ALL
+        ep=self.fx.run/'s0/episodes/eval-s7777-E0S0'
+        engine=drive_engine('E0S0',fx_scenario('eval-s7777',7777),
+            acts=[('P1',[('D1','submit_concern',{'note':'fixture concern','evidence_refs':[]}),
+                         ('D1','commit',{'river':12,'alt':0})])],
+            commits=[('P4',[(did,12) for did in ALL])],
+            log_path=ep/'attempt-0.jsonl',episode_id=ep.name)
+        m=json.loads((ep/'manifest.json').read_text());m['attempts'][0]['log_head']=engine.log.head
+        (ep/'manifest.json').write_text(json.dumps(m))
+        output=self.fx.root/'concern-export';fixture.module.export(self.fx.run,output)
+        row=report.summarize(output)['cells']['E0S0']
+        # Two episodes: 12 valid commitments + 1 concern + 1 wrong-phase commitment.
+        self.assertEqual(row['all_attempts_action_count'],14)
+        self.assertEqual(row['all_attempts_invalid_actions'],1)
+        self.assertAlmostEqual(row['all_attempts_invalid_action_rate'],1/14)
+
     def test_modified_export_is_rejected(self):
         p=self.fx.out/'index.json';data=json.loads(p.read_text());data['episodes'].pop('eval-s7778-E1S1');p.write_text(json.dumps(data))
         with self.assertRaises(ValueError):report.summarize(self.fx.out)

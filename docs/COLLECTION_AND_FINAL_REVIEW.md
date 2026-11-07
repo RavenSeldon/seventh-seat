@@ -33,6 +33,7 @@ Expected private directory: `runs/report-output-2026-11-06/`:
 
 - `curated-records/`: verified evaluation logs/manifests, lock, index, analysis and an export receipt. No provider caches, keys or budget database.
 - `report-tables.json` and `report-tables.md`: complete-block means/contrasts and explicitly scoped descriptive/all-attempt summaries.
+- `calibration-records/`: eight completed pilot episodes, declaration and result, independently reproducing the frozen decision; already curated locally by `scripts/export_calibration.py`.
 - `calibration-summary.json`: checked against the lock's calibration-result hash.
 - `private-cost-summary.json`: local accounting only; do not include in a public export by default.
 
@@ -64,10 +65,12 @@ The manuscript assembler has a `--layout-fixture` option that visibly labels syn
 ## Remaining finish line
 
 1. Verify completed collection and interpret the actual results, including nulls and limitations. Review every numeric claim against the regenerated bundle.
-2. Audit and curate the pilot declaration, result, manifests and attempt logs as well as the evaluation export so the calibration trace can be independently checked. The current automatic export includes evaluation records; the pilot summary alone is not the full pilot release.
+2. Pilot curation is complete locally: eight episodes reproduce the locked decision, with a hashed receipt. Verify both that receipt and the eventual evaluation export again before publication; neither is published yet.
 3. Resolve publication visibility/licence with the author only after the reviewed payload is concrete. Add actual accessible code/data links to the paper and test them.
 4. Render and inspect the final empirical DOCX/PDF, complete the runbook submission checklist and preserve hashes of the delivered artifacts.
-5. The observatory remains the pre-existing scripted shell. Experimental provenance export and the remaining exhibits are unfinished; do not label or deploy that shell as a completed experimental exhibit. Any eventual release must pass its data/provenance, browser and hosting-budget checks.
+5. `scripts/export_observatory.py` now prepares source-bound final snapshots, descriptive summaries and witness details from a completed curated evaluation export. Run it with `--run .../curated-records --output .../exhibit-data` after collection. Witness detail is the first complete scenario in locked order, never outcome-selected. The remaining exhibit interface and browser/hosting checks are unfinished; do not label or deploy the old scripted shell as experimental results.
 6. The author requested one final submission on Sunday. Do not claim submission or completion without the actual confirmation receipt.
 
 The existing prior-work inventory and history remain accurate. The author declined a separate pre-sprint boundary tag; none was created. Today's continuation and actual evaluation freeze are dated 6 November in Vancouver.
+
+Reporting correction R-001 is recorded in `REPORTING_CORRECTIONS.md`: concern submissions now count in the descriptive all-attempts action denominator. The finisher was refreshed to load it; scientific source hashes remain frozen. The offline suite now passes 162 tests.

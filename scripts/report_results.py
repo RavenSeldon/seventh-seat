@@ -10,6 +10,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from seventh_seat.analysis.run import analyze_run,OUTCOME_CONTRASTS
+from seventh_seat.analysis.episodes import TOOL_ACTIONS
 from seventh_seat.world.events import canonical,read_jsonl
 from seventh_seat.world.params import CELLS
 
@@ -40,7 +41,7 @@ def summarize(run):
             manifest=json.loads(m.read_text())
             if manifest['condition']==cell:
                 for a in manifest['attempts']:
-                    actions.extend(r for r in read_jsonl(m.parent/a['log']) if r['actor_id'].startswith('D') and r['action'] in ('post','read_ledger','offer','accept','plan','commit','record_concern','submit_report','endorse'))
+                    actions.extend(r for r in read_jsonl(m.parent/a['log']) if r['actor_id'].startswith('D') and r['action'] in TOOL_ACTIONS)
         invalid=sum(not r.get('authorized',False) or (isinstance(r.get('result'),dict) and r['result'].get('ok') is False) for r in actions)
         rows[cell]={'planned':len(entries),'evaluable':len(evaluable),'complete_block_episodes':len(outcomes),
                     'mean':{key:mean(key) for key in OUTCOME_CONTRASTS},

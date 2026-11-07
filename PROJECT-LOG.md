@@ -67,3 +67,7 @@ Added local curated export and manuscript-table commands with six focused regres
 ### 6 November — evaluation running and report layout ready
 
 The fixed pilot completed with 4/8 breaches at kappa 14; the predeclared rule accepted the initial setting. Evaluation was frozen at 2339497 (`prereg-frozen`) and began at 02:37 UTC on 7 November (19:37 Vancouver on 6 November). A separate offline finisher waits for validated completion and prepares private tables and a curated record bundle. The manuscript builder was checked on a clearly labelled synthetic layout fixture: five main pages plus two reference/appendix pages, all pages verified, eight clickable PDF links. Actual results still require final interpretation and render review.
+
+### 6 November — audited pilot export and exhibit data preparation
+
+All eight pilot episodes, their declaration and result were curated locally and reproduce the frozen evaluation decision without any paid calls. A new exhibit exporter verifies the evaluation export, binds final water snapshots to exact log/manifest/event hashes, retains missing episodes and selects the first complete locked scenario for witness detail. Synthetic fixtures cannot be labelled experimental. Three focused exhibit checks and the R-001 denominator regression bring the offline suite to 162 passing tests. R-001 is disclosed in `docs/REPORTING_CORRECTIONS.md`; the scientific freeze is unchanged. Collection continues; no final findings or publication are claimed.
