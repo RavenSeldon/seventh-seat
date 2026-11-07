@@ -1,0 +1,74 @@
+{
+  "data_status": "scripted-layout-fixture-not-research",
+  "pages": 7,
+  "main_pages": 5,
+  "all_v3_pages_visually_inspected": true,
+  "v4_comparison": {
+    "page-1.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "35064e4fec78d7357d59b6ea4d228f2211e29757ff68b64158301102bd6a12df"
+    },
+    "page-2.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "ade0304614fd254e0f091a311f0d88f58b6166df41231fc2039da4ea8e466c3d"
+    },
+    "page-3.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "ac23cc94229d7c07669708b7f655ff150bbe7bc3dccf044fb68c00decf4dee76"
+    },
+    "page-4.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "a9bc04facfc79cf58362705376700342ecf8df8dc7f80d2eecb6faf1e02f8263"
+    },
+    "page-5.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "66e8a5249e8f42ba0725dd9c85f405c6a561394a5f7a71327fcf4b24aabc4bf2"
+    },
+    "page-6.png": {
+      "pixel_identical_to_inspected_v3": false,
+      "sha256": "5fbece284a24a4ded0f8e83aa6399aef97e582bcb7efa5c91c2fe056ac198fa8"
+    },
+    "page-7.png": {
+      "pixel_identical_to_inspected_v3": true,
+      "sha256": "6a6d47d48be780e5b575a0b2a6ec1175a90adad7f77494d800b9569813333396"
+    }
+  },
+  "pdf_links_verified": 8,
+  "margin_verification": "72 pt top and bottom geometry retained; text bounds inspected with Poppler",
+  "template_package": "all parts except document.xml and its relationships byte-identical; original relationships retained",
+  "final_empirical_render_required": true,
+  "v4_changed_page_6_visually_inspected": true,
+  "all_final_pages_verified": true,
+  "latest_render": "layout-fixture/render-v5",
+  "v5_pages": {
+    "1": {
+      "sha256": "1e8d5e2efdf4061589a6927a563226ad5e5aa2cf58cf1918a8637163cd54ce16",
+      "verification": "visually inspected"
+    },
+    "2": {
+      "sha256": "ade0304614fd254e0f091a311f0d88f58b6166df41231fc2039da4ea8e466c3d",
+      "verification": "pixel-identical to previously inspected render"
+    },
+    "3": {
+      "sha256": "ac23cc94229d7c07669708b7f655ff150bbe7bc3dccf044fb68c00decf4dee76",
+      "verification": "pixel-identical to previously inspected render"
+    },
+    "4": {
+      "sha256": "67d69008088c5c25d0f235d8876ca5f713f556df3bc49edc9cf415db607074aa",
+      "verification": "visually inspected"
+    },
+    "5": {
+      "sha256": "66e8a5249e8f42ba0725dd9c85f405c6a561394a5f7a71327fcf4b24aabc4bf2",
+      "verification": "pixel-identical to previously inspected render"
+    },
+    "6": {
+      "sha256": "5fbece284a24a4ded0f8e83aa6399aef97e582bcb7efa5c91c2fe056ac198fa8",
+      "verification": "pixel-identical to previously inspected render"
+    },
+    "7": {
+      "sha256": "d1c8043d2e663dc063c73a96e6d212430e835a722369ddf8b5a0d23a3b1d5666",
+      "verification": "visually inspected"
+    }
+  },
+  "display_precision": "effect estimates and intervals use three significant figures; decisions use unrounded analysis"
+}

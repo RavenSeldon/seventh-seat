@@ -43,3 +43,7 @@
 ### 6 November — Codex report and export continuation
 
 Codex prepared the official-template draft, checked bounded primary-source citation claims, added local export and report-table commands, and verified a completed pilot by offline cached replay. Empirical results remain pending. Source documents and prior assistant contributions are preserved.
+
+### 6 November — attribution and final-report preparation
+
+The author identified the predecessor as Kimi 3.1; the report assistance statement includes Kimi alongside the already recorded Claude, ChatGPT and Codex contributions. Codex prepared a deterministic manuscript assembler and native Word tables, verified the seven-page synthetic layout, retained the official template package except documented content/relationship edits, and verified clickable citation links. Synthetic layout artifacts remain outside the research results and are not a submission.

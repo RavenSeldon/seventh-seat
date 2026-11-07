@@ -4,16 +4,16 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status (6 November):** the Friday interventions, hazard-world runner and analytics are implemented. The reviewed continuation passes 147 offline tests and all four founding-document hashes. GPT-6 Luna remains the qualified model. The live calibration pilot is running; **no evaluation results exist yet**.
+**Status (6 November):** calibration is complete: 4/8 baseline breaches at kappa 14, accepted without adjustment. The evaluation protocol is frozen at `prereg-frozen` (`2339497`), and the fixed 24-scenario, four-cell evaluation is running. All 158 offline tests pass. Final intervention findings are pending completed, verified analysis.
 
-Current handoff: [Friday continuation](docs/FRIDAY_CONTINUATION.md). The local controller keeps the Mac awake, preserves progress and enforces US$33 per provider with no top-up. It waits for the actual calibration result and reviewed evaluation lock before collecting evaluation data. The novelty statement is deliberately bounded; two unread manuscripts remain excluded from paper citations. Earlier design, world, harness, qualification and observatory work remain [declared pre-existing work](PREEXISTING_WORK.md).
+Current handoff: [collection and final review](docs/COLLECTION_AND_FINAL_REVIEW.md), with the [freeze record](docs/EVALUATION_FREEZE.md) and [continuation audit](docs/FRIDAY_CONTINUATION.md). Detached local workers keep the Mac awake, collect within US$33 per provider with no top-up, and prepare verified private report inputs after collection. They do not publish or submit. Earlier design, world, harness, qualification and observatory work remain [declared pre-existing work](PREEXISTING_WORK.md).
 
 ## Read in This Order
 
 1. [Charter](docs/00_CHARTER.md): the question, principles, scope, roles
 2. [Design freeze](docs/01_DESIGN_FREEZE.md): what is tested and how it can fail
 3. [World specification](docs/02_WORLD_SPEC.md): the watershed mechanics and event record
-4. [Preregistration (draft)](docs/03_PREREGISTRATION.md): estimands, calibration rule; freezes Friday
+4. [Preregistration](docs/03_PREREGISTRATION.md): estimands and calibration rule, now effective under the [freeze record](docs/EVALUATION_FREEZE.md)
 5. [Prior-art ledger](docs/04_PRIOR_ART_LEDGER.md): what is already known; what may be cited
 6. [Runbook](docs/05_RUNBOOK.md): schedule, gates, submission checklist
 7. [Exhibit specification](docs/06_EXHIBIT_SPEC.md) and [ethics and dual-use draft](docs/07_ETHICS_AND_DUAL_USE.md)
@@ -58,7 +58,7 @@ Reality before myth. What changes is the account, never the record. Behaviour, n
 
 ## Prior Work
 
-Declared in [PREEXISTING_WORK.md](PREEXISTING_WORK.md), including Thursday's citation review, outline and preparation documents. The planned boundary is `pre-sprint-2026-11-05`; **that tag has not yet been created**. Only actual sprint-period work is eligible as the weekend contribution; a tag does not change when work was done.
+Declared in [PREEXISTING_WORK.md](PREEXISTING_WORK.md), including the earlier citation review, outline and preparation documents. The author declined the proposed pre-sprint boundary tag; the retained history and inventory identify prior work. Only actual sprint-period work is eligible as the weekend contribution; a tag does not change when work was done.
 
 ## Hosting
 

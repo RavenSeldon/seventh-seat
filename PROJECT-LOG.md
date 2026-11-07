@@ -63,3 +63,7 @@ The author authorized a local commit. The proposed Thursday tag was withdrawn be
 ### 6 November — reproducible report preparation
 
 Added local curated export and manuscript-table commands with six focused regression checks. Replayed the first live pilot episode offline: event bytes identical, no additional paid calls. Retained official template and pending-results manuscript source; rechecked six cited primary abstracts. No evaluation lock or intervention result is claimed at this checkpoint.
+
+### 6 November — evaluation running and report layout ready
+
+The fixed pilot completed with 4/8 breaches at kappa 14; the predeclared rule accepted the initial setting. Evaluation was frozen at 2339497 (`prereg-frozen`) and began at 02:37 UTC on 7 November (19:37 Vancouver on 6 November). A separate offline finisher waits for validated completion and prepares private tables and a curated record bundle. The manuscript builder was checked on a clearly labelled synthetic layout fixture: five main pages plus two reference/appendix pages, all pages verified, eight clickable PDF links. Actual results still require final interpretation and render review.
