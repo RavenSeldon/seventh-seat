@@ -1,0 +1,77 @@
+{
+  "word/footnotes.xml": {
+    "bytes": 3456,
+    "sha256": "e21f31f12c9ccbf3d7ac6796f45b9d249511d82af4e453f73851b2fe5a1fe5be",
+    "mode": "preserve"
+  },
+  "word/_rels/footnotes.xml.rels": {
+    "bytes": 352,
+    "sha256": "74e1261f87d16d97b077f79c7af47a232a106bee6d0c260a02d3b011d8f5afb2",
+    "mode": "preserve"
+  },
+  "word/numbering.xml": {
+    "bytes": 11522,
+    "sha256": "17b764b10bafb4b1ad14856f3fdc493e2199bb6bbe5f9e60f74bcd5753f55795",
+    "mode": "preserve"
+  },
+  "word/settings.xml": {
+    "bytes": 2152,
+    "sha256": "26f2853fde05b88d4b0a9da0bb016d56a896901f60c9272dddf33c3f3fa61e4a",
+    "mode": "preserve"
+  },
+  "word/fontTable.xml": {
+    "bytes": 2045,
+    "sha256": "41f6cd0d5be3467d325ce77d754cf1432b548fab1f478eb0a3aeb896ba206752",
+    "mode": "preserve"
+  },
+  "word/_rels/fontTable.xml.rels": {
+    "bytes": 590,
+    "sha256": "9badf90f7dd1a2e38e307c16f6d2dd7eead417b354beb9154b1f3f51d8bea361",
+    "mode": "preserve"
+  },
+  "word/styles.xml": {
+    "bytes": 6573,
+    "sha256": "bd5c35372725d05aa702c1c55eec0a95138842e5d89450dd810da002caf6d66f",
+    "mode": "preserve"
+  },
+  "word/document.xml": {
+    "bytes": 85461,
+    "sha256": "a2b0f40f5d1b8a0dc03c1518e313bc9f1d63d0200252a824f4e1494470888a71",
+    "mode": "editable"
+  },
+  "word/_rels/document.xml.rels": {
+    "bytes": 1145,
+    "sha256": "a2f6cbe07732bdbe4d2be656ac1f274c0de4eb99db3e39bf11328ab355a84906",
+    "mode": "preserve"
+  },
+  "_rels/.rels": {
+    "bytes": 298,
+    "sha256": "1cc87395d4a229f21c23af406724de12dd9454071925f983e4b648a7b2be8cc5",
+    "mode": "preserve"
+  },
+  "word/fonts/OldStandardTT-regular.ttf": {
+    "bytes": 242700,
+    "sha256": "cf759c9617e8d9a74ccc3fcdc8670a25d1e016e6e4cf55c378e79f70bf45520b",
+    "mode": "preserve"
+  },
+  "word/theme/theme1.xml": {
+    "bytes": 7643,
+    "sha256": "b2295d3198893d2c03f5e584c749a15751b798aefdcd9bee2889f13903d68cb2",
+    "mode": "preserve"
+  },
+  "word/fonts/OldStandardTT-bold.ttf": {
+    "bytes": 260156,
+    "sha256": "fcd2340207253ef61a6a02694b9a43cd54159867518edfd4788b0916f1fc92a3",
+    "mode": "preserve"
+  },
+  "word/fonts/OldStandardTT-italic.ttf": {
+    "bytes": 267016,
+    "sha256": "722168792ee2dda09d07ab6443bdd4743469b86e3d233e5bf8e96e3951afb98c",
+    "mode": "preserve"
+  },
+  "[Content_Types].xml": {
+    "bytes": 1368,
+    "sha256": "d0ae6f5b5cdb2f37a7d642baadd62ae6cd7d35e4be63274f9f43388b6bc90df5",
+    "mode": "preserve"
+  }
+}

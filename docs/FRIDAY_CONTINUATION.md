@@ -36,3 +36,9 @@ The per-episode outputs include the inherited conservative AWC operationalizatio
 ## Actual finish line
 
 Verified analysis, a report in the official template, all reported numbers recomputable from curated released records, verified citation claims, prior-work/assistance disclosure, and the author's final submission receipt. Neither a pilot nor a passing test suite meets that finish line. Public export, publication/licence, and submission remain outstanding.
+
+## Report and export checkpoint
+
+One completed live pilot episode has replayed from the existing provider cache with a byte-identical event log and no transport or budget supplied; `experiments/live-pilot-replay-2026-11-06.json` records the digest. Six additional export/report checks cover reproducibility, missing blocks, credential-cache exclusion, tampering, symlink rejection and hand-computed table values.
+
+`scripts/export_research.py` creates a local allowlisted export only after the run writer has released its lock and every planned episode is accounted for. `scripts/report_results.py` verifies the export receipt, recomputes the analysis and writes manuscript tables. Neither command publishes anything. The official-template manuscript source in `report/working/` remains explicitly pending empirical results.

@@ -1,0 +1,34 @@
+{
+  "read_local_date": "2026-11-06",
+  "verification_scope": "author/title/version and bounded abstract claims; no full-paper statistical claims in manuscript",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2404.16698v4",
+      "status": "verified-primary-abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2106.06060",
+      "status": "verified-primary-abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.17085v3",
+      "status": "verified-primary-abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04170v1",
+      "status": "verified-primary-abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.07680v1",
+      "status": "verified-primary-abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.22526v2",
+      "status": "verified-primary-abstract"
+    }
+  ],
+  "notes": [
+    "2106.06060v5 direct fetch missed cache; unversioned landing page explicitly identified v5, revised 21 October 2026.",
+    "Institutional Creeping Trap summary and unread OpenReview follow-ups are distinguished in the prior-art ledger."
+  ]
+}

@@ -59,3 +59,7 @@ Inherited uncommitted Friday interventions, runner and analytics were preserved 
 A live eight-seed calibration pilot is now running. Its data is private and excluded from evaluation. No evaluation lock or evaluation result yet. Caps: US$33/provider, US$66 overall, US$20 qualification/pilot including historical spend. `runs/controller-status.json` records unattended progress. The controller waits for reviewed gates and the `prereg-frozen` tag before evaluation. Current handoff: `docs/FRIDAY_CONTINUATION.md`.
 
 The author authorized a local commit. The proposed Thursday tag was withdrawn before creation. Historical pre-sprint disclosure is retained; this continuation is dated today. No push, deployment or submission occurred.
+
+### 6 November — reproducible report preparation
+
+Added local curated export and manuscript-table commands with six focused regression checks. Replayed the first live pilot episode offline: event bytes identical, no additional paid calls. Retained official template and pending-results manuscript source; rechecked six cited primary abstracts. No evaluation lock or intervention result is claimed at this checkpoint.

@@ -39,3 +39,7 @@
 
 
 | 2026-11-06 | OpenAI Codex | Continued the inherited Friday intervention, runner and analysis implementation; preserved a hashed baseline; reviewed recovery, routing and outcome integrity; added regression tests, declared calibration/lock/evaluation orchestration, historical-spend migration and private-data ignores; narrowed novelty positioning using a primary institutional summary; prepared unattended local execution | Inherited work is not claimed as authored here. Paid work and empirical findings, if any, are recorded separately in the execution handoff. No push, deployment or submission authorized by this log |
+
+### 6 November — Codex report and export continuation
+
+Codex prepared the official-template draft, checked bounded primary-source citation claims, added local export and report-table commands, and verified a completed pilot by offline cached replay. Empirical results remain pending. Source documents and prior assistant contributions are preserved.
