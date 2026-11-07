@@ -1,0 +1,108 @@
+{
+  "status": "live_verified",
+  "checked_at_utc": "2026-11-07T19:39:03.963327+00:00",
+  "site": "https://benamuwo.me/seventh-seat/",
+  "source_commit": "ec5e01a130801b226c07de14cc7f01fbf8ee8e4f",
+  "release_manifest_sha256": "0c743531153e842d8f30580e7265fb735b5d058bc0c8c7650c8144f3284cdd2f",
+  "files": [
+    {
+      "path": "app.js",
+      "sha256": "712cc427310547bc2998e73858804074230d2313304834c63364b42dbc7b30d4",
+      "http_status": 200
+    },
+    {
+      "path": "data/EXHIBIT.json",
+      "sha256": "53ab8db1beee335016b23d8ea3eceb6fad3f7f32f4cb6f58bbf8bd644fea32c5",
+      "http_status": 200
+    },
+    {
+      "path": "data/manifest.json",
+      "sha256": "ca6f2edf8fdf9223c3497502ff0a2da3eb186f5bf14b7912c9314c7cd4d452c2",
+      "http_status": 200
+    },
+    {
+      "path": "data/snapshots.json",
+      "sha256": "04f7ce8750d9abeea6aee083b27183aff0afb45779a1dd00588c1e2799d31e2d",
+      "http_status": 200
+    },
+    {
+      "path": "data/source-table.json",
+      "sha256": "4065482eecf1ecdc198db8cc5c0e503ee302a3b7e163b7dde1508c180aecaff3",
+      "http_status": 200
+    },
+    {
+      "path": "data/summary.json",
+      "sha256": "2a4b515503182d46cd52c3fca8cd956e4ea64ff3bd1981559a5f39d993ab5212",
+      "http_status": 200
+    },
+    {
+      "path": "data/witness/eval-s2000-E0S0.json",
+      "sha256": "6a830d1cd7198480b7978274904424c0d66ec9fe230aab7762f2f63b8cea012d",
+      "http_status": 200
+    },
+    {
+      "path": "data/witness/eval-s2000-E0S1.json",
+      "sha256": "9f570cce9b3636064f65133029d156c6f0c33367a4fcaa2ffe95388c5bd431e7",
+      "http_status": 200
+    },
+    {
+      "path": "data/witness/eval-s2000-E1S0.json",
+      "sha256": "94e132f6e6a90d24850bb17f4d8445a358800f7c2786136aa835c81236365da0",
+      "http_status": 200
+    },
+    {
+      "path": "data/witness/eval-s2000-E1S1.json",
+      "sha256": "321664208d40d4696be6aa940959aca73b5ed69aee4a3a81d7e5c23672cd6220",
+      "http_status": 200
+    },
+    {
+      "path": "index.html",
+      "sha256": "a075e1c00d44296a09f209ae9ab988fcf3e86e6c2e1bc9ae953f1fabc05d48ed",
+      "http_status": 200
+    },
+    {
+      "path": "paper/index.html",
+      "sha256": "061642bf43ecb3944477addc290a4e2d3a4f087ad6df39d6311feccece9dab7d",
+      "http_status": 200
+    },
+    {
+      "path": "seven/index.html",
+      "sha256": "0dce5ca3fb9dabc44f1ff4137dfcf911bab089ec06630d2f9d4bbc05b812cc34",
+      "http_status": 200
+    },
+    {
+      "path": "seven/vendor/three-0.160.0/LICENSE.txt",
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "http_status": 200
+    },
+    {
+      "path": "seven/vendor/three-0.160.0/build/three.module.min.js",
+      "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+      "http_status": 200
+    },
+    {
+      "path": "seven/vendor/three-0.160.0/examples/jsm/controls/OrbitControls.js",
+      "sha256": "5a44a9e86a2a0fb11933eed69bc2cd33c76a496854c1aed6ed776efa87d7b064",
+      "http_status": 200
+    },
+    {
+      "path": "seven/vendor/three-0.160.0/examples/jsm/environments/RoomEnvironment.js",
+      "sha256": "e21f41b7ef2016f2984a5d27850b42dffa797a6a194a138e288b06576d765a7b",
+      "http_status": 200
+    },
+    {
+      "path": "seven/vendor/three-0.160.0/examples/jsm/renderers/CSS2DRenderer.js",
+      "sha256": "a4f0f79184c043f6b9d2654d8ba051e49a7d631d34e8f437c1804798a68c379f",
+      "http_status": 200
+    }
+  ],
+  "routes": {
+    "/seventh-seat/": 200,
+    "/seventh-seat/paper/": 200,
+    "/seventh-seat/seven/": 200,
+    "/": 200,
+    "/first-notice/": 200,
+    "/schrodingers_civ/": 200
+  },
+  "html_security_policies_match": true
+}
