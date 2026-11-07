@@ -16,6 +16,29 @@ from seventh_seat.agents.providers import SDKTransport
 from seventh_seat.agents.evalrunner import _bind
 
 
+def verify_frozen_checkout(root, plan, hashes):
+    """Allow later documentation checkpoints; freeze scientific bytes and gates."""
+    def git(*args):
+        return subprocess.check_output(['git', *args], cwd=root)
+    tag=git('rev-parse','prereg-frozen^{commit}').decode().strip()
+    if subprocess.run(['git','merge-base','--is-ancestor',tag,'HEAD'],cwd=root,
+                      stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode:
+        raise ValueError('HEAD must descend from the frozen checkpoint')
+    if hashes != plan['source_hashes']:
+        raise ValueError('source hashes differ from lock')
+    import hashlib
+    for name,digest in hashes.items():
+        if hashlib.sha256(git('show',f'{tag}:{name}')).hexdigest()!=digest:
+            raise ValueError('tagged source differs from lock')
+    tagged_plan=json.loads(git('show',f'{tag}:experiments/evaluation-lock.json'))
+    if tagged_plan!=plan:
+        raise ValueError('lock differs from frozen checkpoint')
+    gatefile=root/'experiments/research-gates.json'
+    if git('show',f'{tag}:experiments/research-gates.json')!=gatefile.read_bytes():
+        raise ValueError('gate record differs from frozen checkpoint')
+    return json.loads(gatefile.read_text())
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=('declare-pilot', 'pilot', 'prepare-lock', 'evaluate'))
@@ -41,23 +64,10 @@ def main(argv=None):
             declare_pilot(args.pilot)
         else:
             plan = json.loads(args.lock.read_text())
-            tag = subprocess.check_output(['git','rev-parse','prereg-frozen^{commit}'], cwd=ROOT, text=True).strip()
-            head = subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip()
-            if tag != head:
-                raise ValueError('prereg-frozen must identify the current reviewed HEAD')
-            if source_hashes() != plan['source_hashes']:
-                raise ValueError('source hashes differ from lock')
-            # Sources must match the tagged tree too; an uncommitted working tree
-            # cannot smuggle a different instrument under a valid tag.
-            for name in plan['source_hashes']:
-                import hashlib
-                data = subprocess.check_output(['git','show',f'{tag}:{name}'], cwd=ROOT)
-                if hashlib.sha256(data).hexdigest() != plan['source_hashes'][name]:
-                    raise ValueError('tagged source differs from lock')
+            gates = verify_frozen_checkout(ROOT, plan, source_hashes())
             check = evaluation_plan(args.pilot, plan['protocol_commit'])
             if check != plan:
                 raise ValueError('lock no longer matches verified pilot')
-            gates = json.loads((ROOT/'experiments/research-gates.json').read_text())
             required = ['G0','G1','G2','G3','G3b','G4','G5','G6','G7','G8','G9','G10','G11','GM']
             if any(gates.get(g) != 'pass' for g in required):
                 raise ValueError('required research gates remain open')
