@@ -88,3 +88,5 @@ The reviewed experimental exhibit (`runs/report-output-2026-11-06/exhibit-review
 3. **Look.** Open `https://benamuwo.me/seventh-seat/` on desktop and phone.
 
 `tests/test_blog_blueprint.py` checks the blueprint against the blog's CSP hook and endpoint-alias loop; it runs where Flask is installed and is skipped otherwise. Serving the actual reviewed build through it returned all 17 files byte-identical to the receipt, with the release CSP on both HTML pages. `scripts/deploy.sh` remains the older template for the scripted shell and is not used for this release.
+
+No SSH key? `deploy/droplet_install.sh` does the blog update and the exhibit install from the DigitalOcean web console as root, fetching the public release and verifying its SHA-256 and every file against `RELEASE.json`.
