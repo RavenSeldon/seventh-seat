@@ -94,3 +94,16 @@ No SSH key? `deploy/droplet_install.sh` does the blog update and the exhibit ins
 ### Site palette (7 November)
 
 The hosted hub uses the benamuwo.me house palette (cyan river and districts, lavender seventh seat, gold verified numbers, rose harm). Only `index.html` and `app.js` changed; data, diorama and CSP are byte-identical to the reviewed build. `deploy/site-overlay/` holds those two files and their new `RELEASE.json`; `deploy/droplet_install.sh` lays them over the verified public archive and checks every file against that receipt. The archived research release is unchanged. Browser suite on the restyled build: run `node observatory/research/check_research.mjs --release runs/report-output-2026-11-06/site-copy-2026-11-07 --experimental` on the Mac.
+
+## Reviewed reading edition (7 November)
+
+The presentation checkpoint adds a complete paper reader and preserves every experimental data and diorama byte. Its standalone static installer is `deploy/install_reading.sh`; use it for the `reading-2026-11-07` package instead of the original three-file overlay installer. It checks the pinned archive SHA-256 and each receipt entry, confirms scientific data/diorama continuity, switches atomically, verifies all live bytes/CSPs and the three publication routes, and restores the prior release if health checks fail. It neither pulls the blog nor restarts any service. Prior releases are retained.
+
+Run from the existing server console after the reading release is published:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/RavenSeldon/seventh-seat/reading-2026-11-07/deploy/install_reading.sh -o /tmp/seventh-seat-reading-install.sh
+bash /tmp/seventh-seat-reading-install.sh
+```
+
+See `docs/READING_EDITION.md` and `experiments/reading-edition-2026-11-07.json` for scope and verification. This documented command is not evidence of a completed deployment.

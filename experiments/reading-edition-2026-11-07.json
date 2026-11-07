@@ -1,0 +1,31 @@
+{
+  "kind": "presentation-reading-edition",
+  "source_commit": "ec5e01a130801b226c07de14cc7f01fbf8ee8e4f",
+  "original_research_release": "research-2026-11-07",
+  "manuscript_sha256": "e98928b74faab5b257e14e0887908ed01e264c16b0f4521f5daceb61b785a74e",
+  "scientific_change": false,
+  "deployment_status": "not-deployed",
+  "verification": {
+    "browser_checks": 230,
+    "python_tests_passed": 169,
+    "optional_flask_tests_skipped": 7,
+    "source_items_preserved": 117,
+    "pdf_pages": 9,
+    "locked_source_hashes_matched": 32,
+    "data_and_diorama_unchanged": true
+  },
+  "assets": {
+    "manuscript.json": {
+      "bytes": 25017,
+      "sha256": "e98928b74faab5b257e14e0887908ed01e264c16b0f4521f5daceb61b785a74e"
+    },
+    "seventh-seat-reading-site.zip": {
+      "bytes": 286829,
+      "sha256": "ecfbbec81b719c0621295b2205e40cd22af5279dccdf3017ed298afced1a1af2"
+    },
+    "seventh-seat-reading.pdf": {
+      "bytes": 86503,
+      "sha256": "1a48d319c836e9e1f7962fe9e4ed29a336d0ddbc6bc944c5163bea4c2a068d58"
+    }
+  }
+}
