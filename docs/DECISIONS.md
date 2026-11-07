@@ -125,3 +125,7 @@ Administrative confirmation, 5 November: the author confirmed both the required 
 - User authorized keeping the Mac awake and a low-cost unattended local collector. Execution remains subject to the protocol lock and recorded gates. No cloud service or top-up is introduced.
 
 - Tag disposition: the author first approved a local commit and pre-sprint tag, then withdrew the Thursday-tag request before creation. No Thursday tag is created. The 6 November continuation is committed with its actual date, while prior work remains disclosed from the existing inventory and history.
+
+### D-033 · 6 November — actual evaluation freeze
+
+The accepted eight-episode pilot (4/8 breaches at kappa 14) fixes the 24-scenario evaluation under the existing rule. The freeze metadata is recorded in `EVALUATION_FREEZE.md` and tagged JSON files; the pilot-hashed preregistration and ERRATA remain byte-identical. This administrative record-location deviation is explicit. The author has authorized continuation, local commits and reviewed pushes to RavenSeldon/seventh-seat. No pre-sprint boundary tag is created and no historical disclosure is rewritten.
