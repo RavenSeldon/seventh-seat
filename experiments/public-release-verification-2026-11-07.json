@@ -1,0 +1,54 @@
+{
+  "verified_utc": "2026-11-07T13:00:33.934416+00:00",
+  "method": "Unauthenticated HTTPS reads of public repository, release, tag, page and every asset",
+  "repository_private": false,
+  "release_url": "https://github.com/RavenSeldon/seventh-seat/releases/tag/research-2026-11-07",
+  "published_at": "2026-11-07T13:00:02Z",
+  "tag_commit": "4e8bf51faef20407f3e73e6716ba94ef64e5319a",
+  "assets": [
+    {
+      "name": "experimental-shortfall.pdf",
+      "sha256": "7a7d3644b07c9001e472af1b7c20b33e2fb64854cdf8ff7828b0f7403a17f449",
+      "bytes": 24718,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/experimental-shortfall.pdf"
+    },
+    {
+      "name": "experimental-shortfall.png",
+      "sha256": "a33646c867ff80e831989894075467d6feb07969c69df240c0f1ed7a5a4fcb01",
+      "bytes": 160500,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/experimental-shortfall.png"
+    },
+    {
+      "name": "release-receipt.json",
+      "sha256": "3b50670840679df642adeae42648789e6614f128be791a2d1647937615e06570",
+      "bytes": 922,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/release-receipt.json"
+    },
+    {
+      "name": "seventh-seat-research-2026-11-07.zip",
+      "sha256": "a1887b626dc57d1e475e268fe6c16d00e8739f49e3a1e3e19eea3930e221f04a",
+      "bytes": 4679359,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/seventh-seat-research-2026-11-07.zip"
+    },
+    {
+      "name": "seventh-seat.docx",
+      "sha256": "207e397b2b12cbc950840e19235894d2b0d46bd87c662919d93ff15679dcaa8c",
+      "bytes": 309295,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/seventh-seat.docx"
+    },
+    {
+      "name": "seventh-seat.pdf",
+      "sha256": "ddcd25450950d5a1206a00128b513f0830fd6c9f217534dcecea1b6ccc5b19f1",
+      "bytes": 123922,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/seventh-seat.pdf"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "sha256": "2d2a97227caa8d015155ef0ffb2ca39908efc37f0b3c5236251a21def48a8630",
+      "bytes": 456,
+      "url": "https://github.com/RavenSeldon/seventh-seat/releases/download/research-2026-11-07/SHA256SUMS.txt"
+    }
+  ],
+  "status": "all_public_downloads_match",
+  "submission": "not submitted"
+}

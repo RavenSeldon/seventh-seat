@@ -1,6 +1,6 @@
 # Collection and final review
 
-Updated 7 November 2026. Collection and empirical review are complete; final sprint submission remains outstanding.
+Updated 7 November 2026. Collection, empirical review and the author-approved public research release are complete. Final Sunday sprint submission remains outstanding. Historical preparation notes below are retained for provenance.
 
 ## Where the work lives
 
@@ -99,3 +99,13 @@ The first empirical paper, process census, scientific figure and proposed public
 ## Author-approved release prepared
 
 D-034 resolves publication and licensing. Repository visibility is PUBLIC. The final reviewed manuscript is report/final/manuscript.json; PDF, DOCX and the complete curated package are prepared for release tag research-2026-11-07. Paper: 194 abstract words, six main pages, eight total; all pages reviewed. Exact tables, allocation audit and event census reproduced from the packaged source and records. Confirm the public asset receipt before treating release upload as complete. Never confuse publication with the separately retained Sunday submission decision.
+
+## Published and verified 7 November 13:00 UTC
+
+Public release: https://github.com/RavenSeldon/seventh-seat/releases/tag/research-2026-11-07. Its immutable tag points to 4e8bf51faef20407f3e73e6716ba94ef64e5319a. Repository visibility, release page, tag and all seven assets were verified by unauthenticated HTTPS reads; every downloaded hash matches the local approved payload. The receipt is experiments/public-release-verification-2026-11-07.json.
+
+The archive contains 435 payload files and is 4679359 bytes; its SHA-256 is a1887b626dc57d1e475e268fe6c16d00e8739f49e3a1e3e19eea3930e221f04a. The final PDF is 123922 bytes with SHA-256 ddcd25450950d5a1206a00128b513f0830fd6c9f217534dcecea1b6ccc5b19f1. Updated public links/licence wording are the only substantive changes from the reviewed candidate; scientific records, abstract, results, discussion and all numeric tables are unchanged.
+
+Collector, finisher and bounded review caffeinate have exited. No more model calls, collection, top-ups or awake assertion are needed. Private source records and submission draft remain locally backed up under runs/publication-2026-11-07/ (ignored by Git); public assets are also durably available in the release.
+
+Remaining work: the author requested one final submission on Sunday. The private form draft now contains the final abstract, exact PDF/hash and public links. Review final form choices/terms with the author, submit once on the requested day, then verify the actual confirmation and PDF receipt. Do not equate this public release with submission or claim a receipt that has not arrived. No blog deployment was performed.
