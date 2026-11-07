@@ -74,3 +74,7 @@ Identical to First Notice: point `current` at a previous release with an atomic 
 | Whole release (8 files) | 898,420 B | |
 
 No font, model or backend requests. Before publication: rebuild from the final commit, and verify manifest-to-log provenance for any experimental snapshot.
+
+## Four-exhibit candidate (7 November; not deployed)
+
+`scripts/build_research_release.py --data EXHIBIT_DATA --output NEW_DIRECTORY` builds the research hub plus a nested `seven/` diorama, using verified exports rather than the old shell fixtures. See `observatory/research/README.md`. It preserves the same 15 MB whole-release and 1.5 MB first-load caps, counts the release manifest itself, and vendors the pinned Three.js files. Use the candidate's single CSP for both HTML pages. Experimental JSON under `data/` must be revalidated on release changes (do not apply the old immutable `fixtures/` caching rule to unversioned data). Before any deployment, inspect actual records in the release, run its browser checks with `--experimental`, review the concrete payload and obtain the author's publication/deployment decision. The earlier shell deployment commands do not automatically select this new candidate.

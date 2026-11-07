@@ -29,8 +29,36 @@ def write(path,data):
     os.replace(temp,path)
 
 
+def prepare_exhibits(curated,output):
+    """Build once, or verify a completed local build on resumption. No publishing."""
+    from export_observatory import export as export_exhibits
+    from build_research_release import build
+    if json.loads((curated/'index.json').read_text()).get('data_status')!='experimental':
+        raise ValueError('unattended exhibit preparation requires experimental records')
+    data=output/'exhibit-data';release=output/'exhibit-review'
+    if not data.exists():export_exhibits(curated,data)
+    source_manifest=json.loads((data/'manifest.json').read_text())
+    if source_manifest['source_export_receipt_sha256']!=hashlib.sha256((curated/'EXPORT.json').read_bytes()).hexdigest():
+        raise ValueError('existing exhibit data belongs to another curated export')
+    if not release.exists():
+        build(data,release,ROOT/'observatory/diorama/node_modules/three')
+    # A failed partial build has no receipt and cannot be treated as ready.
+    receipt=json.loads((release/'RELEASE.json').read_text())
+    exhibit=json.loads((data/'EXHIBIT.json').read_text())
+    if receipt.get('data_status')!='experimental' or receipt.get('exhibit_manifest_sha256')!=exhibit['manifest_sha256']:
+        raise ValueError('existing exhibit release differs from its source')
+    for base,files in ((data,exhibit['files']),(release,receipt['files'])):
+        for name,details in files.items():
+            candidate=base/name
+            if candidate.is_symlink() or base.resolve() not in candidate.resolve().parents:
+                raise ValueError('unsafe resumed exhibit path')
+            if hashlib.sha256(candidate.read_bytes()).hexdigest()!=details['sha256']:
+                raise ValueError('existing exhibit file differs from its receipt')
+    return release
+
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--wait',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--wait',action='store_true');p.add_argument('--exhibits',action='store_true',help='also prepare the private experimental exhibit release');args=p.parse_args()
     runs=ROOT/'runs';status=runs/'report-output-status.json'
     def state(value,**details):write(status,{'state':value,'pid':os.getpid(),'updated_utc':datetime.now(timezone.utc).isoformat(),**details})
     with (runs/'report-output.lock').open('a') as lease:
@@ -65,8 +93,13 @@ def main():
                 totals=[{'provider':provider,'status':charge_status,'requests':n,'accounted_usd':cost/1e9} for provider,charge_status,n,cost in db.execute('select provider,status,count(*),sum(coalesce(actual,reserved)) from charges group by provider,status')]
             finally:db.close()
             write(output/'private-cost-summary.json',{'basis':'published-rate usage estimates and conservative unresolved reservations; not a provider invoice','totals':totals})
+            exhibit_release=None
+            if args.exhibits:
+                state('building_exhibit_review_copy')
+                exhibit_release=prepare_exhibits(curated,output)
             state('report_inputs_ready',output=str(output),complete_scenarios=data['complete_scenarios'],evaluable_episodes=data['evaluable_episodes'],
-                  review_remaining=['manuscript interpretation and final layout','calibration-record release audit','author publication and submission'])
+                  exhibit_release=str(exhibit_release) if exhibit_release else None,
+                  review_remaining=['manuscript interpretation and final layout','experimental exhibit data and browser review','author publication and submission'])
             return 0
         except Exception as exc:
             state('stopped',reason='report input verification failed',exception_type=type(exc).__name__)

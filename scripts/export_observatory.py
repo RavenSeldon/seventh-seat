@@ -99,7 +99,10 @@ def export(run,output,*,fixture=False):
                       'Reading evidence does not demonstrate understanding. The ladder and AWC do not identify causes.',
                       'AWC uses the disclosed conservative phase-end proxy and does not fully capture extra replan opportunities.',
                       'All snapshots are final recorded states. Matched reruns are not counterfactuals.']}
-    source_table=[['Final water values','season_executed.result and episode_start.args.scenario; event hashes in manifest.json'],
+    source_table=[['Seat ring and positions','Metaphor only; simultaneous shared commons, no ordering or power encoded'],
+                  ['Seventh seat fill height','max(0, minimum_required_flow - downstream_flow) / minimum_required_flow; zero when minimum is zero'],
+                  ['Allocation bars','Exact final withdrawals and downstream flow; common zero-to-inflow linear scale within each pair'],
+                  ['Final water values','season_executed.result and episode_start.args.scenario; event hashes in manifest.json'],
                   ['Effect estimates and intervals','Frozen analysis contrasts; 10000 complete-scenario bootstrap resamples'],
                   ['Mean shortfall and interval','Same complete-block shortfall values; descriptive mean bootstrap, locked seed/resample count'],
                   ['Ladder','Frozen descriptive first_failed_stage counts over all evaluable episodes; no-hazard episodes labelled separately'],
