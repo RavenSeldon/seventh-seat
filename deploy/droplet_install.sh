@@ -34,24 +34,33 @@ say "2/3 Installing the reviewed exhibit"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 if [[ -n "${SEVENTH_SEAT_ZIP_FILE:-}" ]]; then cp "$SEVENTH_SEAT_ZIP_FILE" "$TMP/r.zip"; else curl -fsSL "$ZIP_URL" -o "$TMP/r.zip"; fi
 echo "$ZIP_SHA  $TMP/r.zip" | sha256sum -c --quiet - || die "downloaded release does not match its published SHA-256"
-STAMP="$(date -u +%Y%m%dT%H%M%SZ)-research-2026-11-07"
+STAMP="$(date -u +%Y%m%dT%H%M%SZ)-site"
 DEST="$BASE/releases/$STAMP/seventh-seat"
-python3 - "$TMP/r.zip" "$DEST" <<'PY'
+OVERLAY_URL="https://raw.githubusercontent.com/RavenSeldon/seventh-seat/main/deploy/site-overlay"
+mkdir -p "$TMP/overlay"
+for f in index.html app.js RELEASE.json; do
+  if [[ -n "${SEVENTH_SEAT_OVERLAY_DIR:-}" ]]; then cp "$SEVENTH_SEAT_OVERLAY_DIR/$f" "$TMP/overlay/$f"
+  else curl -fsSL "$OVERLAY_URL/$f?$(date +%s)" -o "$TMP/overlay/$f" || die "could not fetch the site overlay ($f)"; fi
+done
+python3 - "$TMP/r.zip" "$DEST" "$TMP/overlay" <<'PY'
+# The public archive supplies the verified data, diorama and vendored library; the overlay supplies
+# the restyled hub (index.html, app.js) and its new RELEASE.json. Every final file must match that receipt.
 import hashlib, json, os, sys, zipfile
 from pathlib import Path
-z = zipfile.ZipFile(sys.argv[1]); dest = Path(sys.argv[2]); prefix = "seventh-seat-research/exhibit/"
-rel = json.loads(z.read(prefix + "RELEASE.json"))
+z = zipfile.ZipFile(sys.argv[1]); dest = Path(sys.argv[2]); overlay = Path(sys.argv[3]); prefix = "seventh-seat-research/exhibit/"
+files = {n[len(prefix):]: z.read(n) for n in z.namelist() if n.startswith(prefix) and not n.endswith("/")}
+for f in ("index.html", "app.js", "RELEASE.json"): files[f] = (overlay / f).read_bytes()
+rel = json.loads(files["RELEASE.json"])
 if rel.get("data_status") != "experimental": sys.exit("release is not the experimental exhibit")
-names = {n[len(prefix):] for n in z.namelist() if n.startswith(prefix) and not n.endswith("/")} - {"RELEASE.json"}
+names = set(files) - {"RELEASE.json"}
 if names != set(rel["files"]): sys.exit("exhibit files differ from the receipt")
 for name in sorted(names):
     if ".." in Path(name).parts or name.startswith("/"): sys.exit("unsafe path in archive")
-    b = z.read(prefix + name)
-    if hashlib.sha256(b).hexdigest() != rel["files"][name]["sha256"]: sys.exit(f"{name} does not match the receipt")
-for name in sorted(names | {"RELEASE.json"}):
-    p = dest / name; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(z.read(prefix + name)); os.chmod(p, 0o644)
+    if hashlib.sha256(files[name]).hexdigest() != rel["files"][name]["sha256"]: sys.exit(f"{name} does not match the receipt")
+for name, data in files.items():
+    p = dest / name; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(data); os.chmod(p, 0o644)
 for d in [dest, *[p for p in dest.rglob("*") if p.is_dir()]]: os.chmod(d, 0o755)
-print(f"verified and installed {len(names)} files + RELEASE.json")
+print(f"verified and installed {len(names)} files + RELEASE.json (archive data + restyled hub)")
 PY
 chmod 755 "$BASE" "$BASE/releases" "$BASE/releases/$STAMP"
 ln -sfn "releases/$STAMP" "$BASE/current.new" && mv -T "$BASE/current.new" "$BASE/current"

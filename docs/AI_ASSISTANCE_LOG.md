@@ -61,3 +61,5 @@ The D-034 approved public release was published at 13:00 UTC on 7 November. Code
 ### 7 November — hosting preparation
 
 Claude prepared the `/seventh-seat/` blog blueprint, its installer and checks, and a receipt-verifying deploy script, reading the blog repository without editing it. No commit, push, deployment or submission.
+
+Claude restyled the hosted hub to the house palette (presentation only; data, diorama and CSP unchanged).

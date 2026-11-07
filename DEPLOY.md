@@ -90,3 +90,7 @@ The reviewed experimental exhibit (`runs/report-output-2026-11-06/exhibit-review
 `tests/test_blog_blueprint.py` checks the blueprint against the blog's CSP hook and endpoint-alias loop; it runs where Flask is installed and is skipped otherwise. Serving the actual reviewed build through it returned all 17 files byte-identical to the receipt, with the release CSP on both HTML pages. `scripts/deploy.sh` remains the older template for the scripted shell and is not used for this release.
 
 No SSH key? `deploy/droplet_install.sh` does the blog update and the exhibit install from the DigitalOcean web console as root, fetching the public release and verifying its SHA-256 and every file against `RELEASE.json`.
+
+### Site palette (7 November)
+
+The hosted hub uses the benamuwo.me house palette (cyan river and districts, lavender seventh seat, gold verified numbers, rose harm). Only `index.html` and `app.js` changed; data, diorama and CSP are byte-identical to the reviewed build. `deploy/site-overlay/` holds those two files and their new `RELEASE.json`; `deploy/droplet_install.sh` lays them over the verified public archive and checks every file against that receipt. The archived research release is unchanged. Browser suite on the restyled build: run `node observatory/research/check_research.mjs --release runs/report-output-2026-11-06/site-palette-2026-11-07 --experimental` on the Mac.
