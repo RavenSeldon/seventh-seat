@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-07",
+  "status": "author-approved-publication-ready",
+  "source_commit": "8bacb060a87c3d7005ea3849576a9ab69f271d4e",
+  "abstract_words": 194,
+  "main_pages": 6,
+  "total_pages": 8,
+  "all_pages_visually_reviewed": true,
+  "template_parts_changed": [
+    "word/document.xml",
+    "word/_rels/document.xml.rels"
+  ],
+  "pdf_bytes": 123922,
+  "pdf_sha256": "ddcd25450950d5a1206a00128b513f0830fd6c9f217534dcecea1b6ccc5b19f1",
+  "docx_sha256": "207e397b2b12cbc950840e19235894d2b0d46bd87c662919d93ff15679dcaa8c",
+  "archive_reproduction": "report tables, independent audit and event census reproduced exactly from packaged source and records",
+  "publication": "D-034 author-approved; public release prepared",
+  "submission": "not submitted",
+  "changed_pages_reinspected": [
+    6,
+    7
+  ],
+  "unchanged_pages_pixel_identical": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8
+  ]
+}

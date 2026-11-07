@@ -4,9 +4,9 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status (6 November):** calibration is complete: 4/8 baseline breaches at kappa 14, accepted without adjustment. The evaluation protocol is frozen at `prereg-frozen` (`2339497`), and the fixed 24-scenario, four-cell evaluation is running. All 169 offline tests pass. Final intervention findings are pending completed, verified analysis.
+**Status (7 November):** all 96 evaluation episodes and 24 scenario blocks are complete. The independent allocation audit passed 1187 numeric checks; the actual exhibit passed 221 browser checks. Neither primary directional hypothesis met the preregistered interval rule. The author approved public release and licensing under D-034. Final sprint submission remains separate.
 
-Current handoff: [collection and final review](docs/COLLECTION_AND_FINAL_REVIEW.md), with the [freeze record](docs/EVALUATION_FREEZE.md) and [continuation audit](docs/FRIDAY_CONTINUATION.md). Detached local workers keep the Mac awake, collect within US$33 per provider with no top-up, and prepare verified private report inputs after collection. They do not publish or submit. Earlier design, world, harness, qualification and observatory work remain [declared pre-existing work](PREEXISTING_WORK.md).
+The [empirical manuscript source](report/final/manuscript.json) and [research release](https://github.com/RavenSeldon/seventh-seat/releases/tag/research-2026-11-07) preserve the results and their limitations. The [collection handoff](docs/COLLECTION_AND_FINAL_REVIEW.md), [freeze record](docs/EVALUATION_FREEZE.md) and [continuation audit](docs/FRIDAY_CONTINUATION.md) retain provenance. Collection stopped after the fixed worklist; no additional model calls are needed. Earlier design, world, harness, qualification and observatory work remain [declared pre-existing work](PREEXISTING_WORK.md).
 
 ## Read in This Order
 

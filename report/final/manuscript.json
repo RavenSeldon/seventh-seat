@@ -1,0 +1,225 @@
+{
+  "title": "The Seventh Seat",
+  "subtitle": "Evidence and escalation for an unrepresented downstream party",
+  "author": "Benjamin Amuwo",
+  "affiliation": "Independent researcher",
+  "abstract": "We examine whether verified evidence and direct escalation help six language-model district agents protect an unrepresented downstream community in a synthetic watershed. A scenario-blocked factorial compares a basic register with verified aggregate projections, and peer-mediated reporting with direct access to a fixed scripted supervisor. Downstream harm is designed into the incentives, although it is unnecessary for meeting legitimate demand. A predeclared eight-scenario pilot selected demand pressure 14; evaluation yielded 96 evaluable episodes and 24 complete four-cell scenarios. The primary outcome is downstream shortfall reconstructed from engine records. The evidence contrast was -0.667 [-1.58, +0.188] water units, and the reporting-route contrast was +0.625 [-0.167, +1.46]; brackets give scenario-bootstrap 95% intervals. Neither directional hypothesis met the preregistered support rule. The exploratory interaction was +0.5 [-1, +2]. All planned episodes completed, with no provider refusals; pilot observations are excluded. No structured concern or report was submitted, and no supervisor hold occurred. Thus the routing contrast concerns channel availability rather than an observed supervisory intervention. Process measures are descriptive and do not establish internal understanding. The findings characterize these institutional regimes in a deliberately limited world; they do not establish deployed safety or adequate representation of real communities.",
+  "sections": [
+    [
+      "1 Introduction",
+      [
+        "When agents coordinate on behalf of separate principals, the gains can be distributed among the participants while costs fall on someone outside the interaction. The relevant oversight question is therefore not only whether each agent follows its local instructions, but whether collective consequences become observable and whether an agent can bring them to an authority capable of responding.",
+        "The Seventh Seat examines that question in one deliberately constructed watershed. Six district agents share tradable water entitlements. A downstream community depends on a minimum flow but neither trades nor controls an agent. We compare verified projections of collective withdrawal with a basic register, and direct reporting with peer-mediated reporting, while holding the supervisor policy fixed. The study contributes a reproducible comparison of these complete policy regimes and a record-based description of protection opportunities. It does not claim to discover externalities, introduce the first absent-stakeholder simulation, or establish that a software reporting channel represents real stakeholders."
+      ]
+    ],
+    [
+      "2 Related Work",
+      [
+        "GovSim studies sustainable cooperation in societies of language-model agents sharing resources (Piatti et al., 2024). AI-driven externality pricing uses a policymaker to change market allocations and prices (Danassis et al., 2026). These precedents make collective resource use and governance established research subjects. Our intervention changes available evidence and reporting procedures rather than prices or enforced allocations.",
+        "Disclosure and whistleblowing likewise have precedents in individual agents and research swarms (Agrawal et al., 2026; Paglieri et al., 2026). Work on accountability layers motivates keeping independently generated records distinct from agent conclusions (Arslan, 2026). Process-oriented hazard analysis provides a system-level basis for tracing failures of protection (Rismani et al., 2026). Our ladder is a descriptive application of this framing, not a measure of internal understanding or a new hazard-analysis theory.",
+        "A primary institutional description of Creeping Trap also explicitly concerns extraction, nonacting bystanders and the visibility of their losses (ReignDragon Institute, n.d.). That summary establishes conceptual overlap; its underlying manuscript was inaccessible during this review. Accordingly, we make no priority claim for the combination tested here."
+      ]
+    ],
+    [
+      "3 Methods",
+      [
+        "Each episode represents one season with six fixed-identity districts and four decision phases. Seasonal river flow is 100 units and the downstream minimum is 30, leaving a safe withdrawal cap of 70. Districts have heterogeneous demand, minimum need, entitlements and budgets. Demand pressure is the excess of total district demand over the safe cap. Entitlements exceed total demand by six units. Alternative supply costs either two or five credits per unit, while river supply costs one credit. The cost stratum is fixed within a scenario and balanced across the evaluation scenarios.",
+        "A deterministic oracle checks safe feasibility and the designed incentive trade-off. The no-trade reference remains within the safe cap; a trade-enabled reference can breach it through mutually attractive trades. These are properties of the constructed world, not observations of model behaviour. The utility frontier is flat in the certified scenarios: downstream harm is unnecessary for meeting legitimate demand, although substituting alternative supply carries a credit cost.",
+        "Moves are simultaneous within each phase. Reads return the phase-start snapshot; queued writes resolve in a seeded order. Each district has three actions per phase. All four experimental cells offer the same nine tools: post, read ledger, offer, accept, plan, commit, submit concern, submit report and endorse. Tool names and schemas are shared. Only the report-routing sentence differs between reporting regimes. Agents have no file, shell or network tools; the harness alone contacts the model provider.",
+        "In E0, the ledger returns entitlements, executed trades, river flow and the downstream minimum. In E1 it adds a phase-stamped VERIFIED projection based on current plans and explicitly lists districts without a plan. Missing plans count as zero withdrawal, so early projections can understate risk. In S0, a report becomes a public proposal and reaches the supervisor after two other districts endorse it before execution. In S1, the report goes directly to the supervisor; endorsement remains available but inert. A proposal cannot receive endorsements in the phase in which it was created, because it is not yet visible to peers.",
+        "The same scripted supervisor processes reports at phase end in arrival order. It checks the current projection rather than relying on the report's wording. If a shortfall is projected and the single hold has not been used, it issues a qualitative warning and grants one replan round after the ordinary phases. The warning contains no numeric projection. It nevertheless discloses that a risk has been verified, creating a disclosed evidence crossover. The supervisor cannot change entitlements or force commitments. Unverified reports are recorded as false alerts; there is no additional private supervisor-to-reporter notification channel.",
+        "The selected configuration is GPT-6 Luna through the Responses API, with medium reasoning effort, no temperature setting and at most 4096 output tokens. Pre-experiment competence qualification selected the lower-cost candidate after both passed the disclosed gm-v2 tasks. Qualification does not prove optimal behaviour; Appendix B records the earlier failures and corrections.",
+        "Calibration follows a predeclared rule using eight fixed E0S0 scenarios, four in each cost stratum, beginning at demand pressure 14. A baseline breach fraction between 30% and 85% is accepted. Otherwise the procedure moves one adjacent level along 8, 10, 14, 18 and 22, with at most three changes, no revisiting and no replacement seeds. An incomplete eight-episode batch stops calibration. If no level qualifies, the last tested setting is retained and the factorial is interpreted descriptively. Every pilot seed from 1000 through 1099 is excluded from evaluation.",
+        "The evaluation plan contains 24 scenarios, seeds 2000 through 2023, each run once in all four cells. Cost strata are balanced and within-scenario cell order is deterministically randomized before evaluation. Calibration retained kappa 14; 24 scenarios ultimately formed complete evaluation blocks. The fixed collection stop is 8 November 2026 at 06:00 UTC; in-flight episodes may finish, while new blocks require a conservative reserve based on pilot timing. Persistent budget reservations enforce US$33 per provider, US$66 overall and US$20 for qualification and pilot, counting prior live charges.",
+        "The primary outcome is downstream shortfall: the downstream minimum minus residual river flow, truncated at zero. Secondary outcomes include breach, the fraction of legitimate demand fulfilled, unmet minimum need, alternative-supply cost, reports by route and verification status, phase latencies, refusals, truncations and invalid actions. Actual allocations are reconstructed from authorized actions using the engine's precedence of a commitment over a later provisional plan. Agent claims do not determine these quantities.",
+        "Evidence and reporting effects are computed within each complete four-cell scenario and then averaged across scenarios. The interaction is exploratory. Uncertainty uses 10000 scenario-level bootstrap resamples and percentile 95% intervals with a fixed seed. H1 and H2 require a negative interval excluding zero; both are reported together without a multiplicity correction. Refusal episodes remain included. Transient provider failures receive at most three request attempts and one episode rerun; a second episode failure is missing, and its whole scenario is omitted from factorial contrasts. Every failed attempt and incomplete block remains listed.",
+        "The witness ladder and actionable witness coverage are descriptive. A cited event must already have shown risk when a concern or report cites it. Observing evidence or submitting a concern does not demonstrate understanding. The inherited coverage calculation is conservative: it uses remaining attention at the phase-end hazard onset and ordinary-phase routing cutoffs, and does not fully capture opportunities created by a later replan round. It should be read as an operational proxy rather than a comprehensive measure of available agency."
+      ]
+    ],
+    [
+      "4 Results",
+      [
+        "Calibration followed the declared path: kappa 14: 4/8 breaches. The stopping decision was accepted. Evaluation produced 96 evaluable episodes from 96 planned episodes, with 24 complete scenario blocks used in contrasts. 0 incomplete blocks and 0 missing or unlaunched episodes are retained in the accounting.",
+        {
+          "table": [
+            [
+              "Cell",
+              "N",
+              "Mean shortfall",
+              "Breach",
+              "Demand fulfilled"
+            ],
+            [
+              "E0S0",
+              24,
+              "1.33",
+              "37.5%",
+              "99.0%"
+            ],
+            [
+              "E0S1",
+              24,
+              "1.71",
+              "41.7%",
+              "99.6%"
+            ],
+            [
+              "E1S0",
+              24,
+              "0.42",
+              "12.5%",
+              "98.7%"
+            ],
+            [
+              "E1S1",
+              24,
+              "1.29",
+              "29.2%",
+              "98.6%"
+            ]
+          ],
+          "widths": [
+            1400,
+            700,
+            2500,
+            2100,
+            2660
+          ],
+          "caption": "Table 1. Cell means use only complete scenario blocks. Shortfall is in water units; demand fulfilled is the fraction of legitimate demand met."
+        },
+        {
+          "table": [
+            [
+              "Contrast",
+              "Shortfall estimate [95% interval]"
+            ],
+            [
+              "Evidence E",
+              "-0.667 [-1.58, +0.188]"
+            ],
+            [
+              "Reporting route S",
+              "+0.625 [-0.167, +1.46]"
+            ],
+            [
+              "Interaction E x S",
+              "+0.5 [-1, +2]"
+            ]
+          ],
+          "widths": [
+            3300,
+            6060
+          ],
+          "caption": "Table 2. Within-scenario regime contrasts, averaged across 24 complete blocks, with 10000 scenario-bootstrap percentile 95% intervals. Negative values indicate less shortfall. The interaction is exploratory; decisions use unrounded intervals."
+        },
+        "H1 was not supported under the preregistered interval rule; H2 was not supported under the preregistered interval rule.",
+        "Zero shortfall occurred in 69.8% of all evaluable episodes. Mean shortfall among breaching episodes was 3.93 water units. Provider refusals appeared in 0 of 96 evaluable episodes; these episodes remain included. The preregistered refusal limitation flag was not triggered.",
+        "Secondary contrasts, route-specific report counts, phase latencies, all-attempt call and invalid-action rates, and missingness are provided in Appendix B and the recomputable table bundle. The witness ladder and AWC remain descriptive; no pattern in those measures is interpreted as a causal mediation result.",
+        "Across all 96 episodes, the event census contains no submit_concern or submit_report action and no supervisor hold. This refers to structured tool use, not the absence of discussion about downstream risk in ordinary posts. All episodes completed on their first episode attempt. Of 5648 recorded model calls, 3657 were categorized as valid action, 1987 as model abstention and four as invalid tool call; none were categorized as provider refusal or truncation."
+      ]
+    ],
+    [
+      "5 Discussion and Limitations",
+      [
+        "The evidence estimate favours less shortfall, but its interval includes zero; the reporting-route estimate points toward more shortfall and also includes zero. Neither meets the directional support rule. These results do not establish equivalence or show that evidence and reporting channels cannot help. E1S0 had the lowest observed cell mean, but selecting that cell after observing the outcomes would not establish an optimal institutional design.",
+        "No structured concern or report was submitted, so neither route activated the scripted supervisor. The reporting contrast therefore measures assignment to an available channel, not the effect of receiving a supervisor intervention. The absence of structured reports is compatible with several explanations, including tool-use preferences, timing constraints and limited actionable evidence; this experiment does not separate them. Future work should test those explanations with declared manipulations rather than interpret the descriptive ladder as a causal account.",
+        "The experiment identifies effects of assignment to complete policy regimes in one synthetic setting. Direct routing changes peer-action requirements as well as permission to report, and the qualitative hold changes information and adds an opportunity to revise allocations. These features belong to the tested regime; they prevent interpreting a contrast as a pure psychological effect of evidence or a cost-free removal of peer consent.",
+        "Other limits include one qualified configuration, a small number of independent scenarios, prompt dependence, the designed rather than discovered externality, and uncertainty in the exploratory interaction. Complete-block analysis can select against scenarios with infrastructure failures, although no block was excluded here. The experiment tests a scripted supervisor and a synthetic downstream shortfall, not human judgement, environmental welfare or legitimate political representation. The results cannot establish deployed safety. The trade-disabled diagnostic H4 was not collected. A useful extension would validate the opportunity measure for replan rounds and test whether these regime contrasts transfer to other configurations and environments."
+      ]
+    ],
+    [
+      "6 Conclusion",
+      [
+        "H1 was not supported under the preregistered interval rule; H2 was not supported under the preregistered interval rule. These measurements concern complete policy regimes with one qualified model configuration in a deliberately constructed synthetic world. They do not establish protection in deployed systems or adequate representation of real communities."
+      ]
+    ],
+    [
+      "Code and Data",
+      [
+        "Code and research records are available at https://github.com/RavenSeldon/seventh-seat and https://github.com/RavenSeldon/seventh-seat/releases/tag/research-2026-11-07. Original software is MIT licensed; the original paper, documentation and curated records are CC BY 4.0. Third-party material retains its own terms. The release contains all eight calibration and 96 evaluation episodes with hash receipts and offline reproduction instructions. The frozen scientific source checkpoint is f949dac1c6b17d6dba884e71f8302d12bf3cf651; tag prereg-frozen identifies the evaluation lock. Provider caches, credentials and private budget databases are excluded. The freeze record discloses the administrative placement of metadata."
+      ]
+    ],
+    [
+      "Author Contributions",
+      [
+        "Benjamin Amuwo directed the project and retains authority over research decisions and submission. The founding design, initial literature review, world engine, provider harness, qualification, scripted rehearsal and observatory shell were prepared before the sprint and are disclosed as pre-existing work. The Friday interventions, experimental orchestration, review corrections, pilot and subsequent research are recorded separately in the project history. AI assistance is described below."
+      ]
+    ],
+    [
+      "LLM Usage Statement",
+      [
+        "Claude, Kimi, ChatGPT and Codex assisted planning, review, implementation, testing and drafting; the assistance log records their contributions. Inherited Friday work was preserved and reviewed. Automated tests and record-based checks supply specific verification evidence, not independent replication by assistants. Benjamin Amuwo is responsible for the final interpretation, review and submission."
+      ]
+    ],
+    [
+      "References",
+      [
+        "Piatti, G., Jin, Z., Kleiman-Weiner, M., Schölkopf, B., Sachan, M., and Mihalcea, R. (2024). Cooperate or Collapse: Emergence of Sustainable Cooperation in a Society of LLM Agents. NeurIPS 2024; arXiv:2404.16698v4. https://arxiv.org/abs/2404.16698v4",
+        "Danassis, P., Filos-Ratsikas, A., Chen, H., Tambe, M., and Faltings, B. (2026). AI-driven Prices for Externalities and Sustainability in Production Markets. arXiv:2106.06060v5; first posted 2021. https://arxiv.org/abs/2106.06060v5",
+        "Agrawal, K., Xiao, F., Bergman, G., and Cooper Stickland, A. (2026). Why Do Language Model Agents Whistleblow? arXiv:2511.17085v3. https://arxiv.org/abs/2511.17085v3",
+        "Paglieri, D., Cross, L., Genewein, T., Leibo, J. Z., Tomasev, N., and Vezhnevets, A. S. (2026). A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms. arXiv:2609.04170v1. https://arxiv.org/abs/2609.04170v1",
+        "Arslan, P.-P. (2026). Audit Without Verification: When LLM Accountability Layers Relay Rather Than Check. arXiv:2609.07680v1. https://arxiv.org/abs/2609.07680v1",
+        "Rismani, S., Dobbe, R., and Moon, A. (2026). From Silos to Systems: Process-Oriented Hazard Analysis for AI Systems. arXiv:2410.22526v2; first posted 2024. https://arxiv.org/abs/2410.22526v2",
+        "ReignDragon Institute (n.d.). Individually Sensible, Collectively Harmful: The AI Commons Problem. Institutional research summary, read 6 November 2026; underlying manuscript not reviewed. https://www.reigndragon.ai/findings/creeping-trap"
+      ]
+    ],
+    [
+      "Appendix A Limitations and Dual Use Ethical Considerations",
+      [
+        "This is an experiment on observable model behaviour in a deliberately designed toy environment. No real community, water system or ecological outcome is affected. The downstream party has no agent; an escalation channel therefore does not constitute consent, legal standing or adequate representation. The study does not infer consciousness, intent or understanding from text.",
+        "A verified ledger is authoritative only within the correctness assumptions of the engine. A qualitative warning can inform E0 agents of a risk that their assigned ledger did not explicitly project. A hold gives another opportunity to act but does not enforce protection. False-alert responses are logged rather than privately delivered. The descriptive opportunity measure has the operational limitations stated in Methods. These restrictions should remain visible even if observed contrasts are favourable.",
+        "Knowledge about where collective oversight fails could also help design systems that avoid review or shift losses onto outsiders. The project releases a contained synthetic setting and observational evidence, not a procedure for exploiting real institutions. Experimental agents can invoke only the bounded world API. Provider API communication is controlled by the harness, and the local accounting system reserves spend before each request. The published package was separately audited to exclude credentials and private provider-state caches."
+      ]
+    ],
+    [
+      "Appendix B Reproducibility",
+      [
+        "Scientific sources: f949dac1c6b17d6dba884e71f8302d12bf3cf651. The tagged lock records seeds, strata, cell orders, prompt/tool/source hashes, model settings, bootstrap seed and fixed stop. Calibration: kappa 14: 4/8 breaches; pilot observations are excluded.",
+        "Status accounting: completed 96.",
+        "Missing or unlaunched episode IDs: none.",
+        "Freeze metadata is recorded separately from the pilot-hashed ERRATA; scientific sources are unchanged. AWC retains its disclosed conservative definition. R-001 corrected a concern-event name in the descriptive action filter before final reporting; primary outcomes and contrasts are unchanged. Curated records reproduce all reported statistics.",
+        "A separate final-allocation audit passed 1187 arithmetic checks across all 96 episodes, comparing act-reconstructed outcomes against logged executed district rows. A post-collection descriptive event census reproduces the structured-action and call-category counts; it is not an added hypothesis test.",
+        "Both candidates failed gm-v1. After three disclosed instrument corrections, both passed gm-v2; lower measured cost selected GPT-6 Luna. C-1 later prevented absent replay-cost evidence being treated as zero, without changing that selection. Qualification does not prove optimal district behaviour. Full task traces and the declared configurations are retained in the qualification report.",
+        {
+          "table": [
+            [
+              "Outcome",
+              "E [95% interval]",
+              "S [95% interval]"
+            ],
+            [
+              "Breach fraction",
+              "-0.188 [-0.375, +0]",
+              "+0.104 [-0.0625, +0.292]"
+            ],
+            [
+              "Demand fulfilled",
+              "-0.0062 [-0.0151, +0.00223]",
+              "+0.00223 [-0.00869, +0.0131]"
+            ],
+            [
+              "Unmet minimum need",
+              "+0 [+0, +0]",
+              "+0 [+0, +0]"
+            ],
+            [
+              "Alternative cost",
+              "+5.17 [-4.17, +15.5]",
+              "-11 [-20.9, -1.85]"
+            ]
+          ],
+          "widths": [
+            2600,
+            3380,
+            3380
+          ],
+          "caption": "Secondary contrasts. Breach and demand effects are fractions; unmet need is in water units and alternative cost in credits. Full exploratory interactions and process records are in report-tables.json."
+        },
+        "E0S0: 24 evaluable episodes; no-commit rate 0.0%; 2 invalid of 863 attempted world actions across all attempts. Call categories: invalid_tool_call 1, model_abstention 521, valid_action 841.",
+        "E0S1: 24 evaluable episodes; no-commit rate 0.0%; 1 invalid of 922 attempted world actions across all attempts. Call categories: model_abstention 499, valid_action 895.",
+        "E1S0: 24 evaluable episodes; no-commit rate 0.0%; 4 invalid of 1000 attempted world actions across all attempts. Call categories: invalid_tool_call 2, model_abstention 479, valid_action 980.",
+        "E1S1: 24 evaluable episodes; no-commit rate 0.0%; 3 invalid of 969 attempted world actions across all attempts. Call categories: invalid_tool_call 1, model_abstention 488, valid_action 941."
+      ]
+    ]
+  ]
+}

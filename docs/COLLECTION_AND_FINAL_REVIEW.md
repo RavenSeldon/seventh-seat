@@ -1,12 +1,12 @@
 # Collection and final review
 
-6 November 2026. This is a durable handoff, not a declaration of completed research.
+Updated 7 November 2026. Collection and empirical review are complete; final sprint submission remains outstanding.
 
 ## Where the work lives
 
 The active repository is `/Users/theda/Root/seventh-seat`. The chat workspace at `/Users/theda/Documents/ChatGPT/Seventh Seat` contains source backups and document QA artifacts; its old `review/` copy is not the live checkout. Do not restart from that stale copy.
 
-The author has authorized continued work, local commits and reviewed checkpoint pushes to `https://github.com/RavenSeldon/seventh-seat` on `main`. Private `runs/`, credentials and budget databases stay excluded. There is no authorization here to change repository visibility, publish private logs, deploy the blog or submit the paper. Prepare concrete reviewed outputs before requesting any remaining publication/submission approval.
+The author has authorized continued work, local commits and reviewed checkpoint pushes to `https://github.com/RavenSeldon/seventh-seat` on `main`. Private `runs/`, credentials and budget databases stay excluded. D-034 now authorizes public repository visibility, the reviewed curated research package and MIT/CC BY 4.0 licensing. It does not authorize unrelated blog deployment or final sprint submission.
 
 ## Collection
 
@@ -95,3 +95,7 @@ The actual experimental four-exhibit release passed 221 browser checks, with zer
 The first empirical paper, process census, scientific figure and proposed publication archive are being reviewed privately in the chat workspace. Do not publish them or switch repository visibility without the author's remaining OD-4/OD-5 decision. The paper reports the frozen interval rule without promoting exploratory comparisons to confirmatory findings. No final submission has occurred.
 
 `scripts/audit_process_counts.py` provides a post-collection descriptive event census from receipt-verified records. `scripts/plot_verified_results.py` renders already-computed exhibit intervals to PNG/SVG/PDF; optional isolated figure dependencies are pinned in `experiments/figure-requirements-2026-11-07.txt`. Neither changes scientific sources, outcomes or bootstrap calculations.
+
+## Author-approved release prepared
+
+D-034 resolves publication and licensing. Repository visibility is PUBLIC. The final reviewed manuscript is report/final/manuscript.json; PDF, DOCX and the complete curated package are prepared for release tag research-2026-11-07. Paper: 194 abstract words, six main pages, eight total; all pages reviewed. Exact tables, allocation audit and event census reproduced from the packaged source and records. Confirm the public asset receipt before treating release upload as complete. Never confuse publication with the separately retained Sunday submission decision.
