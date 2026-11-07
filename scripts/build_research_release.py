@@ -48,6 +48,9 @@ def build(data,output,three):
         target=output/'data'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(data/name,target)
     for name in ('index.html','app.js'):shutil.copyfile(ROOT/'observatory/research'/name,output/name)
     htmls=[(output/'index.html').read_text()]
+    paper=ROOT/'observatory/research/paper/index.html'
+    if paper.is_file():
+        (output/'paper').mkdir();shutil.copyfile(paper,output/'paper/index.html');htmls.append(paper.read_text())
     if selected:
         html=(ROOT/'observatory/diorama/index.html').read_text();html=prune_posters(embed(html,selected),selected)
         pinned=re.search(r'https://cdn\.jsdelivr\.net/npm/three@([\d.]+)/',html)[1]

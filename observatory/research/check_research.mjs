@@ -31,6 +31,7 @@ try{
  await page.goto(origin);await page.waitForFunction(()=>document.documentElement.dataset.ready==='true');
  check((await page.locator('#status').innerText()).includes(experimental?'Experimental records · verified export':'SCRIPTED FIXTURE · NOT RESEARCH FINDINGS'),'data status is explicit');
  check(await page.locator('main section').count()===5,'four exhibits and source section present');
+ check(experimental?await page.locator('#finding').isVisible():await page.locator('#finding').isHidden(),'findings only shown for verified experimental data');
  check(!requests.some(x=>x.includes('/witness/')),'witness details are not loaded on entry');
  check(!requests.some(x=>x.includes('/vendor/')),'3D library is not loaded on entry');
  for(const s of snaps){
@@ -60,6 +61,9 @@ try{
   await page.waitForFunction(()=>document.querySelector('#witness-content').textContent.includes('Evaluator truth · phase end'));
   const claims=witness.events.filter(e=>e.actor_id==='D1'&&e.claim_text);
   check(await page.locator('#witness-content blockquote').count()===claims.length,'only selected actor claims displayed as quotations');
+  check(await page.locator('.record-event[open]').count()===0,'witness events initially collapsed');
+  await page.locator('.record-event > summary').first().press('Enter');
+  check(await page.locator('.record-event[open]').count()===1,'witness event opens from keyboard');
   if(!experimental){
    check((await page.locator('#witness-content blockquote').innerText()).includes('<img src=x onerror=alert(1)>'),'agent claim displayed literally as quotation');
    check(await page.locator('#witness-content img').count()===0,'agent HTML cannot become page markup');
@@ -89,14 +93,33 @@ try{
   await page.click('#fixture-'+index);check((await page.evaluate(()=>window.__diorama.current())).episode_id===s.episode_id,`${s.episode_id}: 3D source switches honestly`);
  }
  check((await page.locator('body').innerText()).includes('Return to the four exhibits'),'diorama returns to research hub');
+ if(fs.existsSync(path.join(root,'paper/index.html'))){
+  await page.goto(origin+'/paper/');
+  const manuscript=JSON.parse(fs.readFileSync(new URL('../../report/final/manuscript.json',import.meta.url),'utf8'));
+  const expected=[manuscript.abstract,...manuscript.sections.flatMap(([title,parts])=>[title,...parts.flatMap(p=>typeof p==='string'?[p]:[p.caption,...p.table.flat().map(String)])])];
+  const text=(await page.locator('article').textContent()).replace(/\s+/g,'');
+  check(expected.every(p=>text.includes(p.replace(/\s+/g,''))),'web reader retains every manuscript paragraph, caption and table value');
+  await page.getByRole('link',{name:'4 Results',exact:true}).filter({visible:true}).click();
+  check(new URL(page.url()).hash==='#s3','desktop paper contents navigate to results');
+  if(shots)await page.screenshot({path:path.join(shots,'paper-desktop-results.png')});
+ }
  await ctx.close();
  const mobile=await open({width:390,height:844});await mobile.page.goto(origin);await mobile.page.waitForFunction(()=>document.documentElement.dataset.ready==='true');
  check(await mobile.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'phone has no page-level sideways scrolling');
  check(await mobile.page.locator('select,button').evaluateAll(ns=>ns.every(n=>n.getBoundingClientRect().height>=44)),'phone controls meet 44px touch targets');
  await mobile.page.keyboard.press('Tab');check(await mobile.page.locator('.skip').evaluate(e=>e===document.activeElement),'keyboard skip link reachable first');
- if(shots){await mobile.page.screenshot({path:path.join(shots,'phone-top.png')});for(const id of ['seven','ladder','witness','rivers','sources'])await mobile.page.locator('#'+id).screenshot({path:path.join(shots,'phone-'+id+'.png')});}await mobile.ctx.close();
+ if(shots){await mobile.page.screenshot({path:path.join(shots,'phone-top.png')});for(const id of ['seven','ladder','witness','rivers','sources'])await mobile.page.locator('#'+id).screenshot({path:path.join(shots,'phone-'+id+'.png')});}if(fs.existsSync(path.join(root,'paper/index.html'))){
+  await mobile.page.goto(origin+'/paper/');
+  check(await mobile.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'phone reader has no page-level sideways scrolling');
+  await mobile.page.locator('details.contents > summary').click();
+  await mobile.page.getByRole('link',{name:'4 Results',exact:true}).filter({visible:true}).click();
+  check(new URL(mobile.page.url()).hash==='#s3','phone paper contents navigate to results');
+  check(await mobile.page.locator('.table-scroll').first().evaluate(e=>e.scrollWidth>e.clientWidth&&getComputedStyle(e).overflowX==='auto'),'wide paper tables scroll within their region');
+  if(shots)await mobile.page.screenshot({path:path.join(shots,'paper-phone-results.png')});
+ }
+ await mobile.ctx.close();
  const broken=await open();await broken.page.route('**/data/summary.json',route=>route.fulfill({contentType:'application/json',body:'{}'}));await broken.page.goto(origin);await broken.page.waitForFunction(()=>document.documentElement.dataset.failed==='true');
- check(await broken.page.locator('#content').isHidden(),'digest mismatch prevents any results being drawn');await broken.ctx.close();
+ check(await broken.page.locator('#content').isHidden(),'digest mismatch prevents any results being drawn');check(await broken.page.locator('#finding').isHidden(),'digest mismatch also hides headline finding');await broken.ctx.close();
  check(external.length===0,'zero third-party requests');check(errors.length===0,'no browser errors or CSP violations');
  console.log(JSON.stringify({passed,failures,external,errors},null,2));
 }finally{await browser.close();await new Promise(r=>server.close(r));}

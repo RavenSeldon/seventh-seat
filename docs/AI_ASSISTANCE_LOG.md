@@ -63,3 +63,7 @@ The D-034 approved public release was published at 13:00 UTC on 7 November. Code
 Claude prepared the `/seventh-seat/` blog blueprint, its installer and checks, and a receipt-verifying deploy script, reading the blog repository without editing it. No commit, push, deployment or submission.
 
 Claude restyled the hosted hub to the house palette (presentation only; data, diorama and CSP unchanged).
+
+### 7 November — reading edition and presentation polish
+
+At the author's request, Codex continued from Claude's `d03d5f9` hosting/copy checkpoint, preserving his palette, prose and deployed structure. Codex added publication navigation, an integrity-gated primary-finding summary, keyboard-operable witness disclosures, a full manuscript web reader and a matching nine-page PDF reading edition. All 117 manuscript text items matched the unchanged final source; 230 experimental browser checks passed. All 32 locked scientific source hashes and all exhibit data/diorama asset bytes were unchanged. No provider calls or new observations. Original research publication and submission-format paper remain preserved; deployment status is recorded separately.

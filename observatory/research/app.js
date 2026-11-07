@@ -49,7 +49,7 @@ async function showWitness(){
   const events=data.events.filter(e=>e.actor_id===actor);
   const rows=events.map(e=>{
    const isView=e.action==='observation'||e.action==='read_ledger';
-   return `<article class="event"><span class="badge">${esc(e.phase)} · event ${e.event_id}</span><h3>${esc(e.action)}</h3>${isView?`<h4>Recorded view</h4><details><summary>Inspect the information returned</summary><pre>${esc(JSON.stringify(e.result,null,2))}</pre></details>`:''}${e.claim_text?`<h4>Agent claim · quotation</h4><blockquote>“${esc(e.claim_text)}”</blockquote>`:''}<h4>${e.action==='observation'?'Observation delivery':'Recorded act'}</h4><p>${e.action==='observation'?'Information supplied to the district; not a submitted action.':(e.authorized?'Authorized':'Not authorized')}${e.reason?` · ${esc(e.reason)}`:''}</p><details><summary>Arguments and result</summary><pre>${esc(JSON.stringify({args:e.args,result:e.result,evidence_refs:e.evidence_refs},null,2))}</pre></details><code class="hash">Event hash ${esc(e.hash)}</code></article>`;
+   return `<details class="record-event"><summary><span class="badge">${esc(e.phase)} · ${esc(e.event_id)}</span><span class="event-name">${esc(e.action.replaceAll("_"," "))}</span></summary><article class="event"><span class="badge">${esc(e.phase)} · event ${e.event_id}</span><h3>${esc(e.action)}</h3>${isView?`<h4>Recorded view</h4><details><summary>Inspect the information returned</summary><pre>${esc(JSON.stringify(e.result,null,2))}</pre></details>`:''}${e.claim_text?`<h4>Agent claim · quotation</h4><blockquote>“${esc(e.claim_text)}”</blockquote>`:''}<h4>${e.action==='observation'?'Observation delivery':'Recorded act'}</h4><p>${e.action==='observation'?'Information supplied to the district; not a submitted action.':(e.authorized?'Authorized':'Not authorized')}${e.reason?` · ${esc(e.reason)}`:''}</p><details><summary>Arguments and result</summary><pre>${esc(JSON.stringify({args:e.args,result:e.result,evidence_refs:e.evidence_refs},null,2))}</pre></details><code class="hash">Event hash ${esc(e.hash)}</code></article></details>`;
   }).join('');
   target.innerHTML=`<h3>${esc(eid)} · ${esc(actor)}</h3><p class="muted">${esc(data.scope)}</p><div class="card"><h3>Evaluator truth · phase end</h3><p>Authorized provisional plans, reconstructed at phase end. This is not necessarily what the district saw or what was finally executed.</p><div class="scroll">${table(['Phase','Projected downstream','Minimum','Source event'],data.phase_end_truth.map(r=>[r.phase,num(r.projected_downstream_flow),num(r.minimum),r.event_id]))}</div><p class="muted">Exact event hashes are retained in the <a href="data/witness/${encodeURIComponent(eid)}.json">source witness file</a>.</p></div>${rows||'<p>No recorded events for this district.</p>'}`;
  }catch(e){if(request===witnessRequest){target.textContent='Witness record unavailable: '+e.message;target.classList.add('error');}}
@@ -77,6 +77,13 @@ async function init(){
   for(const id of ['scenario','left-cell','right-cell'])$(id).addEventListener('change',showRivers);showRivers();
   const sources=await verified('source-table.json');$('source-table').innerHTML=table(['Mark or description','Source'],sources);
   $('provenance').innerHTML=`<p>Protocol commit <code>${esc(summary.protocol_commit)}</code></p><code class="hash">Exhibit manifest SHA-256 ${esc(summary.manifest_sha256)}</code>`;
+  const finding=$('finding');
+  if(finding&&summary.data_status==='experimental'){
+   const effects=['E','S'].map(k=>summary.contrasts.shortfall[k]);
+   const includesZero=effects.every(v=>v.estimate!==null&&v.ci95[0]<=0&&v.ci95[1]>=0);
+   finding.innerHTML=`<p class="eyebrow">What the experiment found</p><p><strong>${includesZero?'Both primary effect intervals include zero.':'Read both primary effects with their uncertainty.'}</strong> ${includesZero&&summary.interpretation==='confirmatory'?'Neither directional hypothesis met the preregistered support rule. ':''}These results concern one synthetic world and one model configuration. <a href="#ladder">Inspect the estimates and intervals ↓</a></p>`;
+   finding.hidden=false;
+  }
   $('content').hidden=false;document.documentElement.dataset.ready='true';
  }catch(e){$('status').textContent='Exhibit unavailable: '+e.message+'. No results are drawn.';$('status').classList.add('error');document.documentElement.dataset.failed='true';}
 }
