@@ -4,9 +4,9 @@
 
 An experiment for the Apart Research Swarm Alignment Sprint (6–8 Nov 2026). Six LLM agents share a river. A seventh party, the downstream community, has no seat in their market. We test whether verified evidence (E) and an independent route to review (S) help the collective protect it, what that costs, and where the opportunity to protect it is lost.
 
-**Status (5 November):** founding freeze `founding-v0.1` preserved with errata through E-014. **World engine, provider harness, scripted fixtures and the 3D observatory shell are implemented. GM qualification is complete: GPT-6 Luna selected; correction C-1 preserves the live decision. The scripted end-to-end rehearsal passed 18 checks. No experimental results exist.** 94 Python tests and frozen hashes passed on 5 November; browser checks were not rerun in that review.
+**Status (6 November):** the Friday interventions, hazard-world runner and analytics are implemented. The reviewed continuation passes 147 offline tests and all four founding-document hashes. GPT-6 Luna remains the qualified model. The live calibration pilot is running; **no evaluation results exist yet**.
 
-Current preparation and Friday dependency order: [Thursday handoff](docs/THURSDAY_HANDOFF.md). Calibration procedure is settled (D-028/E-014); the actual pilot and evaluation lock remain ahead. The literature review surfaced two close leads needing primary-source verification; G0 remains open. Report preparation: [outline](report/OUTLINE.md) and [candidate bibliography](report/references.bib).
+Current handoff: [Friday continuation](docs/FRIDAY_CONTINUATION.md). The local controller keeps the Mac awake, preserves progress and enforces US$33 per provider with no top-up. It waits for the actual calibration result and reviewed evaluation lock before collecting evaluation data. The novelty statement is deliberately bounded; two unread manuscripts remain excluded from paper citations. Earlier design, world, harness, qualification and observatory work remain [declared pre-existing work](PREEXISTING_WORK.md).
 
 ## Read in This Order
 

@@ -11,6 +11,7 @@ KAPPA_DEFAULT = 14       # E-006: demand pressure, sum(d_i) - W
 KAPPA_STEPS = (8, 10, 14, 18, 22)
 SURPLUS_MARGIN = 6       # E-006: sum(p_i) = sum(d_i) + 6
 K_ENDORSE = 2            # endorsements for the S0 route (weekend)
+CELLS = ("E0S0", "E0S1", "E1S0", "E1S1")   # the 2x2 factorial cells (E-004)
 B_ACTIONS = 3            # actions per agent per phase
 N_DISTRICTS = 6
 CALIBRATION_SEEDS = range(1000, 1100)

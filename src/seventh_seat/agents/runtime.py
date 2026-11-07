@@ -5,10 +5,10 @@ from collections import Counter
 
 from .providers import Adapter, InfrastructureError
 from .storage import BudgetStop, CacheMiss
-from .tools import dispatch, parse_arguments
+from .tools import definitions, dispatch, parse_arguments
 from ..world.engine import Engine
 from ..world.events import canonical, sha256_hex
-from ..world.params import District, Scenario
+from ..world.params import CELLS, District, Scenario
 
 
 def reservation(provider, max_tokens):
@@ -54,9 +54,13 @@ def cost(provider, response):
 
 
 class Caller:
-    def __init__(self, provider, cache, budget=None, transport=None, replay=False, sleep=time.sleep):
+    def __init__(self, provider, cache, budget=None, transport=None, replay=False,
+                 sleep=time.sleep, stage="preparation"):
         self.provider, self.cache, self.budget = provider, cache, budget
         self.transport, self.replay, self.sleep = transport, replay, sleep
+        if stage not in ("preparation", "evaluation"):
+            raise ValueError("unknown budget stage")
+        self.stage = stage
 
     def call(self, request, namespace):
         key = self.cache.key(self.provider, request, namespace)
@@ -71,7 +75,7 @@ class Caller:
         response = None
         for attempt in range(3):
             reserved = reservation(self.provider, request.get("max_tokens", request.get("max_output_tokens")))
-            rid = self.budget.reserve(self.provider, "preparation", reserved)
+            rid = self.budget.reserve(self.provider, self.stage, reserved)
             ledger = {"reservation_id": rid, "reserved_nanodollars": reserved}
             started = time.monotonic()
             try:
@@ -171,15 +175,19 @@ def agent_turn(engine, caller, adapter, actor, observation, namespace):
             break
 
 
-def drive(engine, caller, max_tokens=2048, episode_attempt=0):
-    adapters = {did: Adapter(caller.provider, max_tokens) for did in engine.ids}
+def drive(engine, caller, max_tokens=2048, episode_attempt=0, namespace=None):
+    # The E-004 tool surface of the engine's own cell (one routing sentence
+    # differs). Non-cell worlds (GM qualification, harness smoke) get the
+    # route-less surface.
+    tools = definitions(engine.condition if engine.condition in CELLS else None)
+    adapters = {did: Adapter(caller.provider, max_tokens, tools=tools) for did in engine.ids}
     engine.start()
     while not engine.state["executed"]:
         phase = engine.state["phase"]
         for actor in engine.ids:
             base = {"episode": engine.episode_id, "scenario": engine.sc.to_dict(),
                     "condition": engine.condition, "actor": actor, "phase": phase,
-                    "episode_attempt": episode_attempt}
+                    "episode_attempt": episode_attempt, **(namespace or {})}
             agent_turn(engine, caller, adapters[actor], actor, engine.view(actor), base)
         engine.end_phase()
     return engine

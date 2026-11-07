@@ -106,3 +106,22 @@ Correction: the two rows filed above under "Open Decisions: Status Update" as D-
 
 Administrative confirmation, 5 November: the author confirmed both the required participant survey and Discord access complete. Provider-console spending controls remain unconfirmed by this review.
 
+
+## Settled (2026-11-06)
+
+| ID | Decision | Rationale |
+|---|---|---|
+| D-029 | **P-1 routing sentences adopted verbatim.** `submit_report` base (all cells): "Submit a report with cited event references." Routing sentence, S0: "Your report is posted to the board as a proposal and reaches the supervisor once two other districts endorse it." S1: "Your report goes directly to the supervisor." `endorse` (all cells): "Endorse a report proposal posted on the board." | Author approval on 6 November, before the evaluation lock (the sentences enter the G10 hashes there). Neutrality is asserted by test: no downstream reference, no experiment language |
+| D-030 | **C-a: the S0 commit deadline is the season's execution.** Endorsements and reports filed during the replan round R count; a proposal that gathers k = 2 other-district endorsements in R routes to the supervisor before execution (no second hold is possible, so the decision is logged only). Unrouted proposals are logged at the end of P4, or at the end of R when a hold occurred | Decided by the assistant under the author's explicit delegation of 6 November ("use your best judgement"). Coherence: commits re-open in R, so the outcome is not fixed until execution; one rule — a proposal routes if k endorsements arrive before the season executes — with no special cases. Identical in every cell, so the contrast is unaffected |
+| D-031 | **C-b: "not verified at this time" is recorded, not delivered.** The supervisor's false-alert response is logged in its decision record (evaluator-visible); the engine has no private notification channel and none is added | Decided by the assistant under the author's explicit delegation of 6 November. The world's only channels are the public board and tool results; a private supervisor-to-reporter channel appears nowhere in the frozen spec or E-001, and adding one pre-lock would widen the observation space for a behavior the design never describes. The property is identical across cells and will be named in the report's limitations |
+
+
+## Continuation record (6 November, before pilot)
+
+- **D-032, author spending limit:** the author states US$33 for each of OpenAI and Anthropic, with no more funding. Enforce US$33 per provider, US$66 overall, and retain the US$20 qualification/pilot subcap. Conservatively count all historical qualification/smoke charges within these limits. GPT-6 Luna remains the closed GM selection; unused Anthropic funds do not authorize model switching.
+- Engineering corrections preserve the seeded scenarios, thresholds and intervention definitions: same-phase invisible proposals cannot receive endorsements; analytics use the engine's commit-over-plan precedence; cited evidence must predate its citation; empty/incomplete blocks yield unavailable contrasts; run identities, hash chains, completed-attempt recovery and writer exclusion are checked. No experimental outcomes informed these fixes.
+- Operational choices before data: 24 evaluation seeds 2000–2023 (12 per stratum under `assign_strata`), deterministic cell-order salt `seventh-seat/cell-order/v1`, existing bootstrap seed, sequential complete blocks. New blocks need a conservative timing reserve of 16 times the slowest measured pilot attempt (minimum 60 seconds). Fixed stop remains 8 November 06:00 UTC. A timing reserve is not a guarantee that infrastructure cannot delay an in-flight episode.
+- Exact gm-v2 declared sources are archived in `experiments/gm/v2-sources/`, verified against all declaration hashes. Qualification outcomes and records are unchanged.
+- User authorized keeping the Mac awake and a low-cost unattended local collector. Execution remains subject to the protocol lock and recorded gates. No cloud service or top-up is introduced.
+
+- Tag disposition: the author first approved a local commit and pre-sprint tag, then withdrew the Thursday-tag request before creation. No Thursday tag is created. The 6 November continuation is committed with its actual date, while prior work remains disclosed from the existing inventory and history.

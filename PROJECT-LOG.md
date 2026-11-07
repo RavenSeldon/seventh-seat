@@ -50,3 +50,12 @@ See `docs/DECISIONS.md` (through D-028; qualms Q-1 to Q-6; open decisions OD-1 t
 ## Resume Point
 
 GM closed (GPT-6 Luna). Dry run, report outline/bibliography, calibration clarification and review inventory are prepared. Next: PA-38/39 primary-source follow-up to close G0; provider-console control confirmation; review/commit/tag the pre-sprint boundary. Follow `docs/THURSDAY_HANDOFF.md`. Weekend runner note: `run_with_recovery` refuses hazard worlds by design; the evaluation runner (with the same recovery rules) is weekend work. Preserve the budget ledger and GM records in `runs/` (private). Before committing observatory changes: `make check`.
+
+
+## Friday continuation — 6 November 2026
+
+Inherited uncommitted Friday interventions, runner and analytics were preserved and reviewed. Added recovery/integrity corrections, calibration and evaluation orchestration, an unattended local controller, source archives and a stricter budget ledger. All 147 offline tests pass; all 160 possible planned pilot/evaluation scenarios across the five kappa settings pass the oracle; four founding-document hashes match. Evidence: `experiments/continuation_checks_2026-11-06.json`.
+
+A live eight-seed calibration pilot is now running. Its data is private and excluded from evaluation. No evaluation lock or evaluation result yet. Caps: US$33/provider, US$66 overall, US$20 qualification/pilot including historical spend. `runs/controller-status.json` records unattended progress. The controller waits for reviewed gates and the `prereg-frozen` tag before evaluation. Current handoff: `docs/FRIDAY_CONTINUATION.md`.
+
+The author authorized a local commit. The proposed Thursday tag was withdrawn before creation. Historical pre-sprint disclosure is retained; this continuation is dated today. No push, deployment or submission occurred.

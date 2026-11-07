@@ -153,3 +153,17 @@ This is a specific experimental comparison. Do not claim that absent stakeholder
 | PA-39 | Theja Tulabandhula, *Distinguishing Governance Effects from Prompting Artifacts in LLM Pricing Simulations*, reportedly Social Sim @ COLM 2026 | PARTIAL: secondary discovery only; exact-title primary-source search returned no accessible manuscript. Verify on the workshop/OpenReview before citation. Discovery: https://lacuna.tiptreesystems.com/work/distinguishing-governance-effects-from-prompting-artifacts |
 
 PA-38 makes a broad “first absent-party commons experiment” claim inappropriate even while primary verification is pending. PA-39 motivates care about framing as a possible alternative explanation, but its reported numerical findings are not evidence in this project. Existing PA-21, PA-33, PA-34 and PA-31/35/36/37 remain outside the report reference set; no unverified legal, historical or incident-specific claims are needed for the current outline.
+
+
+## 6 November bounded final novelty pass (Codex continuation)
+
+G0's final search and contribution revision are complete for the bounded claim below.
+PA-38/39 manuscripts remain **UNVERIFIED** and must not be cited as read papers.
+The OpenReview browser challenge blocked both direct PDFs on 6 November.
+
+- PA-38 primary institutional summary read at https://www.reigndragon.ai/findings/creeping-trap . **VERIFIED-PASSAGE (website abstract only):** the authors' institute describes a repeated extraction benchmark with nonacting bystanders who share catastrophe losses, and a visibility intervention. This establishes substantial conceptual overlap. It does not verify the paper's sample, estimates, implementation or routing mechanisms. A website attribution must say it is an institutional summary.
+- PA-39 discovery now identifies OpenReview https://openreview.net/forum?id=ihKxyyqkGv . The primary manuscript could not be read. No result or numerical claim from the aggregator is adopted or included in the bibliography.
+- Prospective contribution (revised): **A reproducible, scenario-blocked comparison of verified aggregate projections and consent-gated versus direct reporting to a fixed scripted supervisor in one designed watershed, with engine-derived outcomes and descriptive records of protection opportunities.** This is a description of the study, not a priority or uniqueness claim. Absent-party externalities, visibility interventions and governance effects already have related precedents. No claim that this exact combination is absent from unread literature is warranted.
+- The report's intended cited papers remain the verified, passage-bounded entries in the 5 November register and `report/references.bib`. PA-38/39 paper citations remain excluded. Full-manuscript follow-up is still desirable, but cannot justify a broader claim meanwhile.
+
+Official rules re-read 6 November: https://apartresearch.com/sprints/swarm-alignment-2026 . The page allows replacing a submission before the deadline by submitting with the same title; the author's one-final-submission preference remains unchanged. The eight-main-page limit, required ethics appendix and pre-existing-work disclosure remain in force.

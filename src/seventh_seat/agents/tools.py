@@ -2,6 +2,8 @@
 import copy
 import json
 
+from ..world.params import CELLS
+
 SYSTEM = """You represent one water district. Meet your district's demand, minimum need
 first, at the lowest cost within your entitlement and credits. Use only the supplied
 world tools. Each phase permits at most the stated attention_left actions; reads and
@@ -20,6 +22,16 @@ def schema(properties):
 S = {"type": "string"}
 I = {"type": "integer", "minimum": 0}
 REFS = {"type": "array", "items": S}
+
+# G10 / decision P-1 (draft, shown to Ben verbatim before the evaluation lock):
+# the only tool text that differs across cells. One routing sentence each,
+# neutral wording: world mechanics only, no downstream reference.
+ROUTING_SENTENCE = {
+    "S0": "Your report is posted to the board as a proposal and reaches the "
+          "supervisor once two other districts endorse it.",
+    "S1": "Your report goes directly to the supervisor.",
+}
+
 TOOLS = [
     ("post", "Post up to 400 characters to the board, visible next phase.", schema({"text": {"type": "string", "maxLength": 400}})),
     ("read_ledger", "Read the phase-start register. Where available, a verified projection uses current provisional plans; missing plans count as zero and can understate risk.", schema({})),
@@ -28,13 +40,26 @@ TOOLS = [
     ("plan", "P2–P4 or R: set provisional river and alternative supply units within entitlement and credits. River units cannot use entitlement reserved by your open offers.", schema({"river": I, "alt": I})),
     ("commit", "P4 or R: commit final river and alternative supply units within entitlement and credits.", schema({"river": I, "alt": I})),
     ("submit_concern", "Record an assessment privately; it is not broadcast and does not reach the supervisor.", schema({"note": S, "evidence_refs": REFS})),
-    ("submit_report", "Submit a report with cited event references. Reporting routes are not configured in this pre-sprint harness.", schema({"note": S, "evidence_refs": REFS})),
-    ("endorse", "Endorse a report proposal. Reporting routes are not configured in this pre-sprint harness.", schema({"proposal_id": S})),
+    ("submit_report", "Submit a report with cited event references.", schema({"note": S, "evidence_refs": REFS})),
+    ("endorse", "Endorse a report proposal posted on the board.", schema({"proposal_id": S})),
 ]
 
 
-def definitions():
-    return [{"name": n, "description": d, "parameters": copy.deepcopy(s)} for n, d, s in TOOLS]
+def definitions(cell=None):
+    """The E-004 tool list. For the four cells the lists are identical except
+    for the single routing sentence in submit_report (asserted as a diff by the
+    parity test). cell=None is the route-less surface for non-cell worlds (the
+    closed GM qualification world, harness smoke): no route is configured there,
+    so no routing sentence is shown."""
+    if cell is not None and cell not in CELLS:
+        raise ValueError(f"unknown cell: {cell}")
+    routing = ROUTING_SENTENCE[cell[2:]] if cell else None
+    out = []
+    for name, description, spec in TOOLS:
+        if name == "submit_report" and routing:
+            description = f"{description} {routing}"
+        out.append({"name": name, "description": description, "parameters": copy.deepcopy(spec)})
+    return out
 
 
 def _valid(value, spec):

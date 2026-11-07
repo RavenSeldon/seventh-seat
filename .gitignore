@@ -10,3 +10,6 @@ dist/
 runs/cache/
 runs/scratch/
 *.egg-info/
+
+# Private execution state; publish only explicitly curated releases.
+runs/
