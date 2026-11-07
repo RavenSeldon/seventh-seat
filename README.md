@@ -62,8 +62,14 @@ Declared in [PREEXISTING_WORK.md](PREEXISTING_WORK.md), including the earlier ci
 
 ## Hosting
 
-Static release at `https://benamuwo.me/seventh-seat/`, served like Schrödinger's Civilization and First Notice. See [DEPLOY.md](DEPLOY.md).
+The intended hosted location is `https://benamuwo.me/seventh-seat/`; this research release does not claim a verified deployment there. The reviewed static exhibit is included in the GitHub release archive. See [DEPLOY.md](DEPLOY.md) for hosting instructions.
 
 ## Licence
 
-To be decided (OD-4).
+Original software: [MIT](LICENSE). Original paper, documentation and curated research records: [CC BY 4.0](LICENSE-DATA.md). [Scope and third-party exclusions](LICENSING.md). Author-approved public release: D-034.
+
+## Completed evaluation
+
+All 96 episodes across 24 matched four-cell scenarios completed. Neither primary directional hypothesis met the preregistered interval rule. The evidence shortfall contrast was -0.667 water units (95% scenario-bootstrap interval -1.58 to 0.188); the reporting-route contrast was 0.625 (-0.167 to 1.46). No structured concerns or reports were submitted, so no supervisor hold occurred. These findings concern one synthetic setting and model configuration.
+
+The [research release](https://github.com/RavenSeldon/seventh-seat/releases/tag/research-2026-11-07) contains the empirical paper, all eight calibration and 96 evaluation episodes, hash receipts, offline reproduction instructions, scientific figure and static exhibit. Publication is separate from final sprint submission.

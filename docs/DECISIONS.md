@@ -129,3 +129,7 @@ Administrative confirmation, 5 November: the author confirmed both the required 
 ### D-033 · 6 November — actual evaluation freeze
 
 The accepted eight-episode pilot (4/8 breaches at kappa 14) fixes the 24-scenario evaluation under the existing rule. The freeze metadata is recorded in `EVALUATION_FREEZE.md` and tagged JSON files; the pilot-hashed preregistration and ERRATA remain byte-identical. This administrative record-location deviation is explicit. The author has authorized continuation, local commits and reviewed pushes to RavenSeldon/seventh-seat. No pre-sprint boundary tag is created and no historical disclosure is rewritten.
+
+### D-034 · 7 November — author-approved public research release
+
+After reviewing the concrete eight-page paper and 426-file candidate archive, the author explicitly approved making https://github.com/RavenSeldon/seventh-seat public and publishing the reviewed package under MIT for original software and CC BY 4.0 for original paper, documentation and curated records. The request disclosed existing repository history and 104 synthetic episode records, including the README's provider-response identifiers and usage/cost metadata. Keys, provider caches and private budget databases remain excluded. OD-4 and OD-5 are resolved. Existing third-party terms are preserved. Final Sunday submission remains separate; this approval does not submit the project or authorize unrelated hosting changes.
