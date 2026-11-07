@@ -1,0 +1,9 @@
+{
+  "historical_blobs_scanned": 304,
+  "bytes_scanned": 3595140,
+  "credential_shape_hits": [],
+  "sensitive_path_names_for_review": [],
+  "scope": "All reachable Git history; pattern check only, not a guarantee of absence of secrets",
+  "through_commit": "d3be6e2ad67eddd4029bd8c6640648928bf2ff5a",
+  "date_local": "2026-11-07"
+}

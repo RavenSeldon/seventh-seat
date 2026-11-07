@@ -76,4 +76,12 @@ The existing prior-work inventory and history remain accurate. The author declin
 
 Reporting correction R-001 is recorded in `REPORTING_CORRECTIONS.md`: concern submissions now count in the descriptive all-attempts action denominator. The finisher was refreshed to load it; scientific source hashes remain frozen. The offline suite now passes 162 tests.
 
-7 November continuation: four-exhibit preparation and its optional unattended finishing step are ready. The live finisher must be restarted with `--wait --exhibits` after checking its idle state; do not duplicate or interrupt the paid collector. An earlier approval-service usage limit temporarily blocked one browser-check launch; the retry after the stated reset passed all 46 checks.
+7 November continuation: four-exhibit preparation and its optional unattended finishing step are ready. The idle finisher was refreshed successfully with `--wait --exhibits` (PID 60889 at 07:08 UTC); the paid collector was untouched. Always read current status rather than trusting a saved PID. An earlier approval-service usage limit temporarily blocked one browser-check launch; the retry after the stated reset passed all 46 checks.
+
+Before manuscript interpretation, run the independent final-allocation arithmetic audit:
+
+```bash
+.venv/bin/python scripts/audit_report_records.py --run runs/report-output-2026-11-06/curated-records --output runs/report-output-2026-11-06/allocation-audit.json
+```
+
+It compares act-reconstructed primary and secondary outcomes with separately logged final district rows, then checks cell means and point contrasts using direct arithmetic. It does not replace the frozen bootstrap. The suite now passes 169 tests. The 7 November layout rehearsal (v7) remains five main pages and two reference/appendix pages, including R-001 and complete reference author lists; it is still synthetic QA only.

@@ -1,0 +1,30 @@
+{
+  "date_local": "2026-11-07",
+  "kind": "scripted layout rehearsal, not research findings",
+  "main_pages": 5,
+  "total_pages": 7,
+  "abstract_words_including_fixture_label": 189,
+  "visual_review": "All changed pages inspected; remaining pages pixel-identical to inspected predecessors",
+  "docx_sha256": "f7c4a3122005b8e28b9ef6073438b663a9086ef7bc2521c0636040fbf48ba196",
+  "pdf_sha256": "6270fe0081a4a28249aac9b3dab72d586b3d0998bb08994450eaafeae5637c7d",
+  "page_sha256": {
+    "page-1.png": "1e8d5e2efdf4061589a6927a563226ad5e5aa2cf58cf1918a8637163cd54ce16",
+    "page-3.png": "ac23cc94229d7c07669708b7f655ff150bbe7bc3dccf044fb68c00decf4dee76",
+    "page-2.png": "e02f6b0c37d6d1477b0d063c411892672f7b1d6ad3654d283dbece8c315005b2",
+    "page-6.png": "97bda9629018e70be75e74ea1c1e1469a99ae8f1e29e4d31b963c96261e1f86f",
+    "page-7.png": "5bb918f3e9464780844f46d48e889d16fa2cd280a67f034cd3e8d07fbdac01ec",
+    "page-5.png": "b3fdefbadbafde98bd20c992f1f1d5aef45b9e8ffa27428b5da5a3bc4bd307b6",
+    "page-4.png": "a54f356890b237df5ad9f8861feb8297dd1b07143c5506b766af538d055630b6"
+  },
+  "source_sha256": {
+    "report/working/assemble_verified_manuscript.py": "4d7c011e48a6a5472be8e2c55d03c2b4feb065d5e45afb7947bf89fcb1db6ee0",
+    "report/working/build_manuscript.py": "2a3956274804d32db66ff6e6e653e2444715b55c0c6d710dd95f01c2179c106e",
+    "report/working/manuscript.json": "3d30f68e5efa61de661281122ff010410b01d772f7d8599a01eb6af969a78a2a"
+  },
+  "verification": {
+    "offline_tests": 169,
+    "gobs_source_checks": 97,
+    "gobs_release_checks": 97,
+    "frozen_founding_documents": "unchanged"
+  }
+}

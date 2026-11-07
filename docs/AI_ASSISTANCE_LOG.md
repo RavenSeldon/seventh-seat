@@ -47,3 +47,7 @@ Codex prepared the official-template draft, checked bounded primary-source citat
 ### 6 November — attribution and final-report preparation
 
 The author identified the predecessor as Kimi 3.1; the report assistance statement includes Kimi alongside the already recorded Claude, ChatGPT and Codex contributions. Codex prepared a deterministic manuscript assembler and native Word tables, verified the seven-page synthetic layout, retained the official template package except documented content/relationship edits, and verified clickable citation links. Synthetic layout artifacts remain outside the research results and are not a submission.
+
+### 7 November — observatory and reporting review
+
+Codex prepared a four-exhibit static interface, source-bound export and release builder, and a local offline finisher extension. The representative scripted release passed 46 browser checks, 167 offline tests passed, and the existing source/release diorama checks each passed 97 checks. Desktop and phone fixture views were inspected; actual experimental results and manuscript interpretation remain pending collection. The post-freeze descriptive event-filter correction is recorded as R-001. The scientific source and lock remain unchanged. Reviewed code checkpoints were committed and pushed to the author's authorized GitHub repository; private execution state was excluded. No deployment or submission occurred.

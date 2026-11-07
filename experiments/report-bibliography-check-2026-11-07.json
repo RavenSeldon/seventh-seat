@@ -1,0 +1,12 @@
+{
+  "checked_local_date": "2026-11-07",
+  "scope": "Completed abbreviated author lists from primary arXiv metadata; bounded abstract claims rechecked, no full-paper statistical claims added",
+  "sources": [
+    "https://arxiv.org/abs/2404.16698v4",
+    "https://arxiv.org/abs/2106.06060",
+    "https://arxiv.org/abs/2609.04170v1",
+    "https://arxiv.org/abs/2410.22526v2",
+    "https://arxiv.org/abs/2609.07680v1",
+    "https://arxiv.org/abs/2511.17085v3"
+  ]
+}
