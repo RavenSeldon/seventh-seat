@@ -1,0 +1,12 @@
+{
+  "kind": "experimental-exhibit-browser-review",
+  "date": "2026-11-07",
+  "passed": 221,
+  "failures": 0,
+  "external_requests": 0,
+  "browser_errors": 0,
+  "log_sha256": "f466cff59243ddcdaf2812c0360f1a0d3196e1a43b0a8f148e155497281e19c2",
+  "release_sha256": "46e6f86f927cda45fccbc87ecd002267355ab1e9be8e7ce893b39795bfdb176d",
+  "visual_review": "Desktop landing, ladder, loaded witness and matched rivers; all five phone sections and top. Scientific figure reviewed separately.",
+  "note": "First full-page screenshot failed on a long loaded witness; viewport capture rerun passed. No data changes."
+}

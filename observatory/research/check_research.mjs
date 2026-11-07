@@ -71,7 +71,17 @@ try{
   check(await page.locator('#witness-content blockquote').count()===witness.events.filter(e=>e.actor_id==='D2'&&e.claim_text).length,'different actor shows only its own claims');
  }
  check((await page.locator('#source-table').innerText()).includes('Seventh seat fill height'),'source table maps seventh-seat mark');
- if(shots){await page.selectOption('#episode',snaps[0].episode_id);await page.screenshot({path:path.join(shots,'desktop.png'),fullPage:true});}
+ if(shots){
+  await page.selectOption('#episode',snaps[0].episode_id);
+  console.log('Screenshot document height: '+await page.evaluate(()=>document.documentElement.scrollHeight));
+  // Real witness transcripts can exceed Chromium's full-page bitmap limit.
+  // Capture readable viewports, retaining the loaded witness for review.
+  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(shots,'desktop.png')});
+  for(const id of ['seven','ladder','witness','rivers','sources']){
+   await page.locator('#'+id).scrollIntoViewIfNeeded();
+   await page.screenshot({path:path.join(shots,'desktop-'+id+'.png')});
+  }
+ }
  await page.goto(origin+'/seven/');await page.waitForFunction(()=>!!window.__diorama);
  check(await page.locator('#fixture-seg button').count()===4,'diorama includes all four preselected matched cells');
  for(const s of snaps.filter(s=>summary.witness_episodes.includes(s.episode_id))){

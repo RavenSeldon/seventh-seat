@@ -18,7 +18,7 @@ The plan is 24 fixed scenarios, 12 cheap and 12 costly, each with four cells. Co
 
 The durable ledger is `runs/research-budget.sqlite`. Caps remain USD33 OpenAI, USD33 Anthropic, USD66 overall, USD20 preparation, including historical charges. Uncertain requests retain their full reservation. Never increase caps, refund uncertainty without evidence, switch models or requalify because of outcomes. Provider usage costs are published-rate estimates, not invoices.
 
-Two detached local workers are active:
+The two detached local workers completed successfully at 07:39 UTC on 7 November. No further model calls are needed. Their recorded roles were:
 
 - `scripts/keep_run_alive.py`: adopt/resume the pilot, validate the freeze, run evaluation, compute integrity-checked analysis. Status: `runs/controller-status.json`.
 - `scripts/finish_outputs.py --wait --exhibits`: after `results_ready`, create an allowlisted local export, recompute report tables, verify the bound calibration summary and write a private cost summary, then prepare source-bound exhibit data and a private static review build. Status: `runs/report-output-status.json`.
@@ -85,3 +85,13 @@ Before manuscript interpretation, run the independent final-allocation arithmeti
 ```
 
 It compares act-reconstructed primary and secondary outcomes with separately logged final district rows, then checks cell means and point contrasts using direct arithmetic. It does not replace the frozen bootstrap. The suite now passes 169 tests. The 7 November layout rehearsal (v7) remains five main pages and two reference/appendix pages, including R-001 and complete reference author lists; it is still synthetic QA only.
+
+## Completed collection checkpoint 7 November
+
+All 96 episodes and all 24 scenario blocks completed. The independent allocation audit passed 1187 numeric cross-checks. Frozen sources, tag, gates, exported pilot replay and both export receipts were verified again after collection. No pending budget reservations remained. Do not restart or expand collection.
+
+The actual experimental four-exhibit release passed 221 browser checks, with zero third-party requests, page errors or CSP violations. Desktop and all five phone sections were visually reviewed. The static build is 1252665 bytes including its receipt; the initial HTML/JS/data set is 128064 bytes. Long loaded witness transcripts exceed the browser's full-page screenshot limit; the review now captures readable desktop viewports while keeping the loaded witness. This affects QA capture only, not the research data or exhibit.
+
+The first empirical paper, process census, scientific figure and proposed publication archive are being reviewed privately in the chat workspace. Do not publish them or switch repository visibility without the author's remaining OD-4/OD-5 decision. The paper reports the frozen interval rule without promoting exploratory comparisons to confirmatory findings. No final submission has occurred.
+
+`scripts/audit_process_counts.py` provides a post-collection descriptive event census from receipt-verified records. `scripts/plot_verified_results.py` renders already-computed exhibit intervals to PNG/SVG/PDF; optional isolated figure dependencies are pinned in `experiments/figure-requirements-2026-11-07.txt`. Neither changes scientific sources, outcomes or bootstrap calculations.
