@@ -1,0 +1,63 @@
+{
+  "release": "https://github.com/RavenSeldon/seventh-seat/releases/tag/reading-2026-11-07",
+  "downloads": [
+    {
+      "name": "seventh-seat-reading.pdf",
+      "bytes": 86503,
+      "sha256": "1a48d319c836e9e1f7962fe9e4ed29a336d0ddbc6bc944c5163bea4c2a068d58",
+      "public_download_verified": true
+    },
+    {
+      "name": "seventh-seat-reading-site.zip",
+      "bytes": 286829,
+      "sha256": "ecfbbec81b719c0621295b2205e40cd22af5279dccdf3017ed298afced1a1af2",
+      "public_download_verified": true
+    },
+    {
+      "name": "manuscript.json",
+      "bytes": 25017,
+      "sha256": "e98928b74faab5b257e14e0887908ed01e264c16b0f4521f5daceb61b785a74e",
+      "public_download_verified": true
+    },
+    {
+      "name": "reading-receipt.json",
+      "bytes": 1032,
+      "sha256": "388e2a2625172899e30ba2adf21a562a39882a96adcdceacbfda391de4090127",
+      "public_download_verified": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 356,
+      "sha256": "9092cd1023799f5c1aee6938be3630fad684c32a6f3fcd0dee6796328434423d",
+      "public_download_verified": true
+    },
+    {
+      "name": "tagged installer",
+      "public_download_verified": true,
+      "sha256": "fb2d769618b76df087df7c09a58ef4b8f800f652d1d1c2b25a1d21fe6f215ba2"
+    }
+  ],
+  "installer_tests": {
+    "verified_install": true,
+    "corrupt_archive_left_live_unchanged": true,
+    "failed_health_check_restored_previous": true
+  },
+  "preservation": {
+    "frozen_sources": 32,
+    "mismatches": [],
+    "changed_exhibit_files": [
+      "app.js",
+      "index.html"
+    ],
+    "added": [
+      "paper/index.html"
+    ]
+  },
+  "content": {
+    "source_items": 117,
+    "pdf_pages": 9,
+    "missing_pdf": [],
+    "missing_html": []
+  },
+  "deployment": "awaiting author console installation"
+}
