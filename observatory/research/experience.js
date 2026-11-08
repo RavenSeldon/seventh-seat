@@ -41,9 +41,12 @@ if(entrance){
  const bar=document.createElement('div');bar.className='inline-diorama-tools';
  const close=document.createElement('button');close.type='button';close.textContent='Close diorama';
  const full=document.createElement('a');full.href=entrance.href;full.textContent='Open standalone view ↗';full.target='_blank';full.rel='noopener noreferrer';
- bar.append(close,full);panel.append(bar);entrance.after(panel);entrance.setAttribute('aria-expanded','false');entrance.setAttribute('aria-controls',panel.id);
+ bar.append(close,full);panel.append(bar);(entrance.closest('.controls')||entrance).after(panel);entrance.setAttribute('aria-expanded','false');entrance.setAttribute('aria-controls',panel.id);
  entrance.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();if(panel.querySelector('iframe')){close.focus();return;}
- const frame=document.createElement('iframe');frame.src=entrance.href;frame.title='Seventh Seat interactive diorama: four matched experimental cells';frame.allowFullscreen=true;panel.append(frame);panel.hidden=false;entrance.setAttribute('aria-expanded','true');close.focus();});
+ const frame=document.createElement('iframe');frame.src=entrance.href;frame.title='Seventh Seat interactive diorama: four matched experimental cells';frame.allowFullscreen=true;
+ // The outer Enter click is the explicit request to start 3D; no second click inside the frame.
+ frame.addEventListener('load',()=>{try{frame.contentDocument?.getElementById('enter')?.click();}catch{/* Standalone link remains available if embedding is restricted. */}});
+ panel.hidden=false;panel.append(frame);entrance.setAttribute('aria-expanded','true');close.focus();});
  close.addEventListener('click',()=>{panel.querySelector('iframe')?.remove();panel.hidden=true;entrance.setAttribute('aria-expanded','false');entrance.focus();});
 }
 })();

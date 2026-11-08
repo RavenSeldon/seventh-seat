@@ -44,11 +44,15 @@ try{
   check(await page.locator('.music-toggle').getAttribute('aria-pressed')==='true','music button reflects actual playback');
   await page.click('#diorama-link');
   const frame=page.frameLocator('#inline-diorama iframe');
-  await frame.locator('#enter').waitFor();
+  await frame.locator('#fixture-0').waitFor();
+  check(await page.locator('#inline-diorama').evaluate(p=>p.parentElement.id==='seven'&&p.clientWidth>=p.parentElement.clientWidth-4),'embedded diorama occupies the full exhibit width outside the controls row');
   check(await frame.locator('.soundtrack').count()===0,'embedded diorama does not create a second player');
-  await frame.locator('#enter').click();
   const child=page.frames().find(f=>f.url().includes('/seven/'));
   await child.waitForFunction(()=>window.__diorama.scene()!==null,{},{timeout:30000});
+  check(await frame.locator('#enter').isHidden(),'one outer Enter click starts the embedded 3D view');
+  await page.setViewportSize({width:390,height:844});
+  check(await page.locator('#inline-diorama iframe').evaluate(f=>f.getBoundingClientRect().width>=f.closest('section').clientWidth-4&&f.getBoundingClientRect().right<=innerWidth),'embedded view fits the full mobile exhibit width');
+  await page.setViewportSize({width:1440,height:1000});
   for(let i=0;i<4;i++){
    await frame.locator('#fixture-'+i).click();
    check(await child.evaluate(()=>{const d=window.__diorama,s=d.current(),marks=d.scene(),get=(k,a)=>marks.find(m=>m.kind===k&&(a===undefined||m.actor===a));return Math.abs(get('outflow').measuredValue-s.downstream_flow)<.001&&s.actors.every(a=>s.withdrawals_by_actor[a]===0?!get('offtake',a):Math.abs(get('offtake',a).measuredValue-s.withdrawals_by_actor[a])<.001);}),`embedded cell ${i}: actual 3D mesh widths match recorded water`);
