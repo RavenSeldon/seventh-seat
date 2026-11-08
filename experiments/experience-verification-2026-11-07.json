@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-07",
+  "source_commit": "03df2854c6cc3def5aabec11b2177567da32c25e",
+  "status": "release-tested-not-yet-installed-on-server",
+  "archive_sha256": "e694b03a0c6f86428d92ca4cd1f75f8afc2ac691c1dcf73b6afc4d0a32da8786",
+  "checks": {
+    "python_regression_passed": 177,
+    "installer_success_rejection_rollback_passed": 6,
+    "experimental_browser_passed": 248,
+    "diorama_passed": 97,
+    "independent_arithmetic_passed": 1187,
+    "frozen_source_hashes_matched": 32,
+    "original_soundtrack_files_matched": 8,
+    "final_assets_match_browser_candidate": 39
+  },
+  "new_model_provider_calls": 0,
+  "new_experimental_observations": 0
+}
