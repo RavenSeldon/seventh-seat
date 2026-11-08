@@ -33,7 +33,7 @@ THREE_FILES = [
     "examples/jsm/renderers/CSS2DRenderer.js",
     "examples/jsm/environments/RoomEnvironment.js",
 ]
-ALLOWED = {".html", ".js", ".json", ".txt", ".svg", ".webp"}
+ALLOWED = {".html", ".js", ".json", ".txt", ".svg", ".webp", ".png", ".ico", ".webmanifest", ".css", ".mp3", ".m4a", ".aac", ".ogg"}
 RELEASE_LIMIT = 15 * 1024 * 1024
 FIRST_LOAD_LIMIT = int(1.5 * 1024 * 1024)
 IMPORTMAP = re.compile(r'(<script type="importmap">)(.*?)(</script>)', re.S)
@@ -65,6 +65,9 @@ def csp_for(html: str) -> str:
         "style-src 'self' 'unsafe-inline'",
         "img-src 'self' data: blob:",
         "connect-src 'self'",
+        "media-src 'self'",
+        "frame-src 'self'",
+        "manifest-src 'self'",
         "base-uri 'none'",
         "form-action 'none'",
         "frame-ancestors 'self'",

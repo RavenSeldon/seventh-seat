@@ -7,3 +7,5 @@ The author approved these licences and public release on 7 November 2026.
 - Third-party material retains its original terms. In particular, the official Apart report template and its embedded fonts, vendored Three.js, cited publications and quoted third-party text are not relicensed by this project. Three.js retains its bundled MIT notice; the template package is preserved for fidelity and provenance.
 
 The paper discloses AI assistance. A licence notice does not imply ownership of every underlying fact, model-generated phrase or third-party contribution. Retain existing third-party notices when redistributing. Private provider caches, credentials, account settings and budget databases are not part of the release.
+
+The supplied seal and the Rushii soundtrack are reused at the author’s explicit request. They are identity/media assets, not automatically covered by the MIT software licence or CC BY paper licence; no broader music or artwork rights are granted here. The music files are byte-for-byte copies of the author-selected Rushii soundtrack.

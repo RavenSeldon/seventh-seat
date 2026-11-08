@@ -119,6 +119,16 @@ class BlogBlueprint(unittest.TestCase):
         self.assertEqual(v.headers["Cache-Control"], "public, max-age=31536000, immutable")
         self.assertNotIn("Content-Security-Policy", {k: v for k, v in data.headers.items() if v == RELEASE_CSP})
 
+    def test_icons_audio_and_range_requests(self):
+        for name,mime in {"seal.png":"image/png","favicon.ico":"image/vnd.microsoft.icon","site.webmanifest":"application/manifest+json","experience.css":"text/css","track.m4a":"audio/mp4","track.mp3":"audio/mpeg","track.aac":"audio/aac","track.ogg":"audio/ogg"}.items():
+            (self.release/name).write_bytes(b"0123456789")
+            response=self.c.get("/seventh-seat/"+name)
+            self.assertEqual((response.status_code,response.mimetype),(200,mime))
+            self.assertEqual(response.headers["X-Content-Type-Options"],"nosniff")
+        response=self.c.get("/seventh-seat/track.m4a",headers={"Range":"bytes=2-5"})
+        self.assertEqual((response.status_code,response.data),(206,b"2345"))
+        self.assertEqual(response.headers["Content-Range"],"bytes 2-5/10")
+
     def test_refuses_unlisted_types_and_escapes(self):
         for path in ("/seventh-seat/notes.py", "/seventh-seat/../secret.json",
                      "/seventh-seat/%2e%2e/secret.json", "/seventh-seat/missing.json"):

@@ -1,6 +1,6 @@
 # Deploying The Seventh Seat → https://benamuwo.me/seventh-seat/
 
-**Status:** PLAN. Nothing is deployed, and the blog repository has not been touched. The release build (`make release`) and a deploy template (`scripts/deploy.sh`) exist; neither has been run against the server.
+**Status:** Live at `/seventh-seat/`. The reading edition was independently verified on 7 November 2026; subsequent presentation releases have their own receipts.
 
 The same pattern as Schrödinger's Civilization and First Notice: static files on the droplet at `/srv/seventh-seat/current/seventh-seat/`, served by a small blueprint in the Neurascape Flask blog. Everything is built on the Mac; the droplet only receives files.
 
@@ -9,11 +9,11 @@ The same pattern as Schrödinger's Civilization and First Notice: static files o
 | Rule | Limit | Why |
 |---|---|---|
 | Runtime compute | None: no model calls, no database, no server-side rendering | Flat hosting cost; nothing to secure |
-| Whole release | 15 MB or less | Disk and transfer stay negligible |
+| Whole release | 20 MiB or less for the author-requested soundtrack edition | Original 15 MiB limit remains on non-music builds; audio loads only on user request |
 | First load | 1.5 MB or less (HTML, CSS, JS and first-view data) | Fast on phones; small transfer per visit |
 | Exhibit data | Precomputed, decimated JSON, lazy-loaded per exhibit | Full logs are not needed to view |
 | Raw run logs | Not hosted on the droplet; published with the code (GitHub release), with SHA-256 hashes referenced from the exhibit | Keeps the droplet lean while staying verifiable |
-| Media | SVG and WebP only; no audio or video | Largest avoidable cost |
+| Media | SVG/WebP/PNG/ICO icons and optional MP3/M4A/AAC/OGG soundtrack; no video | Author requested Rushii music on 7 November; no audio transfer before play |
 | Fonts | System stack or one subset `woff2` | Size |
 | Third-party requests | None at runtime: three.js is vendored into the release, pinned to the version the source page names | No dependency on a CDN staying up; no visitor data leaves the site |
 | Runtime dependencies | Only static files and the blog's existing blueprint | Nothing to patch on the server |
@@ -77,7 +77,7 @@ No font, model or backend requests. Before publication: rebuild from the final c
 
 ## Four-exhibit candidate (7 November; not deployed)
 
-`scripts/build_research_release.py --data EXHIBIT_DATA --output NEW_DIRECTORY` builds the research hub plus a nested `seven/` diorama, using verified exports rather than the old shell fixtures. See `observatory/research/README.md`. It preserves the same 15 MB whole-release and 1.5 MB first-load caps, counts the release manifest itself, and vendors the pinned Three.js files. Use the candidate's single CSP for both HTML pages. Experimental JSON under `data/` must be revalidated on release changes (do not apply the old immutable `fixtures/` caching rule to unversioned data). Before any deployment, inspect actual records in the release, run its browser checks with `--experimental`, review the concrete payload and obtain the author's publication/deployment decision. The earlier shell deployment commands do not automatically select this new candidate.
+`scripts/build_research_release.py --data EXHIBIT_DATA --output NEW_DIRECTORY` builds the research hub plus a nested `seven/` diorama, using verified exports rather than the old shell fixtures. See `observatory/research/README.md`. The original research release uses a 15 MiB whole-release cap; the author-requested soundtrack edition permits 20 MiB, retaining the 1.5 MB first-load cap, counts the release manifest itself, and vendors the pinned Three.js files. Use the candidate's single CSP for both HTML pages. Experimental JSON under `data/` must be revalidated on release changes (do not apply the old immutable `fixtures/` caching rule to unversioned data). Before any deployment, inspect actual records in the release, run its browser checks with `--experimental`, review the concrete payload and obtain the author's publication/deployment decision. The earlier shell deployment commands do not automatically select this new candidate.
 
 ## Research release to `/seventh-seat/` (prepared 7 November; not deployed)
 

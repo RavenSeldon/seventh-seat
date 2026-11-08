@@ -81,7 +81,7 @@ async function init(){
   if(finding&&summary.data_status==='experimental'){
    const effects=['E','S'].map(k=>summary.contrasts.shortfall[k]);
    const includesZero=effects.every(v=>v.estimate!==null&&v.ci95[0]<=0&&v.ci95[1]>=0);
-   finding.innerHTML=`<p class="eyebrow">What the experiment found</p><p><strong>${includesZero?'Both primary effect intervals include zero.':'Read both primary effects with their uncertainty.'}</strong> ${includesZero&&summary.interpretation==='confirmatory'?'Neither directional hypothesis met the preregistered support rule. ':''}These results concern one synthetic world and one model configuration. <a href="#ladder">Inspect the estimates and intervals ↓</a></p>`;
+   finding.innerHTML=`<p class="eyebrow">What the experiment found</p><p><strong>${includesZero?'Both primary effect intervals include zero.':'Read both primary effects with their uncertainty.'}</strong> ${includesZero&&summary.interpretation==='confirmatory'?'Neither directional hypothesis met the preregistered support rule. ':''}The data do not clearly establish that either change reduced downstream harm; this is not proof of no effect. These results concern one synthetic world and one model configuration. <a href="#ladder">Inspect the estimates and intervals ↓</a></p>`;
    finding.hidden=false;
   }
   $('content').hidden=false;document.documentElement.dataset.ready='true';

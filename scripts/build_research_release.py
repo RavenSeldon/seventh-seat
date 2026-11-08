@@ -16,6 +16,10 @@ from seventh_seat.world.events import canonical,sha256_hex
 from build_release import THREE_FILES,IMPORTMAP,csp_for,git,RELEASE_LIMIT,FIRST_LOAD_LIMIT,ALLOWED
 
 
+from presentation_assets import copy_assets,decorate
+
+PRESENTATION_LIMIT=20*1024*1024
+
 def build(data,output,three):
     data,output,three=Path(data).resolve(),Path(output).resolve(),Path(three)
     if output.exists() or output==data or data in output.parents:
@@ -47,10 +51,11 @@ def build(data,output,three):
     for name in [*receipt['files'],'EXHIBIT.json']:
         target=output/'data'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(data/name,target)
     for name in ('index.html','app.js'):shutil.copyfile(ROOT/'observatory/research'/name,output/name)
-    htmls=[(output/'index.html').read_text()]
+    copy_assets(output)
+    htmls=[]
     paper=ROOT/'observatory/research/paper/index.html'
     if paper.is_file():
-        (output/'paper').mkdir();shutil.copyfile(paper,output/'paper/index.html');htmls.append(paper.read_text())
+        (output/'paper').mkdir();shutil.copyfile(paper,output/'paper/index.html')
     if selected:
         html=(ROOT/'observatory/diorama/index.html').read_text();html=prune_posters(embed(html,selected),selected)
         pinned=re.search(r'https://cdn\.jsdelivr\.net/npm/three@([\d.]+)/',html)[1]
@@ -63,17 +68,23 @@ def build(data,output,three):
         html=IMPORTMAP.sub(lambda m:f'{m[1]}{imports}{m[3]}',html,count=1)
         html=html.replace('<body>','<body><a href="../index.html#seven" style="display:block;padding:12px 24px;color:#ddbf78;background:#0c1318">← Return to the four exhibits</a>',1)
         if 'cdn.jsdelivr.net' in html:raise ValueError('external diorama request remains')
-        (seven/'index.html').write_text(html);htmls.append(html)
+        (seven/'index.html').write_text(html)
+    for path in ('index.html','paper/index.html','seven/index.html'):
+        p=output/path
+        if p.is_file():
+            html=decorate(p.read_text(),path);p.write_text(html);htmls.append(html)
     files={}
     for p in sorted(output.rglob('*')):
         if not p.is_file():continue
         if p.suffix not in ALLOWED:raise ValueError('unsupported release type')
         blob=p.read_bytes();files[str(p.relative_to(output))]={'sha256':hashlib.sha256(blob).hexdigest(),'bytes':len(blob),'gzip':len(gzip.compress(blob,9))}
-    first_names=['index.html','app.js','data/EXHIBIT.json','data/summary.json','data/snapshots.json','data/source-table.json']
+    first_names=['index.html','app.js','data/EXHIBIT.json','data/summary.json','data/snapshots.json','data/source-table.json','experience.js','experience.css','audio/playlist.json','icons/seal.svg','icons/icon-32.png']
     first=sum(files[n]['bytes'] for n in first_names)
     if selected:first=max(first,files['seven/index.html']['bytes'])
     total=sum(f['bytes'] for f in files.values())
-    if total>RELEASE_LIMIT or first>FIRST_LOAD_LIMIT:raise ValueError('release exceeds hosting limits')
+    has_audio=any(Path(n).suffix.lower() in ('.mp3','.m4a','.aac','.ogg') for n in files)
+    limit=PRESENTATION_LIMIT if has_audio else RELEASE_LIMIT
+    if total>limit or first>FIRST_LOAD_LIMIT:raise ValueError('release exceeds hosting limits')
     release={'kind':'four-exhibit-local-release','data_status':receipt['data_status'],'commit':git('rev-parse','HEAD') or None,
              'working_tree_clean':not bool(git('status','--porcelain')),'total_bytes':total,'first_load':{'bytes':first,'files':first_names},
              'content_security_policy':csp_for('\n'.join(htmls)), 'files':files,
@@ -84,7 +95,7 @@ def build(data,output,three):
     for _ in range(4):
         encoded=json.dumps(release,indent=2)+'\n';release['total_bytes']=total+len(encoded.encode())
     encoded=json.dumps(release,indent=2)+'\n'
-    if release['total_bytes']>RELEASE_LIMIT:raise ValueError('release including manifest exceeds hosting limit')
+    if release['total_bytes']>limit:raise ValueError('release including manifest exceeds hosting limit')
     (output/'RELEASE.json').write_text(encoded)
     return release
 

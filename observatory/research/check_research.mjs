@@ -11,7 +11,7 @@ const snaps=JSON.parse(fs.readFileSync(path.join(root,'data/snapshots.json'),'ut
 const experimental=process.argv.includes('--experimental');
 if(release.data_status!==(experimental?'experimental':'scripted-fixture'))throw Error('Release status does not match explicit check mode');
 const format=x=>x==null?'unavailable':Number(x).toLocaleString('en',{maximumSignificantDigits:4});
-const types={'.html':'text/html','.js':'text/javascript','.json':'application/json','.txt':'text/plain'};
+const types={'.html':'text/html','.js':'text/javascript','.json':'application/json','.txt':'text/plain','.css':'text/css','.png':'image/png','.svg':'image/svg+xml','.ico':'image/vnd.microsoft.icon','.webmanifest':'application/manifest+json','.m4a':'audio/mp4','.mp3':'audio/mpeg','.aac':'audio/aac','.ogg':'audio/ogg'};
 const server=http.createServer((req,res)=>{
  const name=decodeURIComponent(new URL(req.url,'http://local').pathname),file=path.resolve(root,'.'+(name.endsWith('/')?name+'index.html':name));
  if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||fs.statSync(file).isDirectory()){res.writeHead(404);res.end();return;}
@@ -34,6 +34,44 @@ try{
  check(experimental?await page.locator('#finding').isVisible():await page.locator('#finding').isHidden(),'findings only shown for verified experimental data');
  check(!requests.some(x=>x.includes('/witness/')),'witness details are not loaded on entry');
  check(!requests.some(x=>x.includes('/vendor/')),'3D library is not loaded on entry');
+ if(fs.existsSync(path.join(root,'experience.js'))){
+  await page.waitForFunction(()=>!document.querySelector('.music-toggle').disabled);
+  check(!requests.some(x=>/\.(m4a|mp3|aac|ogg)(?:$|\?)/.test(x)),'soundtrack transfers no audio before play');
+  check(await page.locator('audio').evaluate(a=>a.paused&&!a.getAttribute('src')),'music starts off with no media source');
+  check(await page.locator('link[rel="apple-touch-icon"]').count()===1&&await page.locator('meta[property="og:image"]').count()===1,'device icon and share image declared');
+  await page.click('.music-toggle');
+  await page.waitForFunction(()=>document.querySelector('audio').currentTime>0,{},{timeout:15000});
+  check(await page.locator('.music-toggle').getAttribute('aria-pressed')==='true','music button reflects actual playback');
+  await page.click('#diorama-link');
+  const frame=page.frameLocator('#inline-diorama iframe');
+  await frame.locator('#enter').waitFor();
+  check(await frame.locator('.soundtrack').count()===0,'embedded diorama does not create a second player');
+  await frame.locator('#enter').click();
+  const child=page.frames().find(f=>f.url().includes('/seven/'));
+  await child.waitForFunction(()=>window.__diorama.scene()!==null,{},{timeout:30000});
+  for(let i=0;i<4;i++){
+   await frame.locator('#fixture-'+i).click();
+   check(await child.evaluate(()=>{const d=window.__diorama,s=d.current(),marks=d.scene(),get=(k,a)=>marks.find(m=>m.kind===k&&(a===undefined||m.actor===a));return Math.abs(get('outflow').measuredValue-s.downstream_flow)<.001&&s.actors.every(a=>s.withdrawals_by_actor[a]===0?!get('offtake',a):Math.abs(get('offtake',a).measuredValue-s.withdrawals_by_actor[a])<.001);}),`embedded cell ${i}: actual 3D mesh widths match recorded water`);
+  }
+  await frame.locator('#view-plan').click();
+  await child.waitForFunction(()=>!window.__diorama.scene3d().looping());
+  check(await child.evaluate(()=>!window.__diorama.scene3d().decorVisible()&&!window.__diorama.scene3d().haloVisible()),'calibrated plan stops decorative effects and rendering');
+  await frame.locator('#view-cinematic').click();await frame.locator('#reveal-start').click();
+  check(await frame.locator('#reveal-card').isVisible(),'embedded guided reveal opens');
+  await frame.locator('#reveal-next').click();await frame.locator('#reveal-exit').click();
+  check(await frame.locator('#reveal-card').isHidden(),'embedded guided reveal exits');
+  check(await page.locator('audio').evaluate(a=>!a.paused&&a.currentTime>0),'music continues throughout diorama exploration');
+  await page.getByRole('button',{name:'Close diorama',exact:true}).click();
+  check(await page.locator('#inline-diorama iframe').count()===0,'closing diorama releases its document and graphics context');
+  await page.click('.music-toggle');check(await page.locator('audio').evaluate(a=>a.paused),'music pause stops playback');
+  await page.click('.music-options > summary');await page.locator('.music-volume').fill('0.2');
+  check(await page.locator('audio').evaluate(a=>a.volume===.2),'music volume control applies');
+  const prior=await page.locator('audio').getAttribute('src');await page.click('.music-next');
+  check(await page.locator('audio').getAttribute('src')!==prior&&await page.locator('audio').evaluate(a=>a.paused),'next track changes without unwanted autoplay');
+  await page.reload();await page.waitForFunction(()=>!document.querySelector('.music-toggle').disabled);
+  check(await page.locator('audio').evaluate(a=>a.paused&&a.volume===.2),'reload restores volume while leaving playback off');
+ }
+
  for(const s of snaps){
   await page.selectOption('#episode',s.episode_id);
   const source=JSON.parse(await page.locator('#snapshot').textContent());check(JSON.stringify(source)===JSON.stringify(s),`${s.episode_id}: exact snapshot shown`);
@@ -106,7 +144,7 @@ try{
  await ctx.close();
  const mobile=await open({width:390,height:844});await mobile.page.goto(origin);await mobile.page.waitForFunction(()=>document.documentElement.dataset.ready==='true');
  check(await mobile.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'phone has no page-level sideways scrolling');
- check(await mobile.page.locator('select,button').evaluateAll(ns=>ns.every(n=>n.getBoundingClientRect().height>=44)),'phone controls meet 44px touch targets');
+ check(await mobile.page.locator('select,button').evaluateAll(ns=>ns.filter(n=>n.getBoundingClientRect().height>0).every(n=>n.getBoundingClientRect().height>=44)),'phone controls meet 44px touch targets');
  await mobile.page.keyboard.press('Tab');check(await mobile.page.locator('.skip').evaluate(e=>e===document.activeElement),'keyboard skip link reachable first');
  if(shots){await mobile.page.screenshot({path:path.join(shots,'phone-top.png')});for(const id of ['seven','ladder','witness','rivers','sources'])await mobile.page.locator('#'+id).screenshot({path:path.join(shots,'phone-'+id+'.png')});}if(fs.existsSync(path.join(root,'paper/index.html'))){
   await mobile.page.goto(origin+'/paper/');

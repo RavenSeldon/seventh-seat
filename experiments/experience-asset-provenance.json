@@ -1,0 +1,38 @@
+{
+  "seal_sha256": "0ec1ea476e8dfae4f915de8d30229f13ab698f032197fbc328b1d88a5c605eff",
+  "soundtrack_source": "RavenSeldon/Rushii, reused unchanged at the author\u2019s request",
+  "tracks": {
+    "02_02-sirens.m4a": {
+      "bytes": 1302630,
+      "sha256": "ea3b564fffbb1be444346880e1636b8650da1a8ce1bf0b21e65d05ba16eb9625"
+    },
+    "05a_05a-requiem.m4a": {
+      "bytes": 1968499,
+      "sha256": "b03a10da890ea4d3a699a6574ae3eb09e0a9fde6e31c4614e80f2022d25584ca"
+    },
+    "06_06-listen.m4a": {
+      "bytes": 892903,
+      "sha256": "a5c0e805b68f52ad9d8368cc577035266b6282ffade0dff189b8d98b454be004"
+    },
+    "04a_04a-good.m4a": {
+      "bytes": 2036454,
+      "sha256": "23cef1cb58735a74934a28a4785a8f068a97be1f444d936cf0b4f029b2b471d3"
+    },
+    "05_05-mind_loaded.m4a": {
+      "bytes": 1794193,
+      "sha256": "6eaa26000397fce714f3b09ab1c8d799893d6f6bc1b696759230b6168633c1ed"
+    },
+    "03_03-mercury.m4a": {
+      "bytes": 2090960,
+      "sha256": "d6748119e5e3d5abab5a9d6b992a958b9de4eb2a0c13fce5b655666fbd929cb8"
+    },
+    "01_01-fission.m4a": {
+      "bytes": 2279704,
+      "sha256": "a4454a8281aa3de19087d3497af298c9c12eb05930829d11b2418ee36bcf9bdd"
+    },
+    "04_04-lament.m4a": {
+      "bytes": 2329185,
+      "sha256": "a9d3ad81235bd2e07d7278d3d51bb9963344ff03158cd43760d1db75c9208ca9"
+    }
+  }
+}
