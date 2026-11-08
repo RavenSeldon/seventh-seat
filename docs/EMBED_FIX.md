@@ -1,0 +1,5 @@
+Fixes the embedded diorama being inserted into the compact controls row (about 330 px wide on desktop) instead of occupying the full exhibit width. The initial Enter click now also starts the embedded 3D view, without a second click inside the iframe. Standalone diorama, paper, data, audio and graphics engine are unchanged.
+
+251 browser checks passed, including desktop/mobile panel width, one-click startup, all four measured 3D snapshots, guided reveal, continuous music and clean CSP. Final assets exactly match the tested candidate. Only experience.js and experience.css differ from the preceding experience release, plus the release receipt.
+
+The static-only installer verifies the archive and every file, refuses changes to scientific data or the standalone diorama, retains the previous release, and rolls back if live checks fail. No blog-code changes or service restart. Local installation, corrupt-download rejection and failed-health-check rollback passed. Published release is separate from verified installation on benamuwo.me.
